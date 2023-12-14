@@ -1,0 +1,12 @@
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.fullWidth {
+  max-width: 100%;
+  width: 100%;
+  padding: 0;
+}
