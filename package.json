@@ -1,24 +1,38 @@
 {
   "name": "nextjs-keyboard-leds",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "description": "KEYBOARD-LEDS.COM website using NextJS",
   "private": true,
+  "author": {
+    "name": "Anton Karpenko",
+    "email": "i@karpolan.com",
+    "url": "https://karpolan.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karpolan/nextjs-keyboard-leds.git"
+  },
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
+    "dev": "next dev",
+    "format": "prettier ./ --write",
+    "lint": "next lint",
     "start": "next start",
-    "lint": "next lint"
+    "test": "jest --watch",
+    "test:ci": "jest --ci",
+    "type": "tsc"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.0.4"
+    "react": "latest",
+    "react-dom": "latest",
+    "next": "latest"
   },
   "devDependencies": {
     "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.0.4"
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "eslint": "latest",
+    "eslint-config-next": "latest"
   }
 }
