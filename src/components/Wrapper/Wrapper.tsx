@@ -19,7 +19,7 @@ const Wrapper: FunctionComponent<WrapperProps> = ({ className, children, fullWid
   );
 
   const styleToRender = useMemo(() => {
-    const widthToRender = width && typeof width === 'number' ? `${width}px` : width;
+    const widthToRender = typeof width === 'number' ? `${width}px` : width;
     return { ...(width && { maxWidth: widthToRender, width: widthToRender }), ...style };
   }, [width, style]);
 

@@ -30,9 +30,11 @@ describe('<Wrapper/> component', () => {
   });
 
   it('supports .fullWidth property', () => {
-    let text = 'property .fullWidth is not set (default)';
+    let text, div;
+
+    text = 'property .fullWidth is not set (default)';
     render(<ComponentToTest>{text}</ComponentToTest>);
-    let div = screen.getByText(text);
+    div = screen.getByText(text);
     expect(div).toBeDefined();
     expect(div).not.toHaveClass('fullWidth');
 
@@ -50,30 +52,29 @@ describe('<Wrapper/> component', () => {
   });
 
   it('supports .width property', () => {
-    let text = 'property .with is not set (default)';
+    let text, div;
+
+    text = 'property .with is not set (default)';
     render(<ComponentToTest>{text}</ComponentToTest>);
-    let div = screen.getByText(text);
+    div = screen.getByText(text);
     expect(div).toBeDefined();
-    let style = window.getComputedStyle(div);
-    expect(style.width).toBe('');
-    expect(style.maxWidth).toBe('');
+    expect(div).not.toHaveStyle({ width: expect.anything(), maxWidth: expect.anything() });
 
     text = 'Property .width is number';
     const withAsNumber = 123;
     render(<ComponentToTest width={withAsNumber}>{text}</ComponentToTest>);
     div = screen.getByText(text);
     expect(div).toBeDefined();
-    style = window.getComputedStyle(div);
-    expect(style.width).toBe(`${withAsNumber}px`);
-    expect(style.maxWidth).toBe(`${withAsNumber}px`);
+    expect(div).toHaveStyle({ width: `${withAsNumber}px`, maxWidth: `${withAsNumber}px` });
 
     text = 'Property .width is text';
     const withAsText = '123rem';
     render(<ComponentToTest width={withAsText}>{text}</ComponentToTest>);
     div = screen.getByText(text);
     expect(div).toBeDefined();
-    style = window.getComputedStyle(div);
-    expect(style.width).toBe(withAsText);
-    expect(style.maxWidth).toBe(withAsText);
+    expect(div).toHaveStyle({ width: withAsText, maxWidth: withAsText });
+    // style = window.getComputedStyle(div);
+    // expect(style.width).toBe(withAsText);
+    // expect(style.maxWidth).toBe(withAsText);
   });
 });

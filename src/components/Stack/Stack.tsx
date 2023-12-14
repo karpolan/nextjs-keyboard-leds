@@ -43,9 +43,9 @@ export const Stack: FunctionComponent<StackProps> = ({
   );
 
   const styleToRender = useMemo(() => {
-    const gapToRender = gap && typeof gap === 'number' ? `${gap}px` : gap;
-    const marginToRender = margin && typeof margin === 'number' ? `${margin}px` : margin;
-    const paddingToRender = padding && typeof padding === 'number' ? `${padding}px` : padding;
+    const gapToRender = typeof gap === 'number' ? `${gap}px` : gap;
+    const marginToRender = typeof margin === 'number' ? `${margin}px` : margin;
+    const paddingToRender = typeof padding === 'number' ? `${padding}px` : padding;
     return {
       alignContent,
       alignItems,
