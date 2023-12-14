@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XML_DIZ_INFO>
+  <MASTER_PAD_VERSION_INFO>
+    <MASTER_PAD_VERSION>3.11</MASTER_PAD_VERSION>
+    <MASTER_PAD_EDITOR>RoboSoft 4.0.756</MASTER_PAD_EDITOR>
+    <MASTER_PAD_EDITOR_URL>http://robosoft.rudenko.com</MASTER_PAD_EDITOR_URL>
+    <MASTER_PAD_INFO>Portable Application Description, or PAD for short, is a data set that is used
+      by shareware authors to disseminate information to anyone interested in their software
+      products. To find out more go to http://www.asp-shareware.org/pad</MASTER_PAD_INFO>
+  </MASTER_PAD_VERSION_INFO>
+  <RoboSoft>
+    <Company_UIN>CMP-00551AFE9C7</Company_UIN>
+    <Company_Description>KARPOLAN is a nickname of Anton Karpenko</Company_Description>
+    <Product_UIN>APP-00B91BE1080</Product_UIN>
+    <Search_String>Keyboard LEDs</Search_String>
+    <Press_Release_Search_String>Keyboard LEDs</Press_Release_Search_String>
+    <NewsFeed_Search_String>Keyboard LEDs</NewsFeed_Search_String>
+    <Search_Engine_Search_String>Keyboard LEDs</Search_Engine_Search_String>
+    <Web_Directories_Search_String>Keyboard LEDs</Web_Directories_Search_String>
+    <Search_String_Unique>KARPOLAN</Search_String_Unique>
+    <Comments_For_Reviewer>Thank you for your interest. Hope this program helps you too :)</Comments_For_Reviewer>
+    <Publish_on_CD>TRUE</Publish_on_CD>
+    <Backlink>https://keyboard-leds.com/submit.html</Backlink>
+    <RSProductType></RSProductType>
+  </RoboSoft>
+  <Company_Info>
+    <Company_Name>KARPOLAN</Company_Name>
+    <Address_1>#101 - 1001 W. Broadway, 381</Address_1>
+    <Address_2></Address_2>
+    <City_Town>Vancouver</City_Town>
+    <State_Province>BC</State_Province>
+    <Zip_Postal_Code>V6H 4E4</Zip_Postal_Code>
+    <Country>Canada</Country>
+    <Company_WebSite_URL>https://karpolan.com</Company_WebSite_URL>
+    <Contact_Info>
+      <Contact_First_Name>Anton</Contact_First_Name>
+      <Contact_Last_Name>Karpenko</Contact_Last_Name>
+      <Contact_Email>pad@karpolan.com</Contact_Email>
+      <Author_First_Name>Anton</Author_First_Name>
+      <Author_Last_Name>Karpenko</Author_Last_Name>
+      <Author_Email>pad@karpolan.com</Author_Email>
+    </Contact_Info>
+    <Support_Info>
+      <Sales_Email>pad@karpolan.com</Sales_Email>
+      <Support_Email>pad@karpolan.com</Support_Email>
+      <General_Email>pad@karpolan.com</General_Email>
+      <Sales_Phone>38 093 3944815</Sales_Phone>
+      <Support_Phone>38 093 3944815</Support_Phone>
+      <General_Phone>38 093 3944815</General_Phone>
+      <Fax_Phone>38 093 3944815</Fax_Phone>
+    </Support_Info>
+  </Company_Info>
+  <ASP>
+    <ASP_FORM>Y</ASP_FORM>
+    <ASP_Member>Y</ASP_Member>
+    <ASP_Member_Number>04242</ASP_Member_Number>
+  </ASP>
+  <NewsFeed>
+    <NewsFeed_FORM>Y</NewsFeed_FORM>
+    <NewsFeed_VERSION>1.0</NewsFeed_VERSION>
+    <NewsFeed_URL>http://Submit-Everywhere.com/extensions/NewsFeed.htm</NewsFeed_URL>
+    <NewsFeed_DESCRIPTION>This PAD extension allows you to add your RSS and Atom news feeds info
+      into your PAD file. This info can be used by RSS feed submission software or by feed
+      directories themselves.</NewsFeed_DESCRIPTION>
+    <NewsFeed_Type>RSS 0.90</NewsFeed_Type>
+    <NewsFeed_Language>English</NewsFeed_Language>
+    <NewsFeed_Purpose>News</NewsFeed_Purpose>
+    <NewsFeed_Author_Email>pad@karpolan.com</NewsFeed_Author_Email>
+    <NewsFeed_Author_First_Name>Anton</NewsFeed_Author_First_Name>
+    <NewsFeed_Author_Last_Name>Karpenko</NewsFeed_Author_Last_Name>
+    <NewsFeed_Feed_URL>https://keyboard-leds.com/feed/</NewsFeed_Feed_URL>
+    <NewsFeed_Site_Name>Keyboard LEDs</NewsFeed_Site_Name>
+    <NewsFeed_Site_URL>https://keyboard-leds.com/</NewsFeed_Site_URL>
+    <NewsFeed_Title>Keyboard LEDs</NewsFeed_Title>
+    <NewsFeed_Description_70>Keyboard Leds software lets you know the current state of keyboard loc</NewsFeed_Description_70>
+    <NewsFeed_Description_250>Keyboard Leds software lets you know the current state of keyboard
+      locks</NewsFeed_Description_250>
+  </NewsFeed>
+  <Site>
+    <Site_FORM>Y</Site_FORM>
+    <Site_VERSION>1.0</Site_VERSION>
+    <Site_URL>http://Submit-Everywhere.com/extensions/Site.htm</Site_URL>
+    <Site_DESCRIPTION>This PAD extension allows you to add your site info into your PAD file. This
+      info can be used by site submission software or by web directories themselves.</Site_DESCRIPTION>
+    <Site_Contact_Email>pad@karpolan.com</Site_Contact_Email>
+    <Site_Contact_First_Name>Anton</Site_Contact_First_Name>
+    <Site_Contact_Last_Name>Karpenko</Site_Contact_Last_Name>
+    <Site_Site_Title>Keyboard LEDs</Site_Site_Title>
+    <Site_Site_URL>https://keyboard-leds.com/</Site_Site_URL>
+    <Site_Description_100>Keyboard Leds software lets you know the current state of keyboard locks</Site_Description_100>
+    <Site_Description_250>Keyboard Leds software lets you know the current state of keyboard locks.
+      You can see the status either on a small icon in the system tray or on a floating OSD window.</Site_Description_250>
+    <Site_Description_450>Lots of notebooks, netbooks and cordless keyboards have no indicators for
+      Caps Lock, and Num Lock. Scroll Lock's bulb disappeared almost from any hardware for now.
+      Keyboard Leds software solves this problem. The program lets you know the current state of
+      keyboard locks. You can see the status either on a small icon in the system tray or on a
+      floating OSD window.</Site_Description_450>
+    <Site_Keywords>caps lock, num lock, scroll lock, keyboard lock, keyboard indicator, keyboard
+      led, lock indicator. shift lock</Site_Keywords>
+  </Site>
+  <ASBMPlannerID1stRound>10</ASBMPlannerID1stRound>
+  <Issues>13</Issues>
+  <ASBMPlannerID2ndRound>11</ASBMPlannerID2ndRound>
+  <Program_Info>
+    <Program_Name>Keyboard LEDs</Program_Name>
+    <Program_Version>2.71</Program_Version>
+    <Program_Release_Month>09</Program_Release_Month>
+    <Program_Release_Day>06</Program_Release_Day>
+    <Program_Release_Year>2012</Program_Release_Year>
+    <Program_Cost_Dollars>0.00</Program_Cost_Dollars>
+    <Program_Type>Freeware</Program_Type>
+    <Program_Release_Status>Minor Update</Program_Release_Status>
+    <Program_Install_Support>Install and Uninstall</Program_Install_Support>
+    <Program_OS_Support>WinXP,WinVista,WinVista x64,Win7 x32,Win7
+      x64,Win2000,WinServer,Win98,WinME,WinNT 4.x</Program_OS_Support>
+    <Program_Language>English</Program_Language>
+    <Program_Change_Info>Added option to disable Internet features (updates, PingNotify statistics,
+      etc.) Memory consumption improved.</Program_Change_Info>
+    <Program_System_Requirements>none</Program_System_Requirements>
+    <Program_Category_Class>System Utilities::Automation Tools</Program_Category_Class>
+    <File_Info>
+      <File_Size_Bytes>522508</File_Size_Bytes>
+      <File_Size_K>510</File_Size_K>
+      <File_Size_MB>0.50</File_Size_MB>
+      <Filename_Versioned></Filename_Versioned>
+      <Filename_Previous></Filename_Previous>
+      <Filename_Generic></Filename_Generic>
+      <Filename_Long></Filename_Long>
+    </File_Info>
+    <Expire_Info>
+      <Has_Expire_Info>N</Has_Expire_Info>
+      <Expire_Based_On>Days</Expire_Based_On>
+      <Expire_Count></Expire_Count>
+      <Expire_Other_Info></Expire_Other_Info>
+      <Expire_Month></Expire_Month>
+      <Expire_Day></Expire_Day>
+      <Expire_Year></Expire_Year>
+    </Expire_Info>
+    <Program_Categories>
+      num lock,caps
+      lock,keyboard,indicator,enhancment,System,Desktop,mouse,Utilities,tools,Software,Notebook,Computer,windows,misc</Program_Categories>
+    <Limitations>none</Limitations>
+    <Awards>Many from other web archives</Awards>
+    <Program_Cost_Other_Code></Program_Cost_Other_Code>
+    <Program_Cost_Other></Program_Cost_Other>
+    <Program_Specific_Category></Program_Specific_Category>
+    <Includes_JAVA_VM></Includes_JAVA_VM>
+    <Includes_VB_Runtime></Includes_VB_Runtime>
+    <Includes_DirectX></Includes_DirectX>
+  </Program_Info>
+  <Web_Info>
+    <Application_URLs>
+      <Application_Info_URL>htts://keyboard-leds.com</Application_Info_URL>
+      <Application_Order_URL>https://keyboard-leds.com/download/</Application_Order_URL>
+      <Application_Screenshot_URL>https://keyboard-leds.com/images/screenshot.png</Application_Screenshot_URL>
+      <Application_Icon_URL>https://keyboard-leds.com/images/icon-32x32.gif</Application_Icon_URL>
+      <Application_XML_File_URL>https://keyboard-leds.com/pad.xml</Application_XML_File_URL>
+    </Application_URLs>
+    <Download_URLs>
+      <Primary_Download_URL>https://keyboard-leds.com/files/keyboard-leds.exe</Primary_Download_URL>
+      <Secondary_Download_URL>https://keyboard-leds.com/files/keyboard-leds.zip</Secondary_Download_URL>
+      <Additional_Download_URL_1></Additional_Download_URL_1>
+      <Additional_Download_URL_2></Additional_Download_URL_2>
+    </Download_URLs>
+  </Web_Info>
+  <Permissions>
+    <Distribution_Permissions>This Software may be distributed freely through on-line services,
+      bulletin boards, or other forms of electronic media, as long as the files are distributed in
+      their entirety. Computer Magazines/Archives are authorized to distribute Software on any Cover
+      Disk or CD-ROM without an individual permission.</Distribution_Permissions>
+    <EULA>This is the End User License Agreement (the "Agreement") is a legal agreement between you,
+      the end-user ("Licensee"), and KARPOLAN, the manufacturer and the copyright owner ("Owner"),
+      for the use of the "Keyboard Leds" aka "Keyboard Indicators" aka "Key Leds" software product
+      ("Software").
+
+      By using this Software or storing this program on a computer drive (or other media), you are
+      agreeing to be bound by the terms of this Agreement. If you do not agree with the terms of
+      this Agreement, please remove this Software from your system.
+
+
+      Rights
+      ======
+
+      The Software is protected by copyright laws and international copyright treaties, as well as
+      other intellectual property laws and treaties. Software is licensed, not sold. Software is
+      free to use and includes no technical support. The origin of this Software must not be
+      misrepresented.
+
+
+      Copyright
+      =========
+
+      All title, including but not limited to copyrights, in and to the Software and any copies
+      thereof are owned by Owner or its suppliers. All title and intellectual property rights in and
+      to the content which may be accessed through use of the Software is the property of the
+      respective content owner and may be protected by applicable copyright or other intellectual
+      property laws and treaties. This Agreement grants you no rights to use such content. All
+      rights not expressly granted are reserved by Owner.
+
+
+      Distribution
+      ============
+
+      This Software may be distributed freely through on-line services, bulletin boards, or other
+      forms of electronic media, as long as the files are distributed in their entirety. Computer
+      Magazines/Archives are authorized to distribute Software on any Cover Disk or CD-ROM without
+      an individual permission.
+
+
+      Restrictions
+      ============
+
+      You may not alter this Software in any way, including changing or removing any messages or
+      windows. You may not decompile, reverse engineer, disassemble or otherwise reduce this
+      Software to a human perceivable form. You may not modify, rent or resell this Software for
+      profit, or create any derivative works, based upon this Software.
+
+
+      Disclaimer
+      ==========
+
+      This Software is provided on an "as is" basis without warranty of any kind, expressed or
+      implied, including but not limited to the implied warranties of merchantability and
+      suitability for a particular purpose. The person using the Software bears all risk as to the
+      quality and performance of the Software. Owner will not be liable for any special, incidental,
+      consequential, indirect or similar damages due to loss of data or any other reason, even if
+      Owner or an agent of Owner has been advised of the possibility of such damages. In no event
+      will Owner be liable for costs of any damages. You acknowledge that you have read this
+      license, understood it, and agreed to be bound by its terms.</EULA>
+  </Permissions>
+  <Program_Descriptions>
+    <English>
+      <Keywords>caps lock, num lock, scroll lock, keyboard lock, keyboard indicator, keyboard led,
+        lock indicator. shift lock</Keywords>
+      <Char_Desc_45>Lets you know the state of keyboard locks</Char_Desc_45>
+      <Char_Desc_80>Keyboard Leds software lets you know the current state of keyboard locks</Char_Desc_80>
+      <Char_Desc_250>Keyboard Leds software lets you know the current state of keyboard locks. You
+        can see the status either on a small icon in the system tray or on a floating OSD window.</Char_Desc_250>
+      <Char_Desc_450>Lots of notebooks, netbooks and cordless keyboards have no indicators for Caps
+        Lock, and Num Lock. Scroll Lock's bulb disappeared almost from any hardware for now.
+        Keyboard Leds software solves this problem. The program lets you know the current state of
+        keyboard locks. You can see the status either on a small icon in the system tray or on a
+        floating OSD window.</Char_Desc_450>
+      <Char_Desc_2000>Lots of notebooks, netbooks and cordless keyboards have no indicators for Caps
+        Lock, and Num Lock. Scroll Lock's bulb disappeared almost from any hardware for now.
+        Keyboard Leds software solves this problem. The program lets you know the current state of
+        keyboard locks. You can see the status either on a small icon in the system tray or on a
+        floating OSD window.</Char_Desc_2000>
+    </English>
+    <Russian>
+      <Char_Desc_2000>На многих современных ноутбуках, нетбуках и беспроводных клавиатурах
+        отсутствуют светодиодные индикаторы Caps Lock и Num Lock. А о лампочке Scroll Lock
+        производители забыли уже давно. Программа Keyboard Leds решает эту проблему, с помощью ее Вы
+        можете узнать текущее состояние переключателей клавиатуры. Положение "замков" отображается
+        на иконке в системном лотке, а так же в плавающем окне на экране.</Char_Desc_2000>
+      <Char_Desc_450>На многих современных ноутбуках, нетбуках и беспроводных клавиатурах
+        отсутствуют светодиодные индикаторы Caps Lock и Num Lock. А о лампочке Scroll Lock
+        производители забыли уже давно. Программа Keyboard Leds решает эту проблему, с помощью ее Вы
+        можете узнать текущее состояние переключателей клавиатуры. Положение "замков" отображается
+        на иконке в системном лотке, а так же в плавающем окне на экране.</Char_Desc_450>
+      <Char_Desc_250>Keyboard Leds позволяет узнать текущее состояние переключателей клавиатуры.
+        Состояние светодиодов отображается на иконке в системном лотке а так же в плавающем окне на
+        экране.</Char_Desc_250>
+      <Char_Desc_80>Keyboard Leds позволяет узнать текущее состояние переключателей клавиатуры</Char_Desc_80>
+      <Char_Desc_45>Текущее состояние переключателей клавиатуры</Char_Desc_45>
+      <Keywords>клавиатура, keyboard, caps lock, num lock, scroll lock</Keywords>
+    </Russian>
+    <German>
+      <Char_Desc_2000>Viele Notebooks, Netbooks und schnurlose Tastaturen haben keine Indikatoren
+        für Caps Lock, Num Lock und. Scroll Lock's Birne verschwand fast von jeder Hardware für
+        jetzt. Keyboard Leds Software löst dieses Problem. Das Programm lässt Sie wissen, den
+        aktuellen Stand der Tastatur sperrt. Sie können den Status entweder auf ein kleines Symbol
+        in der Taskleiste oder auf einer schwimmenden OSD-Fenster zu sehen.</Char_Desc_2000>
+      <Char_Desc_450>Viele Notebooks, Netbooks und schnurlose Tastaturen haben keine Indikatoren für
+        Caps Lock, Num Lock und. Scroll Lock's Birne verschwand fast von jeder Hardware für jetzt.
+        Keyboard Leds Software löst dieses Problem. Das Programm lässt Sie wissen, den aktuellen
+        Stand der Tastatur sperrt. Sie können den Status entweder auf ein kleines Symbol in der
+        Taskleiste oder auf einer schwimmenden OSD-Fenster zu sehen.</Char_Desc_450>
+      <Char_Desc_250>Keyboard Leds Software können Sie den aktuellen Stand der Tastatur sperrt. Sie
+        können den Status entweder auf ein kleines Symbol in der Taskleiste oder auf einer
+        schwimmenden OSD-Fenster zu sehen.</Char_Desc_250>
+      <Char_Desc_80>Software können Sie den aktuellen Stand der Tastatur sperrt</Char_Desc_80>
+      <Char_Desc_45>Sie den aktuellen Stand der Tastatur sperrt</Char_Desc_45>
+      <Keywords>tastatur, keyboard, caps lock, num lock, scroll lock</Keywords>
+    </German>
+    <French>
+      <Keywords>clavier, keyboard, caps lock, num lock, scroll lock</Keywords>
+      <Char_Desc_45>Actuel des écluses du clavier</Char_Desc_45>
+      <Char_Desc_80>Logiciel vous permet de connaître l'état actuel des écluses du clavier</Char_Desc_80>
+      <Char_Desc_250>Keyboard Leds logiciel vous permet de connaître l'état actuel des écluses du
+        clavier. Vous pouvez voir l'état soit sur une petite icône dans la barre système ou sur une
+        fenêtre flottante OSD.</Char_Desc_250>
+      <Char_Desc_450>Beaucoup de portables, netbooks et des claviers sans fil ont pas d'indicateurs
+        pour les Caps Lock, Num Lock et. ampoule Scroll Lock a disparu presque de tout le matériel
+        pour le moment. Keyboard Leds logiciel résout ce problème. Le programme vous permet de
+        connaître l'état actuel des écluses du clavier. Vous pouvez voir l'état soit sur une petite
+        icône dans la barre système ou sur une fenêtre flottante OSD.</Char_Desc_450>
+      <Char_Desc_2000>Beaucoup de portables, netbooks et des claviers sans fil ont pas d'indicateurs
+        pour les Caps Lock, Num Lock et. ampoule Scroll Lock a disparu presque de tout le matériel
+        pour le moment. Keyboard Leds logiciel résout ce problème. Le programme vous permet de
+        connaître l'état actuel des écluses du clavier. Vous pouvez voir l'état soit sur une petite
+        icône dans la barre système ou sur une fenêtre flottante OSD.</Char_Desc_2000>
+    </French>
+    <Spanish>
+      <Char_Desc_2000>Muchos de los portátiles, netbooks y teclados inalámbricos no tienen
+        indicadores de bloqueo de mayúsculas, bloqueo numérico y. bulbo Scroll Lock desapareció casi
+        desde cualquier hardware por ahora. Keyboard Leds de software resuelve este problema. El
+        programa le permite conocer el estado actual de bloqueos de teclado. Usted puede ver el
+        estado ya sea en un pequeño icono en la bandeja del sistema o en una ventana flotante OSD.</Char_Desc_2000>
+      <Char_Desc_450>Muchos de los portátiles, netbooks y teclados inalámbricos no tienen
+        indicadores de bloqueo de mayúsculas, bloqueo numérico y. bulbo Scroll Lock desapareció casi
+        desde cualquier hardware por ahora. Keyboard Leds de software resuelve este problema. El
+        programa le permite conocer el estado actual de bloqueos de teclado. Usted puede ver el
+        estado ya sea en un pequeño icono en la bandeja del sistema o en una ventana flotante OSD.</Char_Desc_450>
+      <Char_Desc_250>Keyboard Leds le permite conocer el estado actual de bloqueos de teclado. Usted
+        puede ver el estado ya sea en un pequeño icono en la bandeja del sistema o en una ventana
+        flotante OSD.</Char_Desc_250>
+      <Char_Desc_45>El estado actual de bloqueos de teclado</Char_Desc_45>
+      <Char_Desc_80>Keyboard Leds le permite conocer el estado actual de bloqueos de teclado</Char_Desc_80>
+      <Keywords>teclado, keyboard, caps lock, num lock, scroll lock</Keywords>
+    </Spanish>
+    <Italian>
+      <Char_Desc_2000>Lots di notebook, netbook e tastiere senza fili non hanno indicatori di Caps
+        Lock e Bloc Num. Bulbo Scroll Lock è scomparso quasi da qualsiasi hardware, per ora. I led
+        della tastiera software risolve questo problema. Il programma ti permette di conoscere lo
+        stato attuale delle serrature tastiera. È possibile visualizzare lo stato o su una piccola
+        icona nella system tray o su una finestra OSD mobile.</Char_Desc_2000>
+      <Char_Desc_450>Lots di notebook, netbook e tastiere senza fili non hanno indicatori di Caps
+        Lock e Bloc Num. Bulbo Scroll Lock è scomparso quasi da qualsiasi hardware, per ora. I led
+        della tastiera software risolve questo problema. Il programma ti permette di conoscere lo
+        stato attuale delle serrature tastiera. È possibile visualizzare lo stato o su una piccola
+        icona nella system tray o su una finestra OSD mobile.</Char_Desc_450>
+      <Char_Desc_250>Keyboard Leds software ti permette di conoscere lo stato attuale delle
+        serrature tastiera. È possibile visualizzare lo stato o su una piccola icona nella system
+        tray o su una finestra OSD mobile.</Char_Desc_250>
+      <Char_Desc_80>Software ti permette di conoscere lo stato attuale delle serrature tastiera</Char_Desc_80>
+      <Char_Desc_45>Consente di conoscere lo stato della tastiera</Char_Desc_45>
+      <Keywords>Caps Lock, Bloc Num, Scroll Lock, blocco tastiera, Indicatore della tastiera,
+        tastiera led, indicatore di blocco. shift lock</Keywords>
+    </Italian>
+    <Portuguese>
+      <Char_Desc_2000>Os lotes de notebooks, netbooks e teclados sem fio não tem indicadores para
+        CapsLock e Num Lock. Bulbo Scroll Lock desapareceu quase de qualquer hardware por enquanto.
+        Keyboard Leds software resolve esse problema. O programa permite quevocê saiba o estado
+        atual da trava o teclado. Você pode ver o status, quer por umpequeno ícone na bandeja do
+        sistema ou em uma janela OSD flutuante.</Char_Desc_2000>
+      <Char_Desc_450>Os lotes de notebooks, netbooks e teclados sem fio não tem indicadores para
+        CapsLock e Num Lock. Bulbo Scroll Lock desapareceu quase de qualquer hardware por enquanto.
+        Keyboard Leds software resolve esse problema. O programa permite quevocê saiba o estado
+        atual da trava o teclado. Você pode ver o status, quer por umpequeno ícone na bandeja do
+        sistema ou em uma janela OSD flutuante.</Char_Desc_450>
+      <Char_Desc_250>Keyboard Leds software permite que você saiba o estado atual da trava o
+        teclado.Você pode ver o status, quer por um pequeno ícone na bandeja do sistema ou em
+        umajanela OSD flutuante.</Char_Desc_250>
+      <Char_Desc_80>Keyboard Leds software permite que você saiba o estado atual do teclado bloqueia</Char_Desc_80>
+      <Char_Desc_45>Você saiba o estado da trava o teclado</Char_Desc_45>
+      <Keywords>caps lock, num lock, scroll lock, bloqueio de teclado, indicador de teclado, teclado
+        conduzida</Keywords>
+    </Portuguese>
+  </Program_Descriptions>
+</XML_DIZ_INFO>
