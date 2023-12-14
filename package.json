@@ -23,9 +23,10 @@
     "type": "tsc"
   },
   "dependencies": {
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-responsive": "latest"
   },
   "devDependencies": {
     "@types/node": "latest",
