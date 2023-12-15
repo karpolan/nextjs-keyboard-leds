@@ -1,4 +1,6 @@
-export const IS_DEBUG = process.env?.NEXT_PUBLIC_DEBUG === 'true';
+export const IS_DEBUG = process.env?.NEXT_PUBLIC_DEBUG === 'true'; // Enables logging, etc.
+export const IS_PRODUCTION = process.env.NEXT_PUBLIC_ENV === 'production'; // Enables analytics, etc.
+export const PUBLIC_URL = getEnvVariable('NEXT_PUBLIC_URL', true) ?? 'this variable must be set in .env !';
 
 export const IS_SERVER = typeof window === 'undefined';
 export const IS_BROWSER = typeof window !== 'undefined' && typeof window?.document !== 'undefined';
