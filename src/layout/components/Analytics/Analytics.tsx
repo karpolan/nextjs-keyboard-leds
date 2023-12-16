@@ -1,5 +1,5 @@
 'use client';
-import { IS_PRODUCTION } from '../../../config';
+import { IS_PRODUCTION } from '@/config';
 import GoogleAnalytics from './GoogleAnalytics';
 import GoogleTagManager from './GoogleTagManager';
 

@@ -4,7 +4,7 @@ import type { Metadata, Viewport } from 'next';
 import { FONTS } from '../layout/fonts';
 import { OPEN_GRAPH_DEFAULT } from './config';
 import Header from '../layout/components/Header';
-import Footer from '../layout/components/Header copy';
+import Footer from '../layout/components/Footer';
 import Analytics from '../layout/components/Analytics';
 import MobileOrDesktop from '../layout/components/MobileOrDesktop';
 import './globals.css';

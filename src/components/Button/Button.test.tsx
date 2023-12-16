@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
-import { randomText } from '../../utils';
+import { randomText } from '@/utils/text';
+import { BUTTON_MARGIN, BUTTON_VARIANT } from '@/components/config';
 import Button, { ButtonVariant } from './Button';
 import { ICONS } from '../Icon/icons';
-import { BUTTON_MARGIN, BUTTON_VARIANT } from '../config';
 
 const ComponentToTest = Button;
 
@@ -58,7 +58,7 @@ describe('<Button/> component', () => {
     expect(link.tagName.toLowerCase()).toBe('a');
     expect(link).toHaveAttribute('href', href);
     expect(link).toHaveAttribute('target', '_blank');
-    expect(link).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
     expect(link).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
   });
 

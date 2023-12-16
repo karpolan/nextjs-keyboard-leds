@@ -1,5 +1,5 @@
 import { FunctionComponent, SVGAttributes } from 'react';
-import { ICON_COLOR_NORMAL, ICON_SIZE } from '../config';
+import { ICON_COLOR_NORMAL, ICON_SIZE } from '@/components/config';
 import { ICONS } from './icons';
 
 export interface IconProps extends SVGAttributes<SVGElement> {
