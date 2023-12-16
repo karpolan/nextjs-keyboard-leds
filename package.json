@@ -26,6 +26,7 @@
     "next": "latest",
     "react": "latest",
     "react-dom": "latest",
+    "react-icons": "latest",
     "react-responsive": "latest"
   },
   "devDependencies": {

@@ -3,3 +3,6 @@ export const SERVER_SIDE_MOBILE_FIRST = true; // true - for mobile, false - for 
 
 export const HEADER_HEIGHT_MOBILE = 48; // '3rem' - NOTE: Synch with styles used in current Layout
 export const HEADER_HEIGHT_DESKTOP = 90; // '5.625rem' - NOTE: Synch with styles used in current Layout
+
+export const CONTENT_MAX_WIDTH = 1200;
+export const CONTENT_MIN_WIDTH = 320; // Not less then (CONTENT_MAX_WIDTH - sidebarWidth)

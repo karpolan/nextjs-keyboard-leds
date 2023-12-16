@@ -1,0 +1,51 @@
+.button {
+  cursor: pointer;
+  border-radius: 999rem;
+  padding: 1.5rem 2.5rem;
+
+  /* !!! don't set "font-family" here !!! font-family: Poppins; */
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.75rem;
+
+  display: inline-flex;
+  /* justify-content: center;
+  align-items: center;
+  white-space: nowrap; */
+}
+
+.contained {
+  border: solid 0.125rem rgba(255, 85, 62, 1);
+  background-color: rgb(255, 85, 62);
+  color: #ffffff;
+}
+
+.contained:hover {
+  background-color: rgba(255, 85, 62, 0.8);
+}
+
+.outlined {
+  border: solid 0.125rem rgb(255, 85, 62);
+  background-color: transparent;
+  color: rgb(255, 85, 62);
+}
+
+.outlined:hover {
+  background-color: rgba(255, 39, 10, 0.2);
+}
+
+.text {
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 85, 62);
+  padding: 0.125rem 0.5rem;
+}
+
+.text:hover {
+  background-color: rgba(255, 39, 10, 0.1);
+}
+
+a.text:hover {
+  text-decoration: underline;
+}
