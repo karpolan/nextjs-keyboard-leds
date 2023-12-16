@@ -1,5 +1,5 @@
 import { useMediaQuery } from 'react-responsive';
-import { MOBILE_SCREEN_MAX_WIDTH } from './config';
+import { MOBILE_SCREEN_MAX_WIDTH } from '../../layout/config';
 
 /**
  * Hook to detect onMobile vs. onDesktop using Media Query

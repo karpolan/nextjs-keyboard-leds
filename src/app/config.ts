@@ -1,7 +1,4 @@
-import { PUBLIC_URL } from '../utils';
-
-export const HEADER_HEIGHT_MOBILE = 48; // '3rem' - NOTE: Synch with styles used in current Layout
-export const HEADER_HEIGHT_DESKTOP = 90; // '5.625rem' - NOTE: Synch with styles used in current Layout
+import { PUBLIC_URL } from '../config';
 
 export const OPEN_GRAPH_DEFAULT = {
   url: PUBLIC_URL,

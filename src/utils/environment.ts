@@ -1,7 +1,3 @@
-export const IS_DEBUG = process.env?.NEXT_PUBLIC_DEBUG === 'true'; // Enables logging, etc.
-export const IS_PRODUCTION = process.env.NEXT_PUBLIC_ENV === 'production'; // Enables analytics, etc.
-export const PUBLIC_URL = getEnvVariable('NEXT_PUBLIC_URL', true) ?? 'this variable must be set in .env !';
-
 export const IS_SERVER = typeof window === 'undefined';
 export const IS_BROWSER = typeof window !== 'undefined' && typeof window?.document !== 'undefined';
 /* eslint-disable no-restricted-globals */
@@ -9,7 +5,15 @@ export const IS_WEBWORKER =
   typeof self === 'object' && self.constructor && self.constructor.name === 'DedicatedWorkerGlobalScope';
 /* eslint-enable no-restricted-globals */
 
-export function getEnvVariable(
+/**
+ * Returns the value of the environment variable with the given name, raises an error if it is required and not set.
+ * Note: My not work with Next.js on client-side code.
+ * @param {string} name - The name of the environment variable to get: e.g. XXX_YYY_PUBLIC_URL
+ * @param {boolean} [isRequired] - Whether the environment variable is required or not.
+ * @param {string} [defaultValue] - The default value to return if the environment variable is not set.
+ * @returns {string} The value of the environment variable with the given name.
+ */
+export function envGet(
   name: string,
   isRequired = false,
   defaultValue: string | undefined = undefined
@@ -24,10 +28,24 @@ export function getEnvVariable(
   return variable;
 }
 
+/**
+ * Verifies existence of environment variables, raises an error if it is required and not set.
+ * @example const MY_VARIABLE = requireEnv(process.env.MY_VARIABLE);
+ * @param {string} [passProcessDotEnvDotValueNameHere] - Pass a value of process.env.MY_VARIABLE here, not just a name!
+ * @returns {string} The value of incoming parameter.
+ * @throws Error "Missing .env variable!"
+ */
+export function envRequired(passProcessDotEnvDotValueNameHere: string | undefined): string {
+  if (typeof passProcessDotEnvDotValueNameHere === 'undefined') {
+    throw new Error('Missing .env variable!');
+  }
+  return passProcessDotEnvDotValueNameHere;
+}
+
 export function getCurrentVersion(): string {
-  return process.env?.npm_package_version ?? process.env.NEXT_PUBLIC_VERSION ?? 'unknown';
+  return process.env.npm_package_version ?? process.env.NEXT_PUBLIC_VERSION ?? 'unknown';
 }
 
 export function getCurrentEnvironment(): string {
-  return process.env?.NODE_ENV ?? 'development';
+  return process.env.NEXT_PUBLIC_ENV ?? process.env?.NODE_ENV ?? 'development';
 }

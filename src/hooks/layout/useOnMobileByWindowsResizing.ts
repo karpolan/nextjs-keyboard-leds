@@ -1,5 +1,5 @@
 import useWindowsSize from './useWindowSize';
-import { MOBILE_SCREEN_MAX_WIDTH } from './config';
+import { MOBILE_SCREEN_MAX_WIDTH } from '../../layout/config';
 
 /**
  * Hook to detect onMobile vs. onDesktop using "resize" event listener
