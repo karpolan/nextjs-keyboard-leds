@@ -1,5 +1,5 @@
-import { IS_SERVER } from '../../utils/environment';
-import { SERVER_SIDE_MOBILE_FIRST } from '../../layout/config';
+import { IS_SERVER } from '@/utils/environment';
+import { SERVER_SIDE_MOBILE_FIRST } from '@/layout/config';
 import useOnMobileForNextJs from './useOnMobileForNextJs';
 import useSetBodyClassMobileOrDesktop from './useSetBodyClassMobileOrDesktop';
 

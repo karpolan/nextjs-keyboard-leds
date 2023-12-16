@@ -1,4 +1,4 @@
-import { PUBLIC_URL } from '../config';
+import { PUBLIC_URL } from '@/config';
 
 export const OPEN_GRAPH_DEFAULT = {
   url: PUBLIC_URL,

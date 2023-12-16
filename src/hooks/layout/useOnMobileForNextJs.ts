@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
+import { SERVER_SIDE_MOBILE_FIRST } from '@/layout/config';
 import useOnMobileByMediaQuery from './useOnMobileByMediaQuery';
-import { SERVER_SIDE_MOBILE_FIRST } from '../../layout/config';
 
 /**
  * Hook to detect onMobile vs. onDesktop with Next.js workaround

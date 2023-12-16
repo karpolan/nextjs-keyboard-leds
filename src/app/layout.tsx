@@ -1,12 +1,9 @@
-import { PUBLIC_URL } from '../config';
+import { PUBLIC_URL } from '@/config';
 import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { FONTS } from '../layout/fonts';
-import { OPEN_GRAPH_DEFAULT } from './config';
-import Header from '../layout/components/Header';
-import Footer from '../layout/components/Footer';
-import Analytics from '../layout/components/Analytics';
-import MobileOrDesktop from '../layout/components/MobileOrDesktop';
+import { OPEN_GRAPH_DEFAULT } from '@/app/config';
+import { FONTS } from '@/layout/fonts';
+import { Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
 import './globals.css';
 
 export const metadata: Metadata = {
