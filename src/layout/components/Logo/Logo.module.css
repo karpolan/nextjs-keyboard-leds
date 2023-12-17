@@ -1,0 +1,66 @@
+.logo {
+  margin: 0.125rem;
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0.5rem;
+  transition: 1s all;
+}
+
+.image {
+  display: block;
+  transition: 1s all;
+}
+
+.text {
+  font-family: var(--font-poppins); /* Poppins */
+  font-style: normal;
+  white-space: nowrap;
+  /* Same as .dark */
+  color: rgb(28, 14, 13);
+}
+
+.text .primary {
+  color: rgb(255, 85, 62);
+}
+
+/* Sizes */
+.small.image {
+  height: 64px;
+  width: 64px;
+}
+.small.text {
+  /* Same as .header3 */
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.75rem; /* 157.143% */
+}
+
+.medium.image {
+  height: 96px;
+  width: 96px;
+}
+.text.medium {
+  /* Same as .header3 */
+  font-size: 1.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.75rem; /* 157.143% */
+}
+
+.large.image {
+  width: 128px;
+  height: 128px;
+}
+.large.text {
+  /* Same as .header2 */
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 4rem; /* 133.333% */
+}

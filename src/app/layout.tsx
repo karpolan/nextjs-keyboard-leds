@@ -27,9 +27,11 @@ const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
           <MobileOrDesktop />
         </Suspense>
 
-        <Header />
-        <div className="content">{children}</div>
-        <Footer />
+        <div style={{ paddingLeft: '1rem', paddingRight: '1rem' }}>
+          <Header />
+          <div className="content">{children}</div>
+          <Footer />
+        </div>
 
         <Suspense>
           <Analytics />

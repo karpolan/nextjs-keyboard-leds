@@ -1,3 +1,4 @@
+'use client';
 import { useLayoutEffect, useState } from 'react';
 import { SERVER_SIDE_MOBILE_FIRST } from '@/layout/config';
 import { IS_SERVER } from '@/utils/environment';

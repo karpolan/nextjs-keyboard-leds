@@ -1,7 +1,12 @@
-import { Wrapper } from '@/components';
+'use client';
+import { useOnMobile } from '@/hooks';
+import HeaderDesktop from './components/HeaderDesktop';
+import HeaderMobile from './components/HeaderMobile';
 
 const Header = () => {
-  return <Wrapper tag="header">Header</Wrapper>;
+  const onMobile = useOnMobile();
+
+  return onMobile ? <HeaderMobile /> : <HeaderDesktop />;
 };
 
 export default Header;
