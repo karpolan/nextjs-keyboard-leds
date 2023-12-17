@@ -4,7 +4,7 @@ import Link, { LinkProps } from './Link';
 import mockRouter from 'next-router-mock';
 import { useRouter } from 'next/router';
 import { act } from 'react-dom/test-utils';
-/* IMPORTANT! To get 'next/router' working with tests, add into "jest.setup.js" file following:
+/* IMPORTANT! To get 'next/router' working with tests, add into "jest.setup.js/ts" file following:
 ---
 jest.mock('next/router', () => require('next-router-mock')); 
 ---

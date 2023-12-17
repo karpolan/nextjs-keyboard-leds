@@ -43,6 +43,7 @@
     "jest-environment-jsdom": "latest",
     "next-router-mock": "latest",
     "prettier": "latest",
+    "ts-node": "latest",
     "typescript": "^5"
   }
 }
