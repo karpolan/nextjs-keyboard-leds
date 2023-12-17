@@ -13,11 +13,10 @@ const ComponentToTest: FunctionComponent<TypoProps> = (props) => {
 describe('<Typo/> component', () => {
   //   beforeEach(() => {});
 
-  it.only('renders itself', () => {
+  it('renders itself', () => {
     let text = 'sample text';
     render(<ComponentToTest>{text}</ComponentToTest>);
     let span = screen.getByText(text);
-    screen.debug(span);
     expect(span).toBeDefined();
     expect(span.tagName.toLowerCase()).toBe('span');
     expect(span).toHaveTextContent(text);
