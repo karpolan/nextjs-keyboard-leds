@@ -1,0 +1,48 @@
+/* Modifiers */
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.bold {
+  /* font-weight: bold; */
+  font-weight: 700;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Colors */
+
+.dark {
+  color: rgb(28, 14, 13);
+}
+
+.light {
+  color: rgb(227, 241, 242);
+}
+
+.primary {
+  color: rgb(255, 85, 62);
+}
+
+.secondary {
+  color: rgb(64, 64, 64);
+}

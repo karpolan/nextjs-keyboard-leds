@@ -1,5 +1,7 @@
+import { Wrapper } from '@/components';
+
 const Header = () => {
-  return <div>Header here...</div>;
+  return <Wrapper tag="header">Header</Wrapper>;
 };
 
 export default Header;

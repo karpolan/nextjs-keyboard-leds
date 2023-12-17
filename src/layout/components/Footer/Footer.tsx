@@ -1,5 +1,7 @@
+import { Wrapper } from '@/components';
+
 const Footer = () => {
-  return <div>Footer here...</div>;
+  return <Wrapper tag="footer">Footer</Wrapper>;
 };
 
 export default Footer;
