@@ -15,6 +15,7 @@
   white-space: nowrap; */
 }
 
+/* Variant "contained"  */
 .contained {
   border: solid 0.125rem rgba(255, 85, 62, 1);
   background-color: rgb(255, 85, 62);
@@ -25,6 +26,7 @@
   background-color: rgba(255, 85, 62, 0.8);
 }
 
+/* Variant "outlined" */
 .outlined {
   border: solid 0.125rem rgb(255, 85, 62);
   background-color: transparent;
@@ -35,6 +37,7 @@
   background-color: rgba(255, 39, 10, 0.2);
 }
 
+/* Variant "text" */
 .text {
   border: none;
   background-color: transparent;
@@ -48,4 +51,16 @@
 
 a.text:hover {
   text-decoration: underline;
+}
+
+/* Variant "icon" */
+.icon {
+  border: none;
+  background-color: transparent;
+  color: rgb(255, 85, 62);
+  padding: 0.25rem;
+}
+
+.icon:hover {
+  background-color: rgba(255, 39, 10, 0.1);
 }

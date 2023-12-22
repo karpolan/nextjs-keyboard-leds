@@ -46,6 +46,8 @@ export const ICONS: Record<string, ComponentType> = {
   loading: FaHourglassHalf,
   more: BsFillArrowRightCircleFill,
 
+  menu: AiOutlineMenu,
+
   menuopen: AiOutlineMenu,
   menuclose: AiOutlineCloseSquare,
 

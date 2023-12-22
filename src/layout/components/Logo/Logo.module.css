@@ -22,6 +22,7 @@
   white-space: nowrap;
   /* Same as .dark */
   color: rgb(28, 14, 13);
+  transition: 1s all;
 }
 
 .text .primary {
