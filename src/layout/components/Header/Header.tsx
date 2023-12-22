@@ -62,7 +62,7 @@ const Header = () => {
         .join(' '),
     [onMobile, openMenu]
   );
-  const logoSize = small ? 'small' : onNarrowScreen ? 'medium' : 'large';
+  const logoSize = onMobile || small ? 'small' : onNarrowScreen ? 'medium' : 'large';
   const menuButtonIcon = openMenu ? 'close' : 'menu';
 
   return (
