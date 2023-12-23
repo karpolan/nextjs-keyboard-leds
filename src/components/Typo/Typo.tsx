@@ -2,9 +2,8 @@
 import { FunctionComponent, HTMLAttributes, PropsWithChildren, ReactNode, useMemo } from 'react';
 import HtmlTag from '../HtmlTag';
 import { useOnMobile } from '@/hooks/layout';
-import stylesShared from './Typo.module.css';
-import stylesDesktop from './TypoDesktop.module.css';
-import stylesMobile from './TypoMobile.module.css';
+import FONTS from '../../layout/fonts';
+import styles from './Typo.module.css';
 
 type TypoColor = 'dark' | 'light' | 'primary' | 'secondary' | string;
 type TypoVariant = 'text' | 'paragraph' | 'header1' | 'header2' | 'header3';
@@ -49,17 +48,15 @@ const Typo: FunctionComponent<TypoProps> = ({
   const onMobile = useOnMobile();
 
   const classToRender = useMemo((): string | undefined => {
-    const composedStyles = {
-      ...stylesShared,
-      ...(onMobile ? stylesMobile : stylesDesktop),
-    };
     const resultAsArray = [
-      composedStyles[variant],
-      composedStyles[color],
-      align && composedStyles[align],
-      bold && composedStyles.bold,
-      capitalize && composedStyles.capitalize,
-      underline && composedStyles.underline,
+      onMobile ? styles.mobile : styles.desktop,
+      (variant as string).includes('header') ? FONTS.poppins.className : FONTS.inter.className,
+      styles[variant],
+      styles[color],
+      align && styles[align],
+      bold && styles.bold,
+      capitalize && styles.capitalize,
+      underline && styles.underline,
       className,
     ];
     const resultAsString: string = resultAsArray.filter(Boolean).join(' ');
@@ -68,7 +65,7 @@ const Typo: FunctionComponent<TypoProps> = ({
 
   const styleToRender = useMemo(
     () => ({
-      ...(!stylesShared?.[color] && { color }), // if exact color is not defined in stylesShared, pass the color as style
+      ...(!styles?.[color] && { color }), // if exact color is not defined in stylesShared, pass the color as style
       ...style,
     }),
     [color, style]

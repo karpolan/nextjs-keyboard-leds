@@ -56,8 +56,8 @@ const Button: FunctionComponent<ButtonProps> = ({
   );
 
   const classToRender = useMemo(
-    () => [FONTS.button.className, styles.button, styles[variant], className].filter(Boolean).join(' '),
-    [className, FONTS.button, variant]
+    () => [FONTS.poppins.className, styles.button, styles[variant], className].filter(Boolean).join(' '),
+    [className, FONTS.poppins.className, variant]
   );
 
   const styleToRender = useMemo(() => ({ ...style, margin: margin }), [margin, style]);

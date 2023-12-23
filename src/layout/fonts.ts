@@ -25,12 +25,14 @@ const fontInter = Inter({
 export const FONTS = {
   default: fontPoppins,
   // Headers and titles
-  header: fontPoppins,
-  title: fontPoppins,
-  button: fontPoppins,
+  poppins: fontPoppins,
+  // header: fontPoppins,
+  // title: fontPoppins,
+  // button: fontPoppins,
   // Text and body
-  body: fontInter,
-  text: fontInter,
+  inter: fontInter,
+  // body: fontInter,
+  // text: fontInter,
 };
 
 export default FONTS;
