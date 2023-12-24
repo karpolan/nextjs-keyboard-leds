@@ -12,17 +12,17 @@
 
 .image {
   display: block;
-  transition: 1s all;
   margin: 0.5rem;
+  transition: 1s all;
 }
 
 .text {
-  font-family: var(--font-poppins); /* Poppins */
-  font-style: normal;
-  white-space: nowrap;
   /* Same as .dark */
   color: rgb(28, 14, 13);
+  font-family: var(--font-poppins); /* Poppins */
+  font-style: normal;
   transition: 1s all;
+  white-space: nowrap;
 }
 
 .text .primary {
@@ -37,7 +37,6 @@
 .small.text {
   /* Same as .header3 */
   font-size: 1.75rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 2.75rem; /* 157.143% */
 }
@@ -49,7 +48,6 @@
 .text.medium {
   /* Same as .header3 */
   font-size: 1.75rem;
-  font-style: normal;
   font-weight: 700;
   line-height: 2.75rem; /* 157.143% */
 }
@@ -61,7 +59,6 @@
 .large.text {
   /* Same as .header2 */
   font-size: 3rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 4rem; /* 133.333% */
 }
