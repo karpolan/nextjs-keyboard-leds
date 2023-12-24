@@ -1,55 +1,70 @@
 'use client';
-import { Button, Link, Stack, Typo, Wrapper } from '@/components';
-import Logo from '../Logo';
+import { useMemo } from 'react';
+import { Button, Link } from '@/components';
 import { useOnMobile } from '@/hooks';
+import Logo from '../Logo';
 import styles from './Footer.module.css';
 
+/**
+ * Renders "Footer" composition.
+ * @component Footer
+ */
 const Footer = () => {
+  const onSmallScreen = useOnMobile(320);
   const onMobile = useOnMobile();
-  const direction = onMobile ? 'column' : 'row';
+  const onNarrowScreen = useOnMobile(1024);
+  const logoTextHidden = onSmallScreen || (!onMobile && onNarrowScreen);
+
+  const className = useMemo(
+    () => [styles.footer, onMobile ? styles.mobile : styles.desktop].filter(Boolean).join(' '),
+    [onMobile]
+  );
 
   return (
-    <footer className={styles.footer} id="footer">
-      <Stack direction={direction} alignItems="center" justifyContent="space-around">
-        <Stack>
-          <Stack direction="row" gap="0.5rem" alignItems="center">
-            <Logo size="small" noText />
-            <Typo variant="text">
-              Keyboard LEDs is free software for Windows. Created just for fun&trade; by{' '}
-              <Link href="https://karpolan.com">KARPOLAN</Link> in 2010.
-            </Typo>
-          </Stack>
-          <div>
-            <Button variant="icon" icon="facebook" href="https://www.facebook.com/KeyLeds" />
-            <Button variant="icon" icon="twitter" href="https://twitter.com/KeyLeds" />
+    <footer className={className} id="footer">
+      <div className={styles.logo}>
+        <Logo size="small" noText={logoTextHidden} />
+        {onMobile && (
+          <span className={styles.text}>
+            Keyboard LEDs is free software for Windows. Created just for fun&trade; by{' '}
+            <Link href="https://karpolan.com">KARPOLAN</Link> in 2010.
+          </span>
+        )}
+      </div>
+      <div className={styles.content}>
+        <div className={styles.menu}>
+          <Link href="/">Home</Link>
+          <Link href="/screenshots">Screenshots</Link>
+          <Link href="/download">Download</Link>
+          <Link href="/buy">Buy</Link>
+          <Link href="/contact">Contact Us</Link>
+          <Link href="/history">History</Link>
+        </div>
+        <div className={styles.menu}>
+          <Link href="/legal/privacy-policy">Privacy Policy</Link>
+          <Link href="/legal/terms">Terms of Use</Link>
+          <Link href="/software">Software</Link>
+          <Link href="/categories">Categories</Link>
+          <Link href="/tags">Tags</Link>
+          <Link href="/articles">Articles</Link>
+        </div>
+        {!onMobile && (
+          <div className={styles.copyright}>
+            <div>
+              Copyright &copy; 2010-{new Date().getFullYear()} <Link href="https://karpolan.com">KARPOLAN</Link>
+            </div>
           </div>
-        </Stack>
-        <Stack direction="row" gap="1rem">
-          <Stack>
-            <Link href="/">Home</Link>
-            <Link href="/screenshots">Screenshots</Link>
-            <Link href="/download">Download</Link>
-            <Link href="/buy">Buy</Link>
-          </Stack>
-          <Stack>
-            <Link href="/legal/privacy-policy">Privacy Policy</Link>
-            <Link href="/legal/terms">Terms of Use</Link>
-            <Link href="/history">History</Link>
-            <Link href="/contact">Contact Us</Link>
-          </Stack>
-        </Stack>
-      </Stack>
-      {!onMobile && (
-        <Stack alignItems="center" direction="row" justifyContent="space-between">
-          <Stack direction="row" gap="1rem">
-            <Link href="/legal/privacy-policy">Privacy Policy</Link>
-            <Link href="/legal/terms">Terms of Use</Link>
-          </Stack>
-          <div>
-            Copyright &copy; 2010-{new Date().getFullYear()} <Link href="https://karpolan.com">KARPOLAN</Link>
-          </div>
-        </Stack>
-      )}
+        )}
+      </div>
+      <div className={styles.social}>
+        <Button
+          variant="icon"
+          icon="facebook"
+          href="https://www.facebook.com/KeyLeds"
+          title="Keyboard LEDs on Facebook"
+        />
+        <Button variant="icon" icon="twitter" href="https://twitter.com/KeyLeds" title="Keyboard LEDs on Twitter" />
+      </div>
     </footer>
   );
 };

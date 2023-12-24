@@ -16,7 +16,7 @@ const HEIGHT_SMALL = 96;
  */
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const [small, setSmall] = useState(window.scrollY || document.documentElement.scrollTop > HEIGHT_BIG);
+  const [small, setSmall] = useState(window?.scrollY || document?.documentElement?.scrollTop > HEIGHT_BIG);
   const onMobile = useOnMobile();
   const onNarrowScreen = useOnMobile(1024);
 
