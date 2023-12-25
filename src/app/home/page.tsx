@@ -1,4 +1,8 @@
-import { Button, Icon, Stack, Typo, Wrapper } from '@/components';
+import { Stack, Typo, Wrapper } from '@/components';
+import DownloadButton from '../../components/DownloadButton';
+import DemoVideo from '../../components/DemoVideo';
+import Screenshot from '../../components/Screenshot';
+import SocialMedia from '../../components/SocialMedia';
 
 export const metadata = {
   alternates: {
@@ -13,74 +17,45 @@ export const metadata = {
 const HomePage = () => {
   return (
     <Wrapper tag="article">
-      {/* <Stack>
-        <Typo variant="header1">Heading 1</Typo>
-        <Typo variant="header2" color="primary">
-          Heading 2
-        </Typo>
-        <Typo tag="h5" variant="header3" color="teal" underline capitalize>
-          Heading 3 - here all words all lowercase
-        </Typo>
-        <Typo tag="h6" variant="header3" color="magenta" bold>
-          Heading 3 - here all words all lowercase
-        </Typo>
-        <Typo variant="text">Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit</Typo>
-        <Typo variant="text">Text: Lorem ipsum dolor sit amet, consectetur adipiscing elit</Typo>
+      <Stack padding="2rem 0">
+        <Typo variant="header2">Where is indicator for Caps Lock?</Typo>
         <Typo variant="paragraph">
-          Paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
+          Many models of modern notebooks, netbooks and cordless keyboards have no indicators for Caps Lock, and Num
+          Lock. Indicator of Scroll lock disappeared almost from any hardware. <strong>Keyboard LEDs</strong> software
+          solves this problem and allows you to see the current state of keyboard locks on small icon in the system tray
+          or on the floating window over your screen.
         </Typo>
-        <Typo variant="paragraph" color="secondary" align="justify">
-          Paragraph: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-          ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-          nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-          id est laborum.
-          <ul>
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-          </ul>
+        <Stack alignItems="center" padding="1rem 0">
+          <Screenshot />
+        </Stack>
+        <Typo variant="paragraph">
+          Also the program allows the user to switch any keyboard lock on computers without hardware buttons: embedded
+          devices, Apple keyboards and notebooks, etc.
+        </Typo>
+        <Typo variant="paragraph">
+          You can download and use <strong>Keyboard LEDs</strong> software absolutely free, either for personal or
+          business purposes:
+        </Typo>
+        <Stack alignItems="center">
+          <DownloadButton />
+        </Stack>
+        <Typo variant="paragraph">
+          If you'll found this program interesting and helpful please inform all your friends about it 🙂
         </Typo>
       </Stack>
-      <hr />
-      <Icon icon="aaa" />
-      <Icon icon="aaa" size={32} title="Title" />
-      <hr />
-      <Button iconRight="check">
-        Button
-        <br />
-        Line is too long
-        <br />
-        Line
-        <br />
-        Line
-        <br />
-      </Button>
-      <hr />
-      <Button variant="outlined" iconLeft="checkCurly">
-        Outlined
-      </Button>
-      <hr />
-      <Button variant="outlined">Outlined</Button>
-      <hr />
-      <Button variant="text">Text</Button>
-      <hr />
-      <Button iconLeft="close" variant="text" href="https://karpolan.com">
-        Link
-      </Button>
-      <hr />
-      <Button variant="text" href="https://karpolan.com">
-        Link
-      </Button>
-      <hr />
-      <Button variant="outlined" href="https://karpolan.com">
-        Link in Button
-      </Button>
-      <hr /> */}
+
+      <Stack padding="2rem 0">
+        <Typo variant="header2">Caps Lock and Num Lock indicators right on your desktop</Typo>
+        <Typo variant="paragraph">
+          Here is a small video that demonstrates how to get indicators of caps, num, and scroll locks right on the
+          screen:
+        </Typo>{' '}
+        <Stack alignItems="center" padding="1rem 0">
+          <DemoVideo />
+        </Stack>
+        <Typo variant="paragraph">You can also follow us on different social media:</Typo>
+        <SocialMedia />
+      </Stack>
     </Wrapper>
   );
 };

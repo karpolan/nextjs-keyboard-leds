@@ -9,6 +9,32 @@ type TypoColor = 'dark' | 'light' | 'primary' | 'secondary' | string;
 type TypoVariant = 'text' | 'paragraph' | 'header1' | 'header2' | 'header3';
 type TypoAlign = 'center' | 'left' | 'right' | 'justify';
 
+function getTagByVariant(variant: TypoVariant): keyof JSX.IntrinsicElements {
+  switch (variant) {
+    case 'header1':
+      return 'h1';
+    case 'header2':
+      return 'h2';
+    case 'header3':
+      return 'h3';
+    case 'paragraph':
+      return 'p';
+    default:
+      return 'span';
+  }
+}
+
+function getFontByVariant(variant: TypoVariant): string {
+  switch (variant) {
+    case 'header1':
+    case 'header2':
+    case 'header3':
+      return FONTS.poppins.className;
+    default:
+      return FONTS.inter.className;
+  }
+}
+
 export interface TypoProps extends PropsWithChildren<HTMLAttributes<HTMLElement>> {
   align?: TypoAlign;
   bold?: boolean;
@@ -40,8 +66,8 @@ const Typo: FunctionComponent<TypoProps> = ({
   className,
   color = 'dark',
   style,
-  tag = 'span',
   variant = 'text',
+  tag = getTagByVariant(variant), // Must be defined after .variant property!!!
   underline,
   ...restOfProps
 }) => {
@@ -50,7 +76,7 @@ const Typo: FunctionComponent<TypoProps> = ({
   const classToRender = useMemo((): string | undefined => {
     const resultAsArray = [
       onMobile ? styles.mobile : styles.desktop,
-      (variant as string).includes('header') ? FONTS.poppins.className : FONTS.inter.className,
+      getFontByVariant(variant),
       styles[variant],
       styles[color],
       align && styles[align],

@@ -15,6 +15,7 @@ import {
   FaInstagram,
   FaLinkedinIn,
   FaTwitter,
+  FaYoutube,
 } from 'react-icons/fa';
 // import { FiMenu } from 'react-icons/fi';
 import { IoIosCloseCircle } from 'react-icons/io';
@@ -52,4 +53,5 @@ export const ICONS: Record<string, ComponentType> = {
   menuclose: AiOutlineCloseSquare,
 
   twitter: FaTwitter,
+  youtube: FaYoutube,
 };
