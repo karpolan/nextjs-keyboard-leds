@@ -33,10 +33,19 @@ const Header = () => {
   useEffect(() => {
     const onScroll = () => {
       const scrollDistance = window?.scrollY || document?.documentElement?.scrollTop;
-      if (scrollDistance > HEIGHT_BIG) {
+      // Variant 1
+      // if (scrollDistance > HEIGHT_BIG) {
+      //   setSmall(true);
+      // }
+      // // if (scrollDistance < HEIGHT_SMALL) {
+      //   setSmall(false);
+      // }
+
+      // Variant 2
+      if (scrollDistance > HEIGHT_SMALL) {
         setSmall(true);
       }
-      if (scrollDistance < HEIGHT_SMALL) {
+      if (scrollDistance <= 0) {
         setSmall(false);
       }
     };

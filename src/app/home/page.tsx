@@ -1,8 +1,8 @@
 import { Stack, Typo, Wrapper } from '@/components';
-import DownloadButton from '../../components/DownloadButton';
-import DemoVideo from '../../components/DemoVideo';
-import Screenshot from '../../components/Screenshot';
-import SocialMedia from '../../components/SocialMedia';
+import DownloadButton from '@/components/DownloadButton';
+import DemoVideo from '@/components/DemoVideo';
+import Screenshot from '@/components/Screenshot';
+import SocialMedia from '@/components/SocialMedia';
 
 export const metadata = {
   alternates: {

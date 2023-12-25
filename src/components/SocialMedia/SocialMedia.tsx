@@ -6,7 +6,6 @@ import { ObjectPropByName } from '@/utils';
 const SOCIAL_MEDIA: ObjectPropByName = {
   facebook: {
     href: 'https://www.facebook.com/KeyLeds',
-    icon: 'facebook',
     title: 'Follow Keyboard LEDs on Facebook',
   },
   twitter: {
