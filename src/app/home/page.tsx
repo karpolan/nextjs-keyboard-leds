@@ -49,7 +49,7 @@ const HomePage = () => {
         <Typo variant="paragraph">
           Here is a small video that demonstrates how to get indicators of caps, num, and scroll locks right on the
           screen:
-        </Typo>{' '}
+        </Typo>
         <Stack alignItems="center" padding="1rem 0">
           <DemoVideo />
         </Stack>
