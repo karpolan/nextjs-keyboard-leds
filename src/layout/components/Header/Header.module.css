@@ -14,6 +14,7 @@
   flex-direction: row;
   height: 6rem; /* 96px; */
   justify-content: space-between;
+  max-width: 1200px;
   margin: 0 auto;
   width: 100%;
 }
@@ -23,12 +24,6 @@
   transition: 0.5s height;
   /* Move it over Mobile Menu */
   z-index: 63;
-}
-
-.header.mobile .spacer {
-  /* Clickable central area of the Header on Mobile */
-  height: 100%;
-  width: 100%;
 }
 
 .header.desktop {
@@ -67,7 +62,8 @@
 .menu.mobile {
   /* Const to set starting position of the Menu */
   --menu-starting-top: -50vh;
-  background-color: rgba(255, 255, 255, 0.95);
+  /* background-color: rgba(255, 255, 255, 0.95); */
+  background-color: rgba(255, 248, 242, 0.95);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   display: flex;
@@ -129,4 +125,10 @@
   font-size: 1.5rem;
   /* Make clickable area bigger */
   padding: 0.6rem 2rem;
+}
+
+.spacer {
+  /* Clickable central area of the Header on Mobile */
+  height: 100%;
+  width: 100%;
 }

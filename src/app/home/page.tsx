@@ -13,7 +13,7 @@ export const metadata = {
 const HomePage = () => {
   return (
     <Wrapper tag="article">
-      <Stack>
+      {/* <Stack>
         <Typo variant="header1">Heading 1</Typo>
         <Typo variant="header2" color="primary">
           Heading 2
@@ -80,7 +80,7 @@ const HomePage = () => {
       <Button variant="outlined" href="https://karpolan.com">
         Link in Button
       </Button>
-      <hr />
+      <hr /> */}
     </Wrapper>
   );
 };

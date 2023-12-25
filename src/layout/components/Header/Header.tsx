@@ -16,7 +16,9 @@ const HEIGHT_SMALL = 96;
  */
 const Header = () => {
   const [openMenu, setOpenMenu] = useState(false);
-  const [small, setSmall] = useState(window?.scrollY || document?.documentElement?.scrollTop > HEIGHT_BIG);
+  const [small, setSmall] = useState(
+    (global?.window && window?.scrollY) || (global?.document && document?.documentElement?.scrollTop) > HEIGHT_BIG
+  );
   const onMobile = useOnMobile();
   const onNarrowScreen = useOnMobile(1024);
 
@@ -30,7 +32,7 @@ const Header = () => {
 
   useEffect(() => {
     const onScroll = () => {
-      const scrollDistance = window.scrollY || document.documentElement.scrollTop;
+      const scrollDistance = window?.scrollY || document?.documentElement?.scrollTop;
       if (scrollDistance > HEIGHT_BIG) {
         setSmall(true);
       }

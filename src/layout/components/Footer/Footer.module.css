@@ -16,11 +16,10 @@
 
 .footer.desktop {
   flex-direction: row;
-  justify-content: space-between;
   padding: 2rem 0;
 }
 
-.footer .desktop a:hover {
+.footer.desktop a:hover {
   text-decoration: underline;
 }
 
@@ -72,7 +71,7 @@
 
 .mobile .menu a {
   width: 100%;
-  padding: 0.25rem 0;
+  padding: 0.5rem 0;
   text-align: center;
 }
 
