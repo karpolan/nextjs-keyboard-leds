@@ -1,10 +1,10 @@
-import { PUBLIC_URL } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 
 export const OPEN_GRAPH_DEFAULT = {
   url: PUBLIC_URL,
-  siteName: 'Keyboard LEDs Software',
-  title: 'Keyboard LEDs',
-  description: 'Free Keyboard LEDs software shows state of Caps Lock, Num Lock, and Scroll locks',
+  siteName: `${APP_NAME} Software`,
+  title: APP_NAME,
+  description: `Free ${APP_NAME}  software shows state of Caps Lock, Num Lock, and Scroll locks'`,
   images: [
     {
       url: `${PUBLIC_URL}/img/social/icon-256x256.png`,

@@ -3,16 +3,18 @@
   border-radius: 999rem;
   padding: 1.5rem 2.5rem;
 
-  /* !!! don't set "font-family" here !!! font-family: Poppins; */
   font-size: 1.125rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.75rem;
 
   display: inline-flex;
-  /* justify-content: center;
+  white-space: nowrap;
   align-items: center;
-  white-space: nowrap; */
+  justify-content: center;
+}
+
+.button:hover {
+  text-decoration: none;
 }
 
 /* Variant "contained"  */
@@ -24,6 +26,7 @@
 
 .contained:hover {
   background-color: rgba(255, 85, 62, 0.8);
+  text-decoration: none;
 }
 
 /* Variant "outlined" */
@@ -35,6 +38,7 @@
 
 .outlined:hover {
   background-color: rgba(255, 39, 10, 0.2);
+  text-decoration: none;
 }
 
 /* Variant "text" */
@@ -47,9 +51,6 @@
 
 .text:hover {
   background-color: rgba(255, 39, 10, 0.1);
-}
-
-a.text:hover {
   text-decoration: underline;
 }
 

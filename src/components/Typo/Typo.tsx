@@ -6,7 +6,7 @@ import FONTS from '../../layout/fonts';
 import styles from './Typo.module.css';
 
 type TypoColor = 'dark' | 'light' | 'primary' | 'secondary' | string;
-type TypoVariant = 'text' | 'paragraph' | 'header1' | 'header2' | 'header3';
+type TypoVariant = 'text' | 'paragraph' | 'header1' | 'header2' | 'header3' | 'list';
 type TypoAlign = 'center' | 'left' | 'right' | 'justify';
 
 function getTagByVariant(variant: TypoVariant): keyof JSX.IntrinsicElements {
@@ -19,6 +19,8 @@ function getTagByVariant(variant: TypoVariant): keyof JSX.IntrinsicElements {
       return 'h3';
     case 'paragraph':
       return 'p';
+    case 'list':
+      return 'ul';
     default:
       return 'span';
   }

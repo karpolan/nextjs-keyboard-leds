@@ -1,4 +1,4 @@
-import { PUBLIC_URL } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
 import type { Metadata, Viewport } from 'next';
 import { OPEN_GRAPH_DEFAULT } from '@/app/config';
@@ -8,7 +8,7 @@ import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(PUBLIC_URL),
-  title: 'Keyboard LEDs',
+  title: APP_NAME, // 'Keyboard LEDs',
   description:
     'Free software shows state of Num, Caps and Scroll locks. Very useful for notebooks and keyboards that have no hardware LED indicators.',
   manifest: '/site.webmanifest',

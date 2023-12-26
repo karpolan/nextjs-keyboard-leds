@@ -43,12 +43,40 @@ describe('<Typo/> component', () => {
     expect(element).toBeDefined();
     expect(element.tagName.toLowerCase()).toBe('span');
 
-    const tagsToVerify: TypoProps['tag'][] = ['div', 'span', 'p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
+    const tagsToVerify: TypoProps['tag'][] = ['div', 'span', 'p', 'ul', 'ol', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'];
     for (const tag of tagsToVerify) {
       text = `property .tag is ${tag}`;
       testId = randomText(8);
       render(
         <ComponentToTest data-testid={testId} tag={tag}>
+          {text}
+        </ComponentToTest>
+      );
+      element = screen.getByTestId(testId);
+      expect(element).toBeDefined();
+      expect(element.tagName.toLowerCase()).toBe(tag);
+    }
+  });
+
+  it('supports .variant property', () => {
+    let text, element, testId;
+
+    text = 'property .variant is not set (default)';
+    testId = randomText(8);
+    render(<ComponentToTest data-testid={testId}>{text}</ComponentToTest>);
+    element = screen.getByTestId(testId);
+    expect(element).toBeDefined();
+    expect(element.tagName.toLowerCase()).toBe('span');
+
+    const variantsToVerify: TypoProps['variant'][] = ['header1', 'header2', 'header3', 'paragraph', 'list', 'text'];
+    const tagsToVerify = ['h1', 'h2', 'h3', 'p', 'ul', 'span'];
+    for (let i = 0; i < variantsToVerify.length; i++) {
+      const variant = variantsToVerify[i];
+      const tag = tagsToVerify[i];
+      text = `property .variant is ${variant}`;
+      testId = randomText(8);
+      render(
+        <ComponentToTest data-testid={testId} variant={variant}>
           {text}
         </ComponentToTest>
       );

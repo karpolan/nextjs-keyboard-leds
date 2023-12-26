@@ -1,21 +1,32 @@
 'use client';
-import Button from '../Button';
-import { gaPageView } from '../../lib/ga';
+import { FunctionComponent } from 'react';
+import { APP_NAME } from '@/config';
+import { gaPageView } from '@/lib/ga';
+import Button, { ButtonProps } from '../Button/Button';
 
-const URL_DOWNLOAD = '/files/keyboard-leds.exe';
+const FILES = {
+  exe: '/files/keyboard-leds.exe',
+  zip: '/files/keyboard-leds.zip',
+};
+
+interface Props extends ButtonProps {
+  file?: keyof typeof FILES;
+}
 
 /**
  * Renders "Download" button
  * @component DownloadButton
  */
-const DownloadButton = () => {
+const DownloadButton: FunctionComponent<Props> = ({ children, file = 'exe', ...restOfProps }) => {
+  const href = FILES[file];
   return (
     <Button
-      href={URL_DOWNLOAD}
-      title="Download Keyboard LEDs software installation package"
-      onClick={() => gaPageView(URL_DOWNLOAD)}
+      href={href}
+      title={`Download ${APP_NAME} software installation package as ${file.toUpperCase()} file`}
+      onClick={() => gaPageView(href)}
+      {...restOfProps}
     >
-      Download
+      {children || 'Download'}
     </Button>
   );
 };

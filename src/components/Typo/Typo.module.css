@@ -66,6 +66,7 @@
   line-height: 2.75rem; /* 157.143% */
 }
 
+.mobile.list,
 .mobile.text,
 .mobile.paragraph {
   font-size: 1.3rem;
@@ -105,6 +106,7 @@
   line-height: 2.75rem; /* 157.143% */
 }
 
+.desktop.list,
 .desktop.text,
 .desktop.paragraph {
   font-size: 1.3rem;
@@ -122,4 +124,9 @@
 
 .desktop.paragraph ul {
   margin: 1rem 0 1rem 2.5rem;
+}
+
+.desktop.list li {
+  margin-left: 2rem;
+  list-style: disc;
 }

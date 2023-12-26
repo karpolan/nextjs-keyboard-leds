@@ -53,8 +53,15 @@
   margin: 0 1rem 0 0;
 }
 
-.menu.desktop ul li a {
+.menu.desktop a {
+  font-size: 1.2rem;
   padding: 1rem 0.5rem;
+  text-decoration: none;
+}
+
+.menu.desktop a:hover {
+  color: rgb(255, 85, 62);
+  transition: 0.3s color;
   text-decoration: none;
 }
 
@@ -111,7 +118,7 @@
 }
 
 /* Single Menu Link */
-.menu.mobile ul li {
+.menu.mobile li {
   padding: 0.35rem;
   text-align: center;
   /* Prevents line break */
@@ -120,7 +127,7 @@
   width: 100%;
 }
 
-.menu.mobile ul li a {
+.menu.mobile a {
   display: block;
   font-size: 1.5rem;
   /* Make clickable area bigger */

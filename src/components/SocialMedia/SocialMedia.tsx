@@ -1,28 +1,28 @@
 import { FunctionComponent } from 'react';
-import Button from '@/components/Button';
-import Stack from '@/components/Stack';
+import { APP_NAME } from '@/config';
 import { ObjectPropByName } from '@/utils';
+import { Button, Stack } from '@/components';
 
 const SOCIAL_MEDIA: ObjectPropByName = {
   facebook: {
     href: 'https://www.facebook.com/KeyLeds',
-    title: 'Follow Keyboard LEDs on Facebook',
+    title: `Follow ${APP_NAME} on Facebook`,
   },
   twitter: {
     href: 'https://twitter.com/KeyLeds',
-    title: 'Follow Keyboard LEDs on Twitter',
+    title: `Follow ${APP_NAME} on Twitter`,
   },
   linkedin: {
     href: 'https://www.linkedin.com/in/karpolan/',
-    title: 'Follow Author of Keyboard LEDs on LinkedIn',
+    title: `Follow Author of ${APP_NAME} on LinkedIn`,
   },
   instagram: {
     href: 'https://www.instagram.com/karpolan/',
-    title: 'Follow Author of Keyboard LEDs on Instagram',
+    title: `Follow Author of ${APP_NAME} on Instagram`,
   },
   youtube: {
     href: 'https://www.youtube.com/user/karpolan',
-    title: 'Follow Author of Keyboard LEDs on YouTube',
+    title: `Follow Author of ${APP_NAME} on YouTube`,
   },
 };
 

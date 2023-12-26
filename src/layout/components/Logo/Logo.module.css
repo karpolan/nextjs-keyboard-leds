@@ -1,5 +1,13 @@
 .logo {
+  /* Same as .dark */
+  color: rgb(28, 14, 13);
   margin: 0.125rem;
+}
+
+.logo:hover {
+  /* Same as .primary */
+  color: rgb(255, 85, 62);
+  text-decoration: none;
 }
 
 .container {
@@ -7,21 +15,19 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  transition: 1s all;
+  transition:
+    color 0.3s,
+    all 1s;
 }
 
 .image {
   display: block;
   margin: 0.5rem;
-  transition: 1s all;
+  transition: all 1s;
 }
 
 .text {
-  /* Same as .dark */
-  color: rgb(28, 14, 13);
-  font-family: var(--font-poppins); /* Poppins */
-  font-style: normal;
-  transition: 1s all;
+  transition: all 1s;
   white-space: nowrap;
 }
 

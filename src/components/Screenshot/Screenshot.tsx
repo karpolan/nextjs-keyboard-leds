@@ -1,8 +1,9 @@
 'use client';
 import { FunctionComponent } from 'react';
 import Image from 'next/image';
-import Link from '../Link';
+import { APP_NAME } from '@/config';
 import { useOnMobile } from '@/hooks';
+import Link from '../Link';
 
 interface Props {
   variant?: 'main' | 'secondary';
@@ -29,9 +30,9 @@ const Screenshot: FunctionComponent<Props> = ({ variant = 'main' }) => {
   return (
     <Link href="/screenshots">
       <Image
-        title="Screenshot of Keyboard LEDs software"
+        title={`Screenshot of ${APP_NAME} software`}
         src={src}
-        alt="Screenshot of Keyboard LEDs"
+        alt={`Screenshot of ${APP_NAME}`}
         width={width}
         height={height}
       />

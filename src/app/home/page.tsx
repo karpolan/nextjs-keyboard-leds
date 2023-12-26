@@ -1,8 +1,9 @@
 import { Stack, Typo, Wrapper } from '@/components';
 import DownloadButton from '@/components/DownloadButton';
-import DemoVideo from '@/components/DemoVideo';
+import Video from '@/components/Video';
 import Screenshot from '@/components/Screenshot';
 import SocialMedia from '@/components/SocialMedia';
+import { APP_NAME } from '../../config';
 
 export const metadata = {
   alternates: {
@@ -21,7 +22,7 @@ const HomePage = () => {
         <Typo variant="header2">Where is indicator for Caps Lock?</Typo>
         <Typo variant="paragraph">
           Many models of modern notebooks, netbooks and cordless keyboards have no indicators for Caps Lock, and Num
-          Lock. Indicator of Scroll lock disappeared almost from any hardware. <strong>Keyboard LEDs</strong> software
+          Lock. Indicator of Scroll lock disappeared almost from any hardware. <strong>{APP_NAME}</strong> software
           solves this problem and allows you to see the current state of keyboard locks on small icon in the system tray
           or on the floating window over your screen.
         </Typo>
@@ -33,8 +34,8 @@ const HomePage = () => {
           devices, Apple keyboards and notebooks, etc.
         </Typo>
         <Typo variant="paragraph">
-          You can download and use <strong>Keyboard LEDs</strong> software absolutely free, either for personal or
-          business purposes:
+          You can download and use <strong>{APP_NAME}</strong> software absolutely free, either for personal or business
+          purposes:
         </Typo>
         <Stack alignItems="center">
           <DownloadButton />
@@ -51,7 +52,7 @@ const HomePage = () => {
           screen:
         </Typo>
         <Stack alignItems="center" padding="1rem 0">
-          <DemoVideo />
+          <Video video="demo" />
         </Stack>
         <Typo variant="paragraph">You can also follow us on different social media:</Typo>
         <SocialMedia />
