@@ -15,19 +15,20 @@
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  transition:
-    color 0.3s,
-    all 1s;
 }
 
 .image {
   display: block;
   margin: 0.5rem;
-  transition: all 1s;
+  transition:
+    color 0.3s,
+    all 1s;
 }
 
 .text {
-  transition: all 1s;
+  transition:
+    color 0.3s,
+    all 1s;
   white-space: nowrap;
 }
 
