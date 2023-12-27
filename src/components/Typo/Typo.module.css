@@ -1,0 +1,132 @@
+/* Modifiers */
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.bold {
+  /* font-weight: bold; */
+  font-weight: 700;
+}
+
+.left {
+  text-align: left;
+}
+
+.right {
+  text-align: right;
+}
+
+.center {
+  text-align: center;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+/* Colors */
+
+.dark {
+  color: rgb(28, 14, 13);
+}
+
+.light {
+  color: rgb(227, 241, 242);
+}
+
+.primary {
+  color: rgb(255, 85, 62);
+}
+
+.secondary {
+  color: rgb(64, 64, 64);
+}
+
+/* Variants for Desktop Screen */
+.mobile.header1 {
+  font-size: 4rem;
+  font-weight: 700;
+  line-height: 6rem; /* 140.625% */
+}
+
+.mobile.header2 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4rem; /* 133.333% */
+}
+
+.mobile.header3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2.75rem; /* 157.143% */
+}
+
+.mobile.list,
+.mobile.text,
+.mobile.paragraph {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2.25rem; /* 180% */
+}
+
+.mobile.paragraph {
+  margin-bottom: 0.25rem;
+}
+
+.mobile.paragraph p {
+  margin-bottom: 1rem;
+}
+
+.mobile.paragraph ul {
+  margin: 1rem 0 1rem 2.5rem;
+}
+
+/* Variants for Desktop Screen */
+
+.desktop.header1 {
+  font-size: 4rem;
+  font-weight: 600;
+  line-height: 6rem; /* 140.625% */
+}
+
+.desktop.header2 {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 4rem; /* 133.333% */
+}
+
+.desktop.header3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 2.75rem; /* 157.143% */
+}
+
+.desktop.list,
+.desktop.text,
+.desktop.paragraph {
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 2.25rem; /* 180% */
+}
+
+.desktop.paragraph {
+  margin-bottom: 0.25rem;
+}
+
+.desktop.paragraph p {
+  margin-bottom: 1rem;
+}
+
+.desktop.paragraph ul {
+  margin: 1rem 0 1rem 2.5rem;
+}
+
+.desktop.list li {
+  margin-left: 2rem;
+  list-style: disc;
+}
