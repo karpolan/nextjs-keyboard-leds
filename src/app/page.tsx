@@ -1,5 +1,5 @@
-import HomePage from './home/page';
+import HomePage from '@/app/home/page';
 
-export * from './home/page'; // `metadata` and so on...
+export * from '@/app/home/page'; // `metadata` and so on...
 
 export default HomePage;
