@@ -14,6 +14,7 @@ import styles from './Button.module.css';
 export type ButtonVariant = 'contained' | 'outlined' | 'text' | 'icon';
 
 export interface ButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>> {
+  activeClassName?: string;
   href?: string;
   icon?: string;
   iconLeft?: string;
@@ -25,13 +26,16 @@ export interface ButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButton
 /**
  * Renders standard "Button"
  * @component Button
+ * @param {string} [activeClassName] - optional class name to apply when button is a link and current page matches .href
  * @param {string} [href] - optional href, if provided, button will be rendered as <a> tag
  * @param {string} [icon] - optional icon to render on the button
  * @param {string} [iconLeft] - optional icon to render on the left side of the button
  * @param {string} [iconRight] - optional icon to render on the right side of the button
- * @param {ButtonVariant} [variant] - variant of the button, defaults to "contained"
+ * @param {string | number} [margin] - optional margin to apply to the button, defaults to BUTTON_MARGIN config
+ * @param {ButtonVariant} [variant] - variant of the button, defaults to "contained" via BUTTON_VARIANT config
  */
 const Button: FunctionComponent<ButtonProps> = ({
+  activeClassName,
   className,
   children,
   href,
@@ -79,12 +83,12 @@ const Button: FunctionComponent<ButtonProps> = ({
   if (href) {
     return (
       <Link
+        activeClassName={activeClassName}
         className={classToRender}
         href={href}
         style={styleToRender}
         {...restOfProps}
-        // Actually onKeyDown handler is not needed, because <Link/> already handles this
-        // onKeyDown={handleKeyDown}
+        onKeyDown={handleKeyDown}
       >
         {buttonContent}
       </Link>

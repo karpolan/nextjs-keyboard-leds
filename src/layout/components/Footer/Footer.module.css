@@ -73,6 +73,7 @@
   padding: 0.125rem 0.25rem;
 }
 
+.desktop .menu a:focus-visible,
 .desktop .menu a:hover {
   color: rgb(255, 85, 62);
   /* transition: 0.3s all; */

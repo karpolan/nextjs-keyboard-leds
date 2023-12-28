@@ -66,6 +66,7 @@ const Header = () => {
         .join(' '),
     [onMobile, small]
   );
+
   const classMenu = useMemo(
     () =>
       [styles.menu, onMobile ? styles.mobile : styles.desktop, openMenu ? styles.open : styles.close]
@@ -73,6 +74,7 @@ const Header = () => {
         .join(' '),
     [onMobile, openMenu]
   );
+
   const logoSize = onMobile || small ? 'small' : onNarrowScreen ? 'medium' : 'large';
   const menuButtonIcon = openMenu ? 'close' : 'menu';
 
@@ -87,14 +89,14 @@ const Header = () => {
           </>
         ) : (
           <nav className={classMenu}>
-            <TopMenuContent />
+            <TopMenuContent activeClassName={styles.activeLink} />
           </nav>
         )}
       </header>
       {onMobile && (
         // Rendered outside the <header/> to "slide" under the "sticky" header
         <nav className={classMenu} onClick={doCloseMenu}>
-          <TopMenuContent />
+          <TopMenuContent activeClassName={styles.activeLink} />
         </nav>
       )}
     </div>
