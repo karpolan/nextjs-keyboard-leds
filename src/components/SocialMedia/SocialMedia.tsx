@@ -2,6 +2,7 @@ import { FunctionComponent } from 'react';
 import { APP_NAME } from '@/config';
 import { ObjectPropByName } from '@/utils';
 import { Button, Stack } from '@/components';
+import { StackProps } from '../Stack/Stack';
 
 const SOCIAL_MEDIA: ObjectPropByName = {
   facebook: {
@@ -26,7 +27,7 @@ const SOCIAL_MEDIA: ObjectPropByName = {
   },
 };
 
-interface Props {
+interface Props extends StackProps {
   variant?: 'full' | 'footer';
 }
 
@@ -34,10 +35,10 @@ interface Props {
  * Renders list of social media links as icons
  * @component SocialMedia
  */
-const SocialMedia: FunctionComponent<Props> = ({ variant = 'full' }) => {
+const SocialMedia: FunctionComponent<Props> = ({ variant = 'full', ...restOfProps }) => {
   const iconsToRender = variant === 'footer' ? ['facebook', 'twitter', 'linkedin'] : Object.keys(SOCIAL_MEDIA);
   return (
-    <Stack direction="row" justifyContent="center">
+    <Stack direction="row" justifyContent="center" {...restOfProps}>
       {iconsToRender.map((key) => (
         <Button key={key} icon={key} href={SOCIAL_MEDIA[key].href} title={SOCIAL_MEDIA[key].title} variant="icon" />
       ))}
