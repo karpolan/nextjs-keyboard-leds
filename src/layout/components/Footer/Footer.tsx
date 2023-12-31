@@ -27,8 +27,9 @@ const Footer = () => {
         <Logo size="small" noText={logoTextHidden} />
         {onMobile && (
           <span className={styles.text}>
-            Keyboard LEDs is free software for Windows. Created just for fun&trade; by{' '}
-            <Link href="https://karpolan.com">KARPOLAN</Link> in 2010.
+            Keyboard LEDs is free software for Windows.
+            <br />
+            Created just for fun&trade; by <Link href="https://karpolan.com">KARPOLAN</Link> in 2010.
           </span>
         )}
       </div>

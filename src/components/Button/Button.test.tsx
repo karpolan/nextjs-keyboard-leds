@@ -74,7 +74,7 @@ describe('<Button/> component', () => {
       const testId = randomText(8);
       render(
         <ComponentToTest data-testid={testId} iconLeft={icon}>
-          Button with iconLeft "{icon}"
+          Button with iconLeft {icon}
         </ComponentToTest>
       );
       const button = screen.getByTestId(testId);
@@ -95,7 +95,7 @@ describe('<Button/> component', () => {
       const testId = randomText(8);
       render(
         <ComponentToTest data-testid={testId} iconRight={icon}>
-          Button with iconRight "{icon}"
+          Button with iconRight {icon}
         </ComponentToTest>
       );
       const button = screen.getByTestId(testId);

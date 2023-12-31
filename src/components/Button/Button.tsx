@@ -1,5 +1,5 @@
 'use client';
-import { FunctionComponent, HTMLAttributes, PropsWithChildren, useCallback, useMemo, KeyboardEvent } from 'react';
+import { FunctionComponent, PropsWithChildren, useCallback, useMemo, KeyboardEvent, ButtonHTMLAttributes } from 'react';
 import FONTS from '@/layout/fonts';
 import {
   BUTTON_ICON_SIZE,
@@ -13,13 +13,14 @@ import styles from './Button.module.css';
 
 export type ButtonVariant = 'contained' | 'outlined' | 'text' | 'icon';
 
-export interface ButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButtonElement | HTMLAnchorElement>> {
+export interface ButtonProps extends PropsWithChildren<ButtonHTMLAttributes<HTMLButtonElement | HTMLAnchorElement>> {
   activeClassName?: string;
   href?: string;
   icon?: string;
   iconLeft?: string;
   iconRight?: string;
   margin?: string | number;
+  spinIcon?: boolean;
   variant?: ButtonVariant;
 }
 
@@ -32,6 +33,7 @@ export interface ButtonProps extends PropsWithChildren<HTMLAttributes<HTMLButton
  * @param {string} [iconLeft] - optional icon to render on the left side of the button
  * @param {string} [iconRight] - optional icon to render on the right side of the button
  * @param {string | number} [margin] - optional margin to apply to the button, defaults to BUTTON_MARGIN config
+ * @param {boolean} [spinIcon] - optional flag to spin the icon infinitely (loading, submitting, etc.)
  * @param {ButtonVariant} [variant] - variant of the button, defaults to "contained" via BUTTON_VARIANT config
  */
 const Button: FunctionComponent<ButtonProps> = ({
@@ -44,6 +46,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   iconRight,
   margin = BUTTON_MARGIN,
   style,
+  spinIcon = false,
   variant = BUTTON_VARIANT,
   onKeyDown,
   ...restOfProps
@@ -61,7 +64,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 
   const classToRender = useMemo(
     () => [FONTS.poppins.className, styles.button, styles[variant], className].filter(Boolean).join(' '),
-    [className, FONTS.poppins.className, variant]
+    [className, variant]
   );
 
   const styleToRender = useMemo(() => ({ ...style, margin: margin }), [margin, style]);
@@ -73,12 +76,26 @@ const Button: FunctionComponent<ButtonProps> = ({
     const iconColor = variant === 'contained' ? ICON_COLOR_INVERTED : ICON_COLOR_NORMAL;
     return (
       <Stack direction="row" justifyContent="center" alignItems="center" gap="0.5rem">
-        {iconLeft && <Icon icon={iconLeft} color={iconColor} size={BUTTON_ICON_SIZE}></Icon>}
+        {iconLeft && (
+          <Icon
+            color={iconColor}
+            className={spinIcon ? styles.spinner : undefined}
+            icon={iconLeft}
+            size={BUTTON_ICON_SIZE}
+          ></Icon>
+        )}
         {children && <div>{children}</div>}
-        {iconRight && <Icon icon={iconRight} color={iconColor} size={BUTTON_ICON_SIZE}></Icon>}
+        {iconRight && (
+          <Icon
+            color={iconColor}
+            className={spinIcon ? styles.spinner : undefined}
+            icon={iconRight}
+            size={BUTTON_ICON_SIZE}
+          ></Icon>
+        )}
       </Stack>
     );
-  }, [children, iconLeft, iconRight, variant]);
+  }, [children, iconLeft, iconRight, spinIcon, variant]);
 
   if (href) {
     return (
