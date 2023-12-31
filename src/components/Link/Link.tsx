@@ -33,6 +33,7 @@ const Link: FunctionComponent<LinkProps> = ({
 
   const linkClassName = useMemo(
     () => [className, isActive && activeClassName].filter(Boolean).join(' ') || undefined,
+
     [className, activeClassName, isActive]
   );
 

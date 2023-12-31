@@ -50,12 +50,15 @@
   height: 4rem;
   justify-content: flex-end;
   list-style: none;
-  margin: 0 1rem 0 0;
+  padding: 0;
+  margin: 0;
+  margin-right: 1rem;
 }
 
 .menu.desktop a {
   font-size: 1.2rem;
-  padding: 1rem 0.5rem;
+  /* padding: 1rem 0.5rem; */
+  padding: 0.5rem 1rem;
   text-decoration: none;
 }
 
@@ -132,6 +135,13 @@
   font-size: 1.5rem;
   /* Make clickable area bigger */
   padding: 0.6rem 2rem;
+  text-decoration: none;
+}
+
+/* Other classes, must be defined last */
+.activeLink {
+  /* LOL, there is a bug with class order in React Modules, so we use  !important :) */
+  background-color: rgba(255, 39, 10, 0.1) !important;
 }
 
 .spacer {
