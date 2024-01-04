@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react';
 import { APP_NAME } from '@/config';
 import { ObjectPropByName } from '@/utils';
-import { Button, Stack } from '@/components';
-import { StackProps } from '../Stack/Stack';
+import { Button } from '@/components';
+import Stack, { StackProps } from '../Stack/Stack';
 
-const SOCIAL_MEDIA: ObjectPropByName = {
+export const SOCIAL_MEDIA: ObjectPropByName = {
   facebook: {
     href: 'https://www.facebook.com/KeyLeds',
     title: `Follow ${APP_NAME} on Facebook`,
