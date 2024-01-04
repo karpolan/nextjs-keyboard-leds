@@ -1,9 +1,8 @@
-import React from 'react';
-import { Link, Typo, Wrapper } from '../../../components';
-import { PUBLIC_URL } from '../../../config';
+import { PUBLIC_URL } from '@/config';
+import { Link, Typo, Wrapper } from '@/components';
 
 /**
- * Page "Privacy Policy"
+ * Content of "Privacy Policy" page
  * @page PrivacyPolicy
  */
 const PrivacyPolicyPage = () => {

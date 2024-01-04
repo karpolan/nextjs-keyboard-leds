@@ -47,6 +47,7 @@ export interface TypoProps extends PropsWithChildren<HTMLAttributes<HTMLElement>
   tag?: keyof JSX.IntrinsicElements;
   variant?: TypoVariant;
   underline?: boolean;
+  uppercase?: boolean;
 }
 
 /**
@@ -59,6 +60,7 @@ export interface TypoProps extends PropsWithChildren<HTMLAttributes<HTMLElement>
  * @param {string} [tag] - HTML tag to render, defaults to 'span'
  * @param {string} [variant] - variant to render, defaults to 'text'
  * @param {boolean} [underline] - whether to render underline text or not
+ * @param {boolean} [uppercase] - whether to render uppercase text or not
  */
 const Typo: FunctionComponent<TypoProps> = ({
   align = 'left',
@@ -71,6 +73,7 @@ const Typo: FunctionComponent<TypoProps> = ({
   variant = 'text',
   tag = getTagByVariant(variant), // Must be defined after .variant property!!!
   underline,
+  uppercase,
   ...restOfProps
 }) => {
   const onMobile = useOnMobile();
@@ -85,6 +88,7 @@ const Typo: FunctionComponent<TypoProps> = ({
       bold && styles.bold,
       capitalize && styles.capitalize,
       underline && styles.underline,
+      uppercase && styles.uppercase,
       className,
     ];
     const resultAsString: string = resultAsArray.filter(Boolean).join(' ');

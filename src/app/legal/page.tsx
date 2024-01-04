@@ -10,13 +10,13 @@ const LegalPage = () => {
       <Typo variant="header1">Legal Documents</Typo>
       <Typo variant="list">
         <li>
-          <Link href="/legal/legal-notices">Legal Notices</Link>
-        </li>
-        <li>
           <Link href="/legal/privacy-policy">Privacy Policy</Link>
         </li>
         <li>
           <Link href="/legal/software-license">Software License</Link>
+        </li>
+        <li>
+          <Link href="/legal/terms-conditions">Terms and Conditions</Link>
         </li>
       </Typo>
     </Wrapper>

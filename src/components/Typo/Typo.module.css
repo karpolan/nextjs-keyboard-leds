@@ -29,6 +29,10 @@
   text-decoration: underline;
 }
 
+.uppercase {
+  text-transform: uppercase;
+}
+
 /* Colors */
 
 .dark {
