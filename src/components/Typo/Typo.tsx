@@ -93,7 +93,7 @@ const Typo: FunctionComponent<TypoProps> = ({
     ];
     const resultAsString: string = resultAsArray.filter(Boolean).join(' ');
     return Boolean(resultAsString) ? resultAsString : undefined;
-  }, [align, bold, color, capitalize, className, onMobile, variant, underline]);
+  }, [align, bold, color, capitalize, className, onMobile, variant, underline, uppercase]);
 
   const styleToRender = useMemo(
     () => ({

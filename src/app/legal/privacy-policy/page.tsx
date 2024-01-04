@@ -21,8 +21,8 @@ const PrivacyPolicyPage = () => {
         ads on your site.
       </Typo>
       <Typo variant="paragraph">
-        Google's use of the DART cookie enables it to serve ads to your users based on their visit to your sites and
-        other sites on the Internet. Users may opt out of the use of the DART cookie by visiting the Google ad and
+        Google&apos;s use of the DART cookie enables it to serve ads to your users based on their visit to your sites
+        and other sites on the Internet. Users may opt out of the use of the DART cookie by visiting the Google ad and
         content network privacy policy.
       </Typo>
 

@@ -10,12 +10,12 @@ const TermsAndConditionsPage = () => {
       <Typo variant="header1">Terms and Conditions</Typo>
 
       <Typo variant="paragraph">
-        Welcome to the <strong>KEYBOARD-LEDS.COM</strong> website ("Site"). This Site is a property of{' '}
+        Welcome to the <strong>KEYBOARD-LEDS.COM</strong> website (&quot;Site&quot;). This Site is a property of{' '}
         <strong>
           <Link href="https://karpolan.com">KARPOLAN</Link>
         </strong>{' '}
-        ("Owner"). By accessing the Site, you agree to follow and be bound by the following terms and conditions
-        concerning your use of the Site and <Link href="/legal/privacy-policy"> our privacy policy</Link>.
+        (&quot;Owner&quot;). By accessing the Site, you agree to follow and be bound by the following terms and
+        conditions concerning your use of the Site and <Link href="/legal/privacy-policy"> our privacy policy</Link>.
       </Typo>
       <Typo variant="paragraph">
         We may revise the Terms and Conditions at any time without notice to you. Areas of the Site may have different
@@ -25,8 +25,8 @@ const TermsAndConditionsPage = () => {
 
       <Typo variant="header2">Restrictions on Use of Information</Typo>
       <Typo variant="paragraph">
-        The Owner hereby authorize you to download, view, copy, and print text and graphics documents ("Documents") from
-        the Site subject to the following:
+        The Owner hereby authorize you to download, view, copy, and print text and graphics documents
+        (&quot;Documents&quot;) from the Site subject to the following:
       </Typo>
       <Typo variant="list" tag="ol">
         <li>The Documents may be used solely for personal, informational, and non-commercial purposes.</li>
@@ -43,8 +43,8 @@ const TermsAndConditionsPage = () => {
 
       <Typo variant="header2">Restriction on Use of Software</Typo>
       <Typo variant="paragraph">
-        Any use of programs on this site ("Software") and accompanying documentation you download from the Site is
-        subject to a Software license agreement(s) between you and Owner. You must agree to the terms of{' '}
+        Any use of programs on this site (&quot;Software&quot;) and accompanying documentation you download from the
+        Site is subject to a Software license agreement(s) between you and Owner. You must agree to the terms of{' '}
         <Link href="/legal/software-license">the end user license agreement</Link> before using of Software.
       </Typo>
 
@@ -63,13 +63,13 @@ const TermsAndConditionsPage = () => {
 
       <Typo variant="header2">Disclaimer</Typo>
       <Typo variant="paragraph" uppercase>
-        The information, documents and materials, including any Software available on the Site, are provided on an "as
-        is" basis without warranties, conditions, representations or guaranties of any kind, expressed or implied,
-        including but not limited to the implied warranties of merchantability and suitability for a particular purpose.
-        Owner does not warrant that the operation of the Software will be uninterrupted or error free. In no event Owner
-        will be liable for any damages whatsoever (including, without limitation, those resulting from lost profits,
-        lost data or business interruption) arising out of the use, inability to use, or the results of use of Site,
-        Software on this site, or any site linked.
+        The information, documents and materials, including any Software available on the Site, are provided on an
+        &quot;as is&quot; basis without warranties, conditions, representations or guaranties of any kind, expressed or
+        implied, including but not limited to the implied warranties of merchantability and suitability for a particular
+        purpose. Owner does not warrant that the operation of the Software will be uninterrupted or error free. In no
+        event Owner will be liable for any damages whatsoever (including, without limitation, those resulting from lost
+        profits, lost data or business interruption) arising out of the use, inability to use, or the results of use of
+        Site, Software on this site, or any site linked.
       </Typo>
     </Wrapper>
   );
