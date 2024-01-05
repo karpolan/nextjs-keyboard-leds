@@ -17,8 +17,8 @@ export const content = (
     </Typo>
     <Typo variant="paragraph" tag="q">
       <br />
-      When you type and keep your eyes on the screen, it's quite easy to accidentally press the "CAPS LOCK" button and
-      other buttons of the same type. It's quite distracting if you don't notice this.
+      When you type and keep your eyes on the screen, it&apos;s quite easy to accidentally press the &quot;CAPS
+      LOCK&quot; button and other buttons of the same type. It&apos;s quite distracting if you don&apos;t notice this.
       <br />
       <br />
       Keyboard LEDs helped our copyrighters streamline their work and made it more efficient.

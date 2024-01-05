@@ -11,10 +11,10 @@ import ListOtherSoftware from '../download/ListOtherSoftware';
 const BuyPage = () => {
   return (
     <Wrapper tag="article">
-      <Typo variant="header1">Don't buy, donate!</Typo>
+      <Typo variant="header1">Don&apos;t buy, donate!</Typo>
       <Typo variant="paragraph">
-        You don't need to make any purchases because <strong>{APP_NAME}</strong> software is entirely free! However, if
-        you'd like to support our team, you have the option to contribute through{' '}
+        You don&apos;t need to make any purchases because <strong>{APP_NAME}</strong> software is entirely free!
+        However, if you&apos;d like to support our team, you have the option to contribute through{' '}
         <Link href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=AWYPPD263Q2N2">PayPal</Link>.
         We appreciate your generosity!
       </Typo>
@@ -29,6 +29,7 @@ const BuyPage = () => {
             name="submit"
             alt="PayPal - The safer, easier way to pay online!"
           />
+          {/* eslint-disable @next/next/no-img-element */}
           <img
             decoding="async"
             alt="PayPal tracking pixel"

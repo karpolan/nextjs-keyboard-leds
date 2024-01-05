@@ -9,7 +9,7 @@ export const content = (
       Our customers report that some antiviruses mark <strong>Keyboard LEDs</strong> software as a virus!
     </Typo>
     <Typo variant="paragraph">
-      We've check the executable file at{' '}
+      We&apos;ve check the executable file at{' '}
       <Link href="https://www.virustotal.com/file-scan/report.html?id=243fe18531fc36a53726df1787368e41c0a8ccfe28a1603540c55b764b1ab437-1317476307">
         VirusTotal
       </Link>{' '}

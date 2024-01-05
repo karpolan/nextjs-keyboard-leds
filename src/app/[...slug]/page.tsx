@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 
+export { generateStaticParams } from './utils'; // Static generation
+
 interface Props {
   params: {
     slug: string[];
@@ -11,7 +13,7 @@ interface Props {
 
 const SmartPage: NextPage<Props> = ({ params: { slug } }) => {
   let pageData;
-  const combinedSlug = slug.join('-');
+  const combinedSlug = slug.map((x) => x.toLowerCase()).join('-');
   try {
     pageData = require(`@/app/[...slug]/${combinedSlug}.tsx`);
   } catch (error) {

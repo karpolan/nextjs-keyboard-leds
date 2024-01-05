@@ -8,9 +8,9 @@ export const content = (
     <Typo variant="paragraph">We often receive feedback like that:</Typo>
     <Typo variant="paragraph" tag="q">
       I was hoping to find something that would indicate my current FLock status (Microsoft Natural 4000 keyboard). This
-      didn't do it.
+      didn&apos;t do it.
     </Typo>
-    <Typo variant="paragraph">So we've made some investigation:</Typo>
+    <Typo variant="paragraph">So we&apos;ve made some investigation:</Typo>
     <Typo variant="list" tag="ol">
       <li>F-Lock state cannot be controlled by software.</li>
       <li>

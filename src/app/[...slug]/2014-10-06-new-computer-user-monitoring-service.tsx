@@ -15,8 +15,8 @@ export const content = (
       <b>
         <Link href="https://www.hoverwatch.com">Hoverwatch</Link>
       </b>{' '}
-      shows what's being done on a phone or computer. It's aimed at caring parents and concerned employers. The web
-      service is available immediately as a free trial or as paid subscription.
+      shows what&apos;s being done on a phone or computer. It&apos;s aimed at caring parents and concerned employers.
+      The web service is available immediately as a free trial or as paid subscription.
     </Typo>
   </>
 );

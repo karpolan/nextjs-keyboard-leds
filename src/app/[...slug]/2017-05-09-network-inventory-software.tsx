@@ -12,6 +12,7 @@ export const content = (
     </Typo>
     <Stack alignItems="center" padding="1rem 0">
       <Link href="https://www.misutilities.com/network-asset-tracker-pro/index.html" title="Software Inventory">
+        {/* eslint-disable @next/next/no-img-element */}
         <img alt="software inventory" src="https://www.misutilities.com/lo/img/NATPro_software_inventory_sm.jpg" />
       </Link>
     </Stack>
@@ -42,7 +43,7 @@ export const content = (
       create your own chart and then export it in HTML.
     </Typo>
     <Typo variant="paragraph">
-      Network Asset Tracker Pro works as standard windows application, it's simple{' '}
+      Network Asset Tracker Pro works as standard windows application, it&apos;s simple{' '}
       <Link href="https://www.misutilities.com" title="Network Inventory Software">
         network inventory software
       </Link>
