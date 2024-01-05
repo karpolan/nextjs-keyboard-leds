@@ -34,7 +34,5 @@ export async function generateStaticParams() {
       },
     };
   });
-
-  console.log('generateStaticParams()', result);
   return result;
 }

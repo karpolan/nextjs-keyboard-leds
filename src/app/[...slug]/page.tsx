@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 
-export { generateStaticParams } from './utils'; // Static generation
+// export { generateStaticParams } from './utils'; // Static generation
 
 interface Props {
   params: {
