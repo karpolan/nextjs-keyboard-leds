@@ -1,0 +1,12 @@
+.group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.group ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}

@@ -35,7 +35,7 @@ const ComponentToTest: FunctionComponent<LinkProps> = (props) => (
   </MockRouter>
 );
 
-describe('<NavLink/> component', () => {
+describe('<Link/> component', () => {
   it('renders itself', () => {
     const text = 'sample text';
     const url = 'https://example.com/';
