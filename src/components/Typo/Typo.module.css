@@ -5,8 +5,8 @@
 }
 
 .bold {
-  /* font-weight: bold; */
-  font-weight: 700;
+  font-weight: bold !important;
+  /* font-weight: 700; */
 }
 
 .left {
@@ -27,6 +27,10 @@
 
 .underline {
   text-decoration: underline;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }
 
 /* Colors */

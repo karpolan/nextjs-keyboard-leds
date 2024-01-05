@@ -39,12 +39,12 @@ const Footer = () => {
           <Link href="/screenshots">Screenshots</Link>
           <Link href="/download">Download</Link>
           <Link href="/buy">Buy</Link>
-          <Link href="/contact">Contact Us</Link>
+          <Link href="/contact">Contacts</Link>
           <Link href="/history">History</Link>
         </div>
         <div className={styles.menu}>
           <Link href="/legal/privacy-policy">Privacy Policy</Link>
-          <Link href="/legal/terms">Terms of Use</Link>
+          <Link href="/legal/terms-conditions">Terms of Use</Link>
           <Link href="/software">Software</Link>
           <Link href="/categories">Categories</Link>
           <Link href="/tags">Tags</Link>

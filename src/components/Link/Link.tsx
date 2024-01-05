@@ -1,10 +1,10 @@
 'use client';
-import { FunctionComponent, HTMLAttributes, PropsWithChildren, useMemo, KeyboardEvent, useCallback } from 'react';
+import { FunctionComponent, PropsWithChildren, useMemo, KeyboardEvent, useCallback, AnchorHTMLAttributes } from 'react';
 import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 import { usePathname } from 'next/navigation';
 import { EXTERNAL_LINK_PROPS } from '@/utils';
 
-export interface LinkProps extends PropsWithChildren<NextLinkProps & HTMLAttributes<HTMLAnchorElement>> {
+export interface LinkProps extends PropsWithChildren<NextLinkProps & AnchorHTMLAttributes<HTMLAnchorElement>> {
   activeClassName?: string;
   className?: string;
   href: string;
@@ -29,7 +29,10 @@ const Link: FunctionComponent<LinkProps> = ({
     [href, pathname]
   );
 
-  const isExternal = useMemo(() => href.startsWith('http') || href.startsWith('mailto'), [href]);
+  const isExternal = useMemo(
+    () => href.startsWith('http') || href.startsWith('mailto') || href.startsWith('//'),
+    [href]
+  );
 
   const linkClassName = useMemo(
     () => [className, isActive && activeClassName].filter(Boolean).join(' ') || undefined,
