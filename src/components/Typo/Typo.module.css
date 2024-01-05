@@ -5,8 +5,8 @@
 }
 
 .bold {
-  /* font-weight: bold; */
-  font-weight: 700;
+  font-weight: bold !important;
+  /* font-weight: 700; */
 }
 
 .left {
