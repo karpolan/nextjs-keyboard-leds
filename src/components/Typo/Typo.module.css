@@ -51,6 +51,12 @@
   color: rgb(64, 64, 64);
 }
 
+/* Variants for All Screen */
+
+.list {
+  list-style: disc;
+}
+
 /* Variants for Desktop Screen */
 
 .mobile.header1 {
