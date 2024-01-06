@@ -3,9 +3,9 @@ import Video from '../../components/Video';
 
 export const categories = ['caps lock', 'num lock', 'social media', 'video'];
 export const tags = ['caps lock', 'discuss', 'num lock', 'scroll lock', 'social', 'software', 'video'];
+export const title = 'Video demo';
 export const content = (
   <>
-    <Typo variant="header1">Video demo</Typo>
     <Typo variant="paragraph">
       Short video demonstration of <strong>Keyboard LEDs</strong> software:
     </Typo>

@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['software', 'download'];
 export const tags = ['feature', 'memory', 'software', 'virus'];
+export const title = 'False antivirus alert';
 export const content = (
   <>
-    <Typo variant="header1">False antivirus alert</Typo>
     <Typo variant="paragraph">
       Our customers report that some antiviruses mark <strong>Keyboard LEDs</strong> software as a virus!
     </Typo>
