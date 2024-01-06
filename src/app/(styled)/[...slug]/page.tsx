@@ -49,9 +49,7 @@ export async function generateStaticParams() {
     const slugAsArray = contentFileNameToUrl(fileName).split('/').filter(Boolean);
     // IS_DEBUG && console.log(fileName, '=', slugAsArray);
     return {
-      params: {
-        slug: slugAsArray,
-      },
+      slug: slugAsArray,
     };
   });
 

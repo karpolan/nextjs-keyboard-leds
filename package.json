@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "latest",
-    "next": "13.4.19",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "latest",
