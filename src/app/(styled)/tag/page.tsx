@@ -1,5 +1,5 @@
 import { Button, Stack, Typo, Wrapper } from '@/components';
-import { getContentFiles } from '@/app/[...slug]/utils';
+import { getContentFiles } from '@/app/(styled)/[...slug]/utils';
 
 /**
  * Renders a page with a list of all tags.
@@ -8,7 +8,7 @@ import { getContentFiles } from '@/app/[...slug]/utils';
 const AllTagsPage = async () => {
   const contentFiles = await getContentFiles();
   const allTags: string[] = contentFiles.reduce((all: string[], fileName: string) => {
-    const { tags } = require(`@/app/[...slug]/${fileName}`);
+    const { tags } = require(`@/app/(styled)/[...slug]/${fileName}`);
     return [...all, ...tags];
   }, []);
   const uniqueTags = Array.from(new Set(allTags)).sort();

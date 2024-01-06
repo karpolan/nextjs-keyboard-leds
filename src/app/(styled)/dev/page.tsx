@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 import { redirect } from 'next/navigation';
 import { Typo, Wrapper } from '@/components';
-import { IS_DEBUG } from '../../config';
+import { IS_DEBUG } from '@/config';
 
 const DevToolsPage = () => {
   const filler = useMemo(() => <Typo style={{ opacity: 0.3 }}>{'Some text check margins. '.repeat(12)}</Typo>, []);

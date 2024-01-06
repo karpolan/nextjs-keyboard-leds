@@ -1,7 +1,6 @@
 import { ReactNode } from 'react';
 import { readdir } from 'node:fs/promises';
-import { IS_DEBUG } from '../../config';
-// import path from 'node:path';
+import { IS_DEBUG } from '@/config';
 
 export type ContentFile = {
   categories?: string[];
@@ -19,8 +18,7 @@ export function contentFileNameToUrl(fileName: string): string {
 }
 
 export async function getContentFiles(): Promise<string[]> {
-  // const directoryPath = path.join(__dirname, '../../../../../src/app/[...slug]');
-  const directoryPath = 'src/app/[...slug]';
+  const directoryPath = 'src/app/(styled)/[...slug]';
   const fileNames = [];
   try {
     const files = await readdir(directoryPath);
@@ -35,21 +33,5 @@ export async function getContentFiles(): Promise<string[]> {
     .filter((file) => !['page.tsx', 'utils.ts'].includes(file))
     .sort((a, b) => b.localeCompare(a, undefined, { numeric: true })); // Sort by ISO date in beginning of file name
   IS_DEBUG && console.log('getContentFiles()', result);
-  return result;
-}
-
-export async function generateStaticParams() {
-  const files = await getContentFiles();
-  const result = files.map((fileName) => {
-    const slugAsArray = contentFileNameToUrl(fileName).split('/');
-    IS_DEBUG && console.log(fileName, '=', slugAsArray);
-    return {
-      params: {
-        slug: slugAsArray,
-      },
-    };
-  });
-
-  IS_DEBUG && console.log('generateStaticParams()', result);
   return result;
 }

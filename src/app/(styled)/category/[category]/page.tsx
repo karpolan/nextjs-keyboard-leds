@@ -1,7 +1,8 @@
 import { NextPage } from 'next';
+import { IS_DEBUG } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-import { ContentFile, contentFileNameToUrl, getContentFiles } from '@/app/[...slug]/utils';
+import { ContentFile, contentFileNameToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
 
 interface Props {
   params: {
@@ -17,7 +18,7 @@ const SingleCategoryPage: NextPage<Props> = async ({ params: { category } }) => 
   const textToFind = category.replace(/-/g, ' ');
   const contentFiles = await getContentFiles();
   const articles: ContentFile[] = contentFiles.reduce((all: ContentFile[], fileName: string) => {
-    const { tags, categories, content, title } = require(`@/app/[...slug]/${fileName}`);
+    const { tags, categories, content, title } = require(`@/app/(styled)/[...slug]/${fileName}`);
     if (categories.includes(textToFind)) {
       const href = contentFileNameToUrl(fileName);
       all.push({ tags, categories, content, title, href });
@@ -43,5 +44,21 @@ const SingleCategoryPage: NextPage<Props> = async ({ params: { category } }) => 
     </Wrapper>
   );
 };
+
+/**
+ * Returns list of all mentioned categories to generate static pages.
+ * @returns {Promise<{ params: { category: string } }[]>} List of all categories.
+ */
+export async function generateStaticParams() {
+  const contentFiles = await getContentFiles();
+  const allCategories: string[] = contentFiles.reduce((all: string[], fileName: string) => {
+    const { categories } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    return [...all, ...categories];
+  }, []);
+  const uniqueTags = Array.from(new Set(allCategories)).sort();
+  const result = uniqueTags.map((category) => ({ params: { category: category.replace(/ /g, '-') } }));
+  IS_DEBUG && console.log('category.generateStaticParams()', JSON.stringify(result));
+  return result;
+}
 
 export default SingleCategoryPage;

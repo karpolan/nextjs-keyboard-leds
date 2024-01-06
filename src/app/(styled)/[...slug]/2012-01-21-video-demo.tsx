@@ -1,5 +1,5 @@
 import { Link, Stack, Typo } from '@/components';
-import Video from '../../components/Video';
+import Video from '@/components/Video';
 
 export const categories = ['caps lock', 'num lock', 'social media', 'video'];
 export const tags = ['caps lock', 'discuss', 'num lock', 'scroll lock', 'social', 'software', 'video'];

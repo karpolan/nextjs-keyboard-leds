@@ -1,5 +1,5 @@
 import { Button, Stack, Typo, Wrapper } from '@/components';
-import { getContentFiles } from '@/app/[...slug]/utils';
+import { getContentFiles } from '@/app/(styled)/[...slug]/utils';
 
 /**
  * Renders a page with a list of all categories
@@ -8,7 +8,7 @@ import { getContentFiles } from '@/app/[...slug]/utils';
 const AllCategoriesPage = async () => {
   const contentFiles = await getContentFiles();
   const allCategories: string[] = contentFiles.reduce((all: string[], fileName: string) => {
-    const { categories } = require(`@/app/[...slug]/${fileName}`);
+    const { categories } = require(`@/app/(styled)/[...slug]/${fileName}`);
     return [...all, ...categories];
   }, []);
   const uniqueCategories = Array.from(new Set(allCategories)).sort();

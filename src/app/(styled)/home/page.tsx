@@ -3,7 +3,7 @@ import DownloadButton from '@/components/DownloadButton';
 import Video from '@/components/Video';
 import Screenshot from '@/components/Screenshot';
 import SocialMedia from '@/components/SocialMedia';
-import { APP_NAME } from '../../config';
+import { APP_NAME } from '@/config';
 import { useMemo } from 'react';
 
 export const metadata = {
