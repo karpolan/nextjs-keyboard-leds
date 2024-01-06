@@ -4,7 +4,7 @@ import { Link } from '@/components';
 import { useOnMobile } from '@/hooks';
 import Logo from '../Logo';
 import styles from './Footer.module.css';
-import SocialMedia from '../../../components/SocialMedia';
+import SocialMedia from '@/components/SocialMedia';
 
 /**
  * Renders "Footer" composition.

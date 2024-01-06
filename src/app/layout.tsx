@@ -6,35 +6,25 @@ import { FONTS } from '@/layout/fonts';
 import { Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
 import './globals.css';
 
-export const metadata: Metadata = {
-  metadataBase: new URL(PUBLIC_URL),
-  title: APP_NAME, // 'Keyboard LEDs',
-  description:
-    'Free software shows state of Num, Caps and Scroll locks. Very useful for notebooks and keyboards that have no hardware LED indicators.',
-  manifest: '/site.webmanifest',
-  openGraph: OPEN_GRAPH_DEFAULT,
-};
+// export const metadata: Metadata = {
+//   metadataBase: new URL(PUBLIC_URL),
+//   title: APP_NAME, // 'Keyboard LEDs',
+//   description:
+//     'Free software shows state of Num, Caps and Scroll locks. Very useful for notebooks and keyboards that have no hardware LED indicators.',
+//   manifest: '/site.webmanifest',
+//   openGraph: OPEN_GRAPH_DEFAULT,
+// };
 
-export const viewport: Viewport = {
-  themeColor: '#FFFFFF',
-};
+// export const viewport: Viewport = {
+//   themeColor: '#FFFFFF',
+// };
 
 const RootLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <html lang="en">
-      <body className={FONTS.default.className}>
-        <Suspense>
-          <MobileOrDesktop />
-        </Suspense>
-
-        <Header />
-        <div className="content">{children}</div>
-        <Footer />
-
-        <Suspense>
-          <Analytics />
-        </Suspense>
-      </body>
+      {/* <body className={FONTS.default.className}> */}
+      {children}
+      {/* </body> */}
     </html>
   );
 };
