@@ -1,9 +1,10 @@
 import React, { FunctionComponent, PropsWithChildren } from 'react';
-import { render, screen } from '@testing-library/react';
-import Link, { LinkProps } from './Link';
-import mockRouter from 'next-router-mock';
 import { useRouter } from 'next/router';
+import mockRouter from 'next-router-mock';
+import { render, screen } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import { randomText } from '../../utils';
+import Link, { LinkProps } from './Link';
 /* IMPORTANT! To get 'next/router' working with tests, add into "jest.setup.js/ts" file following:
 ---
 jest.mock('next/router', () => require('next-router-mock')); 
@@ -59,6 +60,25 @@ describe('<Link/> component', () => {
     expect(link).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
   });
 
+  it('supports external links with .rel property set', () => {
+    const text = 'external link with custom rel';
+    const url = 'https://example.com/';
+    const rel = 'nofollow';
+    render(
+      <ComponentToTest href={url} rel={rel}>
+        {text}
+      </ComponentToTest>
+    );
+    const link = screen.getByText(text);
+    expect(link).toBeDefined();
+    expect(link.tagName.toLowerCase()).toBe('a');
+    expect(link).toHaveAttribute('href', url);
+    expect(link).toHaveAttribute('target', '_blank');
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noopener'));
+    expect(link).toHaveAttribute('rel', expect.stringContaining('noreferrer'));
+    expect(link).toHaveAttribute('rel', expect.stringContaining(rel));
+  });
+
   it('supports internal links', () => {
     const text = 'internal link';
     const url = '/internal-link';
@@ -69,6 +89,25 @@ describe('<Link/> component', () => {
     expect(link).toHaveTextContent(text);
     expect(link).not.toHaveAttribute('target');
     expect(link).not.toHaveAttribute('rel');
+  });
+
+  it('supports internal links with .rel property set', () => {
+    const text = 'internal link';
+    const url = '/internal-link';
+    const rel = 'nofollow';
+    render(
+      <ComponentToTest href={url} rel={rel}>
+        {text}
+      </ComponentToTest>
+    );
+    const link = screen.getByText(text);
+    expect(link).toBeDefined();
+    expect(link).toHaveAttribute('href', url);
+    expect(link).toHaveTextContent(text);
+    expect(link).not.toHaveAttribute('target');
+    expect(link).toHaveAttribute('rel', expect.stringContaining(rel));
+    expect(link).toHaveAttribute('rel', expect.not.stringContaining('noopener'));
+    expect(link).toHaveAttribute('rel', expect.not.stringContaining('noreferrer'));
   });
 
   test('applies .activeClassName for active link only', () => {
@@ -171,13 +210,40 @@ describe('<Link/> component', () => {
   });
 
   test('renders .children content correctly', () => {
+    const text = 'Child component';
     const { getByText } = render(
       <ComponentToTest href="/children" activeClassName="active">
-        <span>Child component</span>
+        <span>{text}</span>
       </ComponentToTest>
     );
-
-    const linkElement = getByText('Child component');
+    const linkElement = getByText(text);
     expect(linkElement).toBeInTheDocument();
+  });
+
+  test('supports .target property', () => {
+    let testId, url, link;
+    const target = '_self';
+
+    testId = randomText(8);
+    url = '/some-internal-link';
+    render(
+      <ComponentToTest data-testid={testId} href={url} target={target}>
+        Internal link with .target property
+      </ComponentToTest>
+    );
+    link = screen.getByTestId(testId);
+    expect(link).toBeDefined();
+    expect(link).toHaveAttribute('target', target);
+
+    testId = randomText(8);
+    url = 'https://example.com';
+    render(
+      <ComponentToTest data-testid={testId} href={url} target={target}>
+        External link with .target property
+      </ComponentToTest>
+    );
+    link = screen.getByTestId(testId);
+    expect(link).toBeDefined();
+    expect(link).toHaveAttribute('target', target);
   });
 });

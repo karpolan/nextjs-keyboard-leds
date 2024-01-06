@@ -19,10 +19,23 @@ const Link: FunctionComponent<LinkProps> = ({
   children,
   className,
   href,
+  rel,
+  target,
   onKeyDown,
   ...restOfProps
 }) => {
   const pathname = usePathname();
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent<HTMLAnchorElement>) => {
+      if (event.key === 'Spacebar' || event.key === ' ') {
+        event.preventDefault();
+        event.currentTarget.click(); // Emulate click by Spacebar
+      }
+      onKeyDown?.(event);
+    },
+    [onKeyDown]
+  );
 
   const isActive = useMemo(
     () => pathname === href || `${pathname}/` === href || pathname === `${href}/`,
@@ -36,29 +49,23 @@ const Link: FunctionComponent<LinkProps> = ({
 
   const linkClassName = useMemo(
     () => [className, isActive && activeClassName].filter(Boolean).join(' ') || undefined,
-
     [className, activeClassName, isActive]
   );
 
-  const handleKeyDown = useCallback(
-    (event: KeyboardEvent<HTMLAnchorElement>) => {
-      if (event.key === 'Spacebar' || event.key === ' ') {
-        event.preventDefault();
-        event.currentTarget.click(); // Emulate click by Spacebar
-      }
-      onKeyDown?.(event);
-    },
-    [onKeyDown]
-  );
+  const propsToRender = useMemo(() => {
+    const relAsArray = [rel];
+    if (isExternal) {
+      relAsArray.push('noopener', 'noreferrer');
+    }
+    const relAsString = relAsArray.filter(Boolean).join(' ');
+    return {
+      target: target ? target : isExternal ? '_blank' : undefined,
+      rel: relAsString ? relAsString : undefined,
+    };
+  }, [isExternal, rel, target]);
 
   return (
-    <NextLink
-      className={linkClassName}
-      href={href}
-      {...(isExternal && EXTERNAL_LINK_PROPS)}
-      {...restOfProps}
-      onKeyDown={handleKeyDown}
-    >
+    <NextLink className={linkClassName} href={href} {...propsToRender} onKeyDown={handleKeyDown} {...restOfProps}>
       {children}
     </NextLink>
   );
