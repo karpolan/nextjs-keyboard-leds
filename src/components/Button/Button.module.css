@@ -13,6 +13,8 @@
   justify-content: center;
 
   transition: background-color 0.3s;
+
+  text-transform: capitalize;
 }
 
 .button:hover {

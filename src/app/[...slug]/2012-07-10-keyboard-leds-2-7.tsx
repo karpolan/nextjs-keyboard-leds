@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['download', 'free', 'news', 'software', 'website'];
 export const tags = ['download', 'feature', 'free', 'memory', 'news'];
+export const title = 'Keyboard LEDs 2.7';
 export const content = (
   <>
-    <Typo variant="header1">Keyboard LEDs 2.7</Typo>
     <Typo variant="paragraph">
       <strong>Keyboard LEDs 2.7</strong> has been released.
     </Typo>

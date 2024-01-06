@@ -10,6 +10,7 @@
 .row {
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .column-reverse {
@@ -19,4 +20,5 @@
 .row-reverse {
   flex-direction: row-reverse;
   justify-content: center;
+  flex-wrap: wrap;
 }

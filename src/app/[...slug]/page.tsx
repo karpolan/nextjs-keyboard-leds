@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import { notFound } from 'next/navigation';
-import { Wrapper } from '@/components';
+import { Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 
 // export { generateStaticParams } from './utils'; // Static generation
@@ -20,13 +20,14 @@ const SmartPage: NextPage<Props> = ({ params: { slug } }) => {
     // return notFound();
   }
 
-  const { categories, tags, content } = pageData ?? {};
+  const { categories, tags, content, title } = pageData ?? {};
   if (!content) {
     return notFound();
   }
 
   return (
     <Wrapper tag="article">
+      {title && <Typo variant="header1">{title}</Typo>}
       {content}
       {categories?.length > 0 && <CategoryGroup categories={categories} />}
       {tags?.length > 0 && <TagGroup tags={tags} />}

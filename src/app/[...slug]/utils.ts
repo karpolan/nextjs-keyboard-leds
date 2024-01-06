@@ -1,5 +1,22 @@
+import { ReactNode } from 'react';
 import { readdir } from 'node:fs/promises';
-import path from 'node:path';
+import { IS_DEBUG } from '../../config';
+// import path from 'node:path';
+
+export type ContentFile = {
+  categories?: string[];
+  content: ReactNode;
+  href?: string;
+  title?: string;
+  tags?: string[];
+};
+
+export function contentFileNameToUrl(fileName: string): string {
+  const justName = fileName.substring(0, fileName.indexOf('.')); // File name without extension
+  const asArray = justName.split('-');
+  const result = '/' + asArray[0] + '/' + asArray[1] + '/' + asArray[2] + '/' + justName.substring(11);
+  return result;
+}
 
 export async function getContentFiles(): Promise<string[]> {
   // const directoryPath = path.join(__dirname, '../../../../../src/app/[...slug]');
@@ -7,32 +24,32 @@ export async function getContentFiles(): Promise<string[]> {
   const fileNames = [];
   try {
     const files = await readdir(directoryPath);
-    for (const file of files) {
-      fileNames.push(file);
+    for (const fileName of files) {
+      fileNames.push(fileName);
     }
-    fileNames.filter((file) => file !== 'index.ts');
   } catch (error) {
     console.error('Unable to scan directory: ' + error);
   }
 
-  const result = fileNames.filter((file) => !['page.tsx', 'utils.ts'].includes(file));
-  console.log('getContentFiles()', result);
+  const result = fileNames
+    .filter((file) => !['page.tsx', 'utils.ts'].includes(file))
+    .sort((a, b) => b.localeCompare(a, undefined, { numeric: true })); // Sort by ISO date in beginning of file name
+  IS_DEBUG && console.log('getContentFiles()', result);
   return result;
 }
 
 export async function generateStaticParams() {
   const files = await getContentFiles();
-  const result = files.map((file) => {
-    const justName = file.substring(0, file.indexOf('.')); // File name without extension
-    const asArray = justName.split('-');
-    // const slugAsString = [asArray[0] + '/' + asArray[1] + '/' + asArray[2] + '/' + justName.substring(11);
-    const slugAsArray = [asArray[0], asArray[1], asArray[2], justName.substring(11)];
-    console.log(file, '=', slugAsArray);
+  const result = files.map((fileName) => {
+    const slugAsArray = contentFileNameToUrl(fileName).split('/');
+    IS_DEBUG && console.log(fileName, '=', slugAsArray);
     return {
       params: {
         slug: slugAsArray,
       },
     };
   });
+
+  IS_DEBUG && console.log('generateStaticParams()', result);
   return result;
 }
