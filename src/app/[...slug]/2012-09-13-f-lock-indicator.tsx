@@ -2,9 +2,9 @@ import { Typo } from '@/components';
 
 export const categories = ['download', 'software'];
 export const tags = ['download', 'discuss', 'software', 'feature'];
+export const title = 'F-Lock Keyboard Indicator';
 export const content = (
   <>
-    <Typo variant="header1">F-Lock Keyboard Indicator</Typo>
     <Typo variant="paragraph">We often receive feedback like that:</Typo>
     <Typo variant="paragraph" tag="q">
       I was hoping to find something that would indicate my current FLock status (Microsoft Natural 4000 keyboard). This

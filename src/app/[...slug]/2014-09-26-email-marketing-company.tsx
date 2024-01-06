@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['caps lock', 'software', 'website'];
 export const tags = ['analytics', 'caps lock', 'feedback', 'osd'];
+export const title = 'A feedback from an email marketing company';
 export const content = (
   <>
-    <Typo variant="header1">A feedback from an email marketing company</Typo>
     <Typo variant="paragraph">We often receive feedback like that:</Typo>
     <Typo variant="paragraph">
       We have recently received a letter from{' '}

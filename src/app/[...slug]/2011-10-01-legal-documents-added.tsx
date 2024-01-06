@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['software', 'website'];
 export const tags = ['discuss', 'documents', 'legal', 'software', 'website'];
+export const title = 'Legal documents added';
 export const content = (
   <>
-    <Typo variant="header1">Legal documents added</Typo>
     <Typo variant="paragraph">Legal documents have been added to our site:</Typo>
     <Typo variant="list">
       <li>

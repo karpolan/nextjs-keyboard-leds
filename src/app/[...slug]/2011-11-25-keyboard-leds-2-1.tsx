@@ -13,9 +13,9 @@ export const tags = [
   'system tray',
   'tray icon',
 ];
+export const title = 'Keyboard LEDs 2.1';
 export const content = (
   <>
-    <Typo variant="header1">Keyboard LEDs 2.1</Typo>
     <Typo variant="paragraph">
       <strong>Keyboard LEDs 2.1</strong> has been released.
     </Typo>

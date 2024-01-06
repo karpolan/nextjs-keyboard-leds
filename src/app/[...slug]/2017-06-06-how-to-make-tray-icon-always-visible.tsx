@@ -4,9 +4,9 @@ import Video from '@/components/Video';
 
 export const categories = ['news', 'software', 'video'];
 export const tags = ['indicator', 'install', 'system tray', 'tray icon', 'video', 'windows'];
+export const title = 'How to make tray icon always visible?';
 export const content = (
   <>
-    <Typo variant="header1">How to make tray icon always visible?</Typo>
     <Typo variant="paragraph">
       Lots of our customers ask this question when installing{' '}
       <Link href="/">
