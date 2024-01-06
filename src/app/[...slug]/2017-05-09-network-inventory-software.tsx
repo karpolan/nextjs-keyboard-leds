@@ -2,9 +2,9 @@ import { Link, Stack, Typo } from '@/components';
 
 export const categories = ['news', 'software'];
 export const tags = ['memory', 'network', 'screen', 'software', 'windows'];
+export const title = 'Network Inventory Software';
 export const content = (
   <>
-    <Typo variant="header1">Network Inventory Software</Typo>
     <Typo variant="paragraph">
       Simple network inventory with <strong>Network Asset Tracker Pro</strong>. Our software enables you to collect
       hardware and software inventory data from remote computers with variety of audit methods like agentless and

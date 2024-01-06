@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['news', 'software', 'website'];
 export const tags = ['download', 'software', 'feature', 'switch', 'website'];
+export const title = 'New computer user monitoring service';
 export const content = (
   <>
-    <Typo variant="header1">New computer user monitoring service</Typo>
     <Typo variant="paragraph">We often receive feedback like that:</Typo>
     <Typo variant="paragraph">
       New computer user monitoring service has been announced by{' '}

@@ -2,9 +2,9 @@ import { Link, Typo } from '@/components';
 
 export const categories = ['free', 'website'];
 export const tags = ['feature', 'feedback', 'free', 'internet', 'osd', 'screen', 'website'];
+export const title = 'Screen Resolution Test for Websites';
 export const content = (
   <>
-    <Typo variant="header1">Screen Resolution Test for Websites</Typo>
     <Typo variant="paragraph">
       Testing of the website at different screen resolutions is very important for every site owner.
     </Typo>

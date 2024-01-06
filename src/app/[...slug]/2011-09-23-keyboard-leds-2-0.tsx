@@ -14,9 +14,9 @@ export const tags = [
   'software',
   'switch',
 ];
+export const title = 'Keyboard LEDs 2.0';
 export const content = (
   <>
-    <Typo variant="header1">Keyboard LEDs 2.0</Typo>
     <Typo variant="paragraph">
       New major update of{' '}
       <strong>

@@ -11,7 +11,7 @@ const NewsPage = () => {
       <Typo variant="list">
         <li>
           <Link href="/2024/01/05/new-website/">2024-01-05 - New Website</Link>
-        </li>{' '}
+        </li>
         <li>
           <Link href="/2017/06/06/how-to-make-tray-icon-always-visible/">
             2017-06-06 - How to make tray icon always visible?

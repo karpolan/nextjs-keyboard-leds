@@ -40,14 +40,14 @@ const Footer = () => {
           <Link href="/download">Download</Link>
           <Link href="/buy">Buy</Link>
           <Link href="/contact">Contacts</Link>
-          <Link href="/history">History</Link>
+          <Link href="/news">News</Link>
         </div>
         <div className={styles.menu}>
           <Link href="/legal/privacy-policy">Privacy Policy</Link>
           <Link href="/legal/terms-conditions">Terms of Use</Link>
           <Link href="/software">Software</Link>
-          <Link href="/categories">Categories</Link>
-          <Link href="/tags">Tags</Link>
+          <Link href="/category">Categories</Link>
+          <Link href="/tag">Tags</Link>
           <Link href="/articles">Articles</Link>
         </div>
         {!onMobile && (
