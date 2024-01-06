@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { IS_DEBUG } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 import { ContentFile, contentFileNameToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
@@ -43,5 +44,21 @@ const SingleCategoryPage: NextPage<Props> = async ({ params: { category } }) => 
     </Wrapper>
   );
 };
+
+/**
+ * Returns list of all mentioned categories to generate static pages.
+ * @returns {Promise<{ params: { category: string } }[]>} List of all categories.
+ */
+export async function generateStaticParams() {
+  const contentFiles = await getContentFiles();
+  const allCategories: string[] = contentFiles.reduce((all: string[], fileName: string) => {
+    const { categories } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    return [...all, ...categories];
+  }, []);
+  const uniqueTags = Array.from(new Set(allCategories)).sort();
+  const result = uniqueTags.map((category) => ({ params: { category: category.replace(/ /g, '-') } }));
+  IS_DEBUG && console.log('category.generateStaticParams()', JSON.stringify(result));
+  return result;
+}
 
 export default SingleCategoryPage;

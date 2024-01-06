@@ -1,6 +1,6 @@
 import { APP_NAME, PUBLIC_URL } from '@/config';
 import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
-import type { Metadata, Viewport } from 'next';
+import type { Metadata } from 'next';
 import { OPEN_GRAPH_DEFAULT } from '@/app/config';
 import { FONTS } from '@/layout/fonts';
 import { Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   openGraph: OPEN_GRAPH_DEFAULT,
 };
 
-export const viewport: Viewport = {
-  themeColor: '#FFFFFF',
-};
+// export const viewport: Viewport = {
+//   themeColor: '#FFFFFF',
+// };
 
 const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (

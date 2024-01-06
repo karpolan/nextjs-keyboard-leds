@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import { IS_DEBUG } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 import { ContentFile, contentFileNameToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
@@ -43,5 +44,21 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
     </Wrapper>
   );
 };
+
+/**
+ * Returns list of all mentioned tags to generate static pages.
+ * @returns {Promise<{ params: { tag: string } }[]>} List of all tags.
+ */
+export async function generateStaticParams() {
+  const contentFiles = await getContentFiles();
+  const allTags: string[] = contentFiles.reduce((all: string[], fileName: string) => {
+    const { tags } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    return [...all, ...tags];
+  }, []);
+  const uniqueTags = Array.from(new Set(allTags)).sort();
+  const result = uniqueTags.map((tag) => ({ params: { tag: tag.replace(/ /g, '-') } }));
+  IS_DEBUG && console.log('tag.generateStaticParams()', JSON.stringify(result));
+  return result;
+}
 
 export default SingleTagPage;

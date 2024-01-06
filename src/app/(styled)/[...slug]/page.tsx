@@ -1,9 +1,9 @@
 import { NextPage } from 'next';
 import { notFound } from 'next/navigation';
+import { IS_DEBUG } from '@/config';
 import { Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-
-// export { generateStaticParams } from './utils'; // Static generation
+import { contentFileNameToUrl, getContentFiles } from './utils';
 
 interface Props {
   params: {
@@ -38,5 +38,25 @@ const NewsPage: NextPage<Props> = ({ params: { slug } }) => {
     </Wrapper>
   );
 };
+
+/**
+ * Returns list of all news to generate static pages.
+ * @returns {Promise<{ params: { slug: string[] } }[]>} List of all news.
+ */
+export async function generateStaticParams() {
+  const files = await getContentFiles();
+  const result = files.map((fileName) => {
+    const slugAsArray = contentFileNameToUrl(fileName).split('/').filter(Boolean);
+    // IS_DEBUG && console.log(fileName, '=', slugAsArray);
+    return {
+      params: {
+        slug: slugAsArray,
+      },
+    };
+  });
+
+  IS_DEBUG && console.log('news.generateStaticParams()', JSON.stringify(result));
+  return result;
+}
 
 export default NewsPage;

@@ -35,19 +35,3 @@ export async function getContentFiles(): Promise<string[]> {
   IS_DEBUG && console.log('getContentFiles()', result);
   return result;
 }
-
-export async function generateStaticParams() {
-  const files = await getContentFiles();
-  const result = files.map((fileName) => {
-    const slugAsArray = contentFileNameToUrl(fileName).split('/');
-    IS_DEBUG && console.log(fileName, '=', slugAsArray);
-    return {
-      params: {
-        slug: slugAsArray,
-      },
-    };
-  });
-
-  IS_DEBUG && console.log('generateStaticParams()', result);
-  return result;
-}

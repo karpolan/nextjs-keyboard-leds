@@ -13,7 +13,7 @@ const UninstallPage = () => {
     <Wrapper tag="article">
       <Typo variant="header1">Software Uninstalled</Typo>
       <Typo variant="paragraph">
-        You've successfully removed <strong>{APP_NAME}</strong> software from your computer.
+        You&apos;ve successfully removed <strong>{APP_NAME}</strong> software from your computer.
       </Typo>
       <Typo variant="paragraph">
         Please <Link href="/contact">let us know the reason</Link> for our software removal. This information is very
