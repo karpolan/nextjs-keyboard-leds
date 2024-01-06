@@ -24,7 +24,7 @@ const PingNotifyEventPage: NextPage<Props> = ({ params: { slug } }) => {
 
 /**
  * Returns list of all PingNotify verbs to generate static pages.
- * @returns {{ params: { slug: string[] } }[]} List of all verbs.
+ * @returns {{ slug: string[] }[]} List of all verbs.
  */
 export function generateStaticParams() {
   const PING_NOTIFY_VERBS = [
@@ -40,7 +40,7 @@ export function generateStaticParams() {
     'openlink',
     'running',
   ];
-  const result = PING_NOTIFY_VERBS.map((verb) => ({ params: { slug: [verb] } }));
+  const result = PING_NOTIFY_VERBS.map((verb) => ({ slug: [verb] }));
   IS_DEBUG && console.log('ping.generateStaticParams()', JSON.stringify(result));
   return result;
 }

@@ -56,7 +56,7 @@ export async function generateStaticParams() {
     return [...all, ...categories];
   }, []);
   const uniqueTags = Array.from(new Set(allCategories)).sort();
-  const result = uniqueTags.map((category) => ({ params: { category: category.replace(/ /g, '-') } }));
+  const result = uniqueTags.map((category) => ({ category: category.replace(/ /g, '-') }));
   IS_DEBUG && console.log('category.generateStaticParams()', JSON.stringify(result));
   return result;
 }
