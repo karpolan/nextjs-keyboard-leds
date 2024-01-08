@@ -1,7 +1,6 @@
 import { Link, Typo, Wrapper } from '@/components';
-import { capitalizeAllWords } from '@/utils';
 import { APP_NAME } from '@/config';
-import { articleToUrl, getArticleList } from './utils';
+import { articleToTitle, articleToUrl, getArticleList } from './utils';
 import styles from './article.module.css';
 
 /**
@@ -20,8 +19,9 @@ const AllArticlesPage = async () => {
       </Typo>
       <Typo variant="list" className={styles.list}>
         {articles.map((name) => (
+          // TODO: Make component for list item
           <li key={name}>
-            <Link href={articleToUrl(name)}>{capitalizeAllWords(name)}</Link>
+            <Link href={articleToUrl(name)}>{articleToTitle(name)}</Link>
           </li>
         ))}
       </Typo>

@@ -1,3 +1,4 @@
+import { capitalizeAllWords } from '@/utils';
 import { ARTICLES } from './config';
 
 /**
@@ -7,6 +8,15 @@ import { ARTICLES } from './config';
  */
 export function articleToUrl(article: string): string {
   return `/article/${article.replace(/ /g, '-')}/`;
+}
+
+/**
+ * Generates user friendly title for given Software
+ * @param {string} software Software name
+ * @returns {string} User friendly title
+ */
+export function articleToTitle(software: string): string {
+  return capitalizeAllWords(decodeURIComponent(software));
 }
 
 /**

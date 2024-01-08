@@ -1,8 +1,7 @@
 import { FunctionComponent } from 'react';
-import { capitalizeAllWords } from '@/utils';
 import { Link, Typo } from '@/components';
 import { ARTICLES } from './config';
-import { articleToUrl } from './utils';
+import { articleToTitle, articleToUrl } from './utils';
 import styles from './article.module.css';
 
 const DISTANCE_TO_NEXT = 17; // Number of Articles to skip to get to next link
@@ -28,17 +27,18 @@ const BlockRelativeArticles: FunctionComponent<Props> = ({
 }) => {
   const text = article.replace(/-/g, ' ');
   const start = ARTICLES.indexOf(text) ?? 0;
-  const articles = [];
+  const list = [];
   for (let i = 1; i <= total; i++) {
     const index = (start + i * skip) % ARTICLES.length;
-    articles.push(ARTICLES[index]);
+    list.push(ARTICLES[index]);
   }
 
   return (
     <Typo variant="list" className={styles.list}>
-      {articles.map((article) => (
-        <li key={article}>
-          <Link href={articleToUrl(article)}>{capitalizeAllWords(article)}</Link>
+      {list.map((name) => (
+        // TODO: Make component for list item
+        <li key={name}>
+          <Link href={articleToUrl(name)}>{articleToTitle(name)}</Link>
         </li>
       ))}
     </Typo>

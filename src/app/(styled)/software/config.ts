@@ -11,7 +11,7 @@ export const SOFTWARE: string[] = [
   'Cool Numpad',
   'Crazy Num Caps Scroll',
   'Disable Key',
-  'DK:Keyboard-Status',
+  'DK%3AKeyboard-Status', // Must be "path friendly" name
   'DKOSD',
   'DKOSD - Caps-Lock Status',
   'Easy HR Caps Lock',

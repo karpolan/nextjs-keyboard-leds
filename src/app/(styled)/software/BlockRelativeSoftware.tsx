@@ -2,7 +2,7 @@ import { FunctionComponent } from 'react';
 import { capitalizeAllWords } from '@/utils';
 import { Link, Typo } from '@/components';
 import { SOFTWARE } from './config';
-import { softwareToUrl } from './utils';
+import { softwareToTitle, softwareToUrl } from './utils';
 import styles from './software.module.css';
 
 const DISTANCE_TO_NEXT = 9; // Number of Articles to skip to get to next link
@@ -28,17 +28,18 @@ const BlockRelativeSoftware: FunctionComponent<Props> = ({
 }) => {
   const text = software.replace(/-/g, ' ');
   const start = SOFTWARE.indexOf(text) ?? 0;
-  const articles = [];
+  const list = [];
   for (let i = 1; i <= total; i++) {
     const index = (start + i * skip) % SOFTWARE.length;
-    articles.push(SOFTWARE[index]);
+    list.push(SOFTWARE[index]);
   }
 
   return (
     <Typo variant="list" className={styles.list}>
-      {articles.map((article) => (
-        <li key={article}>
-          <Link href={softwareToUrl(article)}>{capitalizeAllWords(article)}</Link>
+      {list.map((name) => (
+        // TODO: Make component for list item
+        <li key={name}>
+          <Link href={softwareToUrl(name)}>{softwareToTitle(name)}</Link>
         </li>
       ))}
     </Typo>

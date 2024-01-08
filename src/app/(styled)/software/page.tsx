@@ -1,7 +1,7 @@
 import { Link, Typo, Wrapper } from '@/components';
 import { capitalizeAllWords } from '@/utils';
 import { APP_NAME } from '@/config';
-import { softwareToUrl, getSoftwareList } from './utils';
+import { softwareToUrl, getSoftwareList, softwareToTitle } from './utils';
 import styles from './software.module.css';
 
 /**
@@ -9,7 +9,7 @@ import styles from './software.module.css';
  * @component AllSoftwarePage
  */
 const AllSoftwarePage = async () => {
-  const software = await getSoftwareList();
+  const list = await getSoftwareList();
   return (
     <Wrapper tag="section">
       <Typo variant="header1">{APP_NAME} Alternative Software</Typo>
@@ -22,9 +22,10 @@ const AllSoftwarePage = async () => {
         Explore the following list of well-known alternatives to the <strong>{APP_NAME}</strong> product:
       </Typo>
       <Typo variant="list" className={styles.list}>
-        {software.map((name) => (
+        {list.map((name) => (
+          // TODO: Make component for list item
           <li key={name}>
-            <Link href={softwareToUrl(name)}>{capitalizeAllWords(name)}</Link>
+            <Link href={softwareToUrl(name)}>{softwareToTitle(name)}</Link>
           </li>
         ))}
       </Typo>

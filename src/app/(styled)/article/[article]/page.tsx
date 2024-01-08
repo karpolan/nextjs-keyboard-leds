@@ -18,7 +18,7 @@ interface Props {
  * @component SingleArticlePage
  */
 const SingleArticlePage: NextPage<Props> = async ({ params: { article } }) => {
-  const text = decodeURIComponent(article).replace(/-/g, ' ').replace(/   /g, ' - ');
+  const text = article.replace(/-/g, ' ').replace(/   /g, ' - ');
 
   const title = capitalizeAllWords(text);
 
