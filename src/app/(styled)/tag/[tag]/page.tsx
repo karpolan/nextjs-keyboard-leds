@@ -2,7 +2,8 @@ import { NextPage } from 'next';
 import { IS_DEBUG } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-import { ContentFile, contentFileNameToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
+import { ContentFile, contentFileToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
+import { getTagList } from '../utils';
 
 interface Props {
   params: {
@@ -20,7 +21,7 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
   const articles: ContentFile[] = contentFiles.reduce((all: ContentFile[], fileName: string) => {
     const { tags, categories, content, title } = require(`@/app/(styled)/[...slug]/${fileName}`);
     if (tags.includes(textToFind)) {
-      const href = contentFileNameToUrl(fileName);
+      const href = contentFileToUrl(fileName);
       all.push({ tags, categories, content, title, href });
     }
     return all;
@@ -50,13 +51,8 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
  * @returns {Promise<{ params: { tag: string } }[]>} List of all tags.
  */
 export async function generateStaticParams() {
-  const contentFiles = await getContentFiles();
-  const allTags: string[] = contentFiles.reduce((all: string[], fileName: string) => {
-    const { tags } = require(`@/app/(styled)/[...slug]/${fileName}`);
-    return [...all, ...tags];
-  }, []);
-  const uniqueTags = Array.from(new Set(allTags)).sort();
-  const result = uniqueTags.map((tag) => ({ tag: tag.replace(/ /g, '-') }));
+  const tags = await getTagList();
+  const result = tags.map((tag) => ({ tag: tag.replace(/ /g, '-') }));
   IS_DEBUG && console.log('tag.generateStaticParams()', JSON.stringify(result));
   return result;
 }

@@ -36,19 +36,19 @@ const Footer = () => {
       <div className={styles.content}>
         <div className={styles.menu}>
           <Link href="/">Home</Link>
-          <Link href="/screenshots">Screenshots</Link>
-          <Link href="/download">Download</Link>
-          <Link href="/buy">Buy</Link>
-          <Link href="/contact">Contacts</Link>
-          <Link href="/news">News</Link>
+          <Link href="/screenshots/">Screenshots</Link>
+          <Link href="/download/">Download</Link>
+          <Link href="/buy/">Buy</Link>
+          <Link href="/contact/">Contacts</Link>
+          <Link href="/news.">News</Link>
         </div>
         <div className={styles.menu}>
-          <Link href="/legal/privacy-policy">Privacy Policy</Link>
-          <Link href="/legal/terms-conditions">Terms of Use</Link>
-          <Link href="/software">Software</Link>
-          <Link href="/category">Categories</Link>
-          <Link href="/tag">Tags</Link>
-          <Link href="/articles">Articles</Link>
+          <Link href="/legal/privacy-policy/">Privacy Policy</Link>
+          <Link href="/legal/terms-conditions/">Terms of Use</Link>
+          <Link href="/article/">Articles</Link>
+          <Link href="/software/">Software</Link>
+          <Link href="/category/">Categories</Link>
+          <Link href="/tag/">Tags</Link>
         </div>
         {!onMobile && (
           <div className={styles.copyright}>
