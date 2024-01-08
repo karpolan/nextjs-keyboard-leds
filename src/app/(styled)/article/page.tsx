@@ -19,9 +19,9 @@ const AllArticlesPage = async () => {
         <strong>{APP_NAME}</strong> software below:
       </Typo>
       <Typo variant="list" className={styles.list}>
-        {articles.map((article) => (
-          <li key={article}>
-            <Link href={articleToUrl(article)}>{capitalizeAllWords(article)}</Link>
+        {articles.map((name) => (
+          <li key={name}>
+            <Link href={articleToUrl(name)}>{capitalizeAllWords(name)}</Link>
           </li>
         ))}
       </Typo>
