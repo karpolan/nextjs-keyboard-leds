@@ -2,16 +2,16 @@ import { getContentFiles } from '@/app/(styled)/[...slug]/utils';
 
 /**
  * Generates url for given Category
- * @param {string} tag Tag name
+ * @param {string} category Category name
  * @returns {string} Relative URL
  */
-export function categoryToUrl(tag: string): string {
-  return `/category/${tag.replace(/ /g, '-')}/`;
+export function categoryToUrl(category: string): string {
+  return `/category/${category.replace(/ /g, '-')}/`;
 }
 
 /**
- * Returns list of unique categories from all content files
- * @returns {Promise<string[]>} List categories as strings
+ * Returns list of unique Categories from all content files
+ * @returns {Promise<string[]>} List Categories as strings
  */
 export async function getCategoryList() {
   const contentFiles = await getContentFiles();

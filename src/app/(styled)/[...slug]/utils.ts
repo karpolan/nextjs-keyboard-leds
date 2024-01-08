@@ -23,7 +23,7 @@ export function contentFileToUrl(fileName: string): string {
 }
 
 /**
- * Returns list of content files
+ * Returns list of content/news/article files
  * @returns {Promise<string[]>} List of content files as strings
  */
 export async function getContentFiles(): Promise<string[]> {

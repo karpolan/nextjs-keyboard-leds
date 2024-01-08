@@ -11,7 +11,7 @@ export function tagToUrl(tag: string): string {
 
 /**
  * Returns list of unique Tags from all content files
- * @returns {Promise<string[]>} List of tags as strings
+ * @returns {Promise<string[]>} List of Tags as strings
  */
 export async function getTagList() {
   const contentFiles = await getContentFiles();
