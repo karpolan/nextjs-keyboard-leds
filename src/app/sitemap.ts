@@ -3,6 +3,7 @@ import { PUBLIC_URL } from '@/config';
 import { contentFileToUrl, getContentFiles } from './(styled)/[...slug]/utils';
 import { getTagList, tagToUrl } from './(styled)/tag/utils';
 import { categoryToUrl, getCategoryList } from './(styled)/category/utils';
+import { articleToUrl, getArticleList } from './(styled)/article/utils';
 
 async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
@@ -30,6 +31,14 @@ async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified,
     changeFrequency: 'weekly',
     priority: 0.7,
+  }));
+
+  const articleList = await getArticleList();
+  const articles: MetadataRoute.Sitemap = articleList.map((article) => ({
+    url: `${PUBLIC_URL}${articleToUrl(article)}`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.5,
   }));
 
   return [
@@ -116,16 +125,23 @@ async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `${PUBLIC_URL}/category/`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.7,
+      priority: 0.8,
     },
     ...categories,
     {
       url: `${PUBLIC_URL}/tag/`,
       lastModified,
       changeFrequency: 'weekly',
-      priority: 0.6,
+      priority: 0.7,
     },
     ...tags,
+    {
+      url: `${PUBLIC_URL}/article/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...articles,
   ];
 }
 
