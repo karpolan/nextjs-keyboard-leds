@@ -4,38 +4,47 @@ import { contentFileToUrl, getContentFiles } from './(styled)/[...slug]/utils';
 import { getTagList, tagToUrl } from './(styled)/tag/utils';
 import { categoryToUrl, getCategoryList } from './(styled)/category/utils';
 import { articleToUrl, getArticleList } from './(styled)/article/utils';
+import { getSoftwareList, softwareToUrl } from './(styled)/software/utils';
 
 async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
   const lastModified = currentDate.substring(0, currentDate.indexOf('T'));
 
   const contentList = await getContentFiles();
-  const news: MetadataRoute.Sitemap = contentList.map((fileName) => ({
-    url: `${PUBLIC_URL}${contentFileToUrl(fileName)}`,
+  const news: MetadataRoute.Sitemap = contentList.map((name) => ({
+    url: `${PUBLIC_URL}${contentFileToUrl(name)}`,
     lastModified,
     changeFrequency: 'monthly',
     priority: 0.8,
   }));
 
   const tagList = await getTagList();
-  const tags: MetadataRoute.Sitemap = tagList.map((tag) => ({
-    url: `${PUBLIC_URL}${tagToUrl(tag)}`,
+  const tags: MetadataRoute.Sitemap = tagList.map((name) => ({
+    url: `${PUBLIC_URL}${tagToUrl(name)}`,
     lastModified,
     changeFrequency: 'weekly',
     priority: 0.6,
   }));
 
   const categoryList = await getCategoryList();
-  const categories: MetadataRoute.Sitemap = categoryList.map((category) => ({
-    url: `${PUBLIC_URL}${categoryToUrl(category)}`,
+  const categories: MetadataRoute.Sitemap = categoryList.map((name) => ({
+    url: `${PUBLIC_URL}${categoryToUrl(name)}`,
     lastModified,
     changeFrequency: 'weekly',
     priority: 0.7,
   }));
 
   const articleList = await getArticleList();
-  const articles: MetadataRoute.Sitemap = articleList.map((article) => ({
-    url: `${PUBLIC_URL}${articleToUrl(article)}`,
+  const articles: MetadataRoute.Sitemap = articleList.map((name) => ({
+    url: `${PUBLIC_URL}${articleToUrl(name)}`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.5,
+  }));
+
+  const softwareList = await getSoftwareList();
+  const software: MetadataRoute.Sitemap = softwareList.map((name) => ({
+    url: `${PUBLIC_URL}${softwareToUrl(name)}`,
     lastModified,
     changeFrequency: 'monthly',
     priority: 0.5,
@@ -142,6 +151,13 @@ async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     ...articles,
+    {
+      url: `${PUBLIC_URL}/software/`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.6,
+    },
+    ...software,
   ];
 }
 

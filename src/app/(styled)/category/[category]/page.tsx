@@ -48,7 +48,7 @@ const SingleCategoryPage: NextPage<Props> = async ({ params: { category } }) => 
 
 /**
  * Returns list of all mentioned categories to generate static pages.
- * @returns {Promise<{ params: { category: string } }[]>} List of all categories.
+ * @returns {Promise<{ category: string }[]>} List of all categories.
  */
 export async function generateStaticParams() {
   const categories = await getCategoryList();

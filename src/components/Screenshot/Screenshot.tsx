@@ -1,11 +1,11 @@
 'use client';
 import { FunctionComponent } from 'react';
-import Image from 'next/image';
+import Image, { ImageProps } from 'next/image';
 import { APP_NAME } from '@/config';
 import { useOnMobile } from '@/hooks';
 import Link from '../Link';
 
-interface Props {
+interface Props extends Partial<ImageProps> {
   variant?: 'main' | 'secondary';
 }
 
@@ -22,20 +22,16 @@ function getSrcByVariant(variant: Props['variant']): string {
  * Renders specific screenshot, size of image depends on screen size
  * @component Screenshot
  */
-const Screenshot: FunctionComponent<Props> = ({ variant = 'main' }) => {
+const Screenshot: FunctionComponent<Props> = ({ alt, src, title, variant = 'main', ...restOfProps }) => {
   const onMobile = useOnMobile();
-  const src = getSrcByVariant(variant);
+  const altToRender = alt ?? `Screenshot of ${APP_NAME}`;
+  const srcToRender = src ?? getSrcByVariant(variant);
+  const titleToRender = title ?? `Screenshot of ${APP_NAME} software`;
   const width = onMobile ? 320 : 400;
   const height = onMobile ? 480 : 600;
   return (
     <Link href="/screenshots">
-      <Image
-        title={`Screenshot of ${APP_NAME} software`}
-        src={src}
-        alt={`Screenshot of ${APP_NAME}`}
-        width={width}
-        height={height}
-      />
+      <Image alt={altToRender} height={height} src={srcToRender} title={titleToRender} width={width} {...restOfProps} />
     </Link>
   );
 };
