@@ -48,7 +48,7 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
 
 /**
  * Returns list of all mentioned tags to generate static pages.
- * @returns {Promise<{ params: { tag: string } }[]>} List of all tags.
+ * @returns {Promise<{ tag: string }[]>} List of all tags.
  */
 export async function generateStaticParams() {
   const tags = await getTagList();

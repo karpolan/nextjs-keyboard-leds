@@ -1,0 +1,29 @@
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  /* justify-content: center; */
+  list-style: none;
+}
+
+.list li {
+  margin: 0 0.5rem;
+  list-style: none;
+}
+
+@media screen and (min-width: 600px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* @media screen and (min-width: 1200px) {
+  .list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+} */

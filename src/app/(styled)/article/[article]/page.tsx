@@ -18,7 +18,8 @@ interface Props {
  * @component SingleArticlePage
  */
 const SingleArticlePage: NextPage<Props> = async ({ params: { article } }) => {
-  const text = article.replace(/-/g, ' ');
+  const text = article.replace(/-/g, ' ').replace(/   /g, ' - ');
+
   const title = capitalizeAllWords(text);
 
   // TODO: Make content dynamic based on the article
@@ -33,7 +34,10 @@ const SingleArticlePage: NextPage<Props> = async ({ params: { article } }) => {
         issues.
       </Typo>
       <Stack alignItems="center" padding="1rem 0 0 0">
-        <Screenshot />
+        <Screenshot
+          alt={`Screenshot of ${APP_NAME} that solves ${text}`}
+          title={`Solution for ${text} is ${APP_NAME} software`}
+        />
       </Stack>
       <BlockDownloadButtons />
       <Typo variant="paragraph">
@@ -67,11 +71,11 @@ const SingleArticlePage: NextPage<Props> = async ({ params: { article } }) => {
 
 /**
  * Returns list of all mentioned categories to generate static pages.
- * @returns {Promise<{ params: { category: string } }[]>} List of all categories.
+ * @returns {Promise<{ article: string }[]>} List of all categories.
  */
 export async function generateStaticParams() {
   const articles = await getArticleList();
-  const result = articles.map((article) => ({ article: article.replace(/ /g, '-') }));
+  const result = articles.map((name) => ({ article: name.replace(/ /g, '-') }));
   IS_DEBUG && console.log('article.generateStaticParams()', JSON.stringify(result));
   return result;
 }
