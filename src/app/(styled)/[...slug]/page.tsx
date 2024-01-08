@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import { IS_DEBUG } from '@/config';
 import { Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-import { contentFileNameToUrl, getContentFiles } from './utils';
+import { contentFileToUrl, getContentFiles } from './utils';
 
 interface Props {
   params: {
@@ -40,13 +40,13 @@ const NewsPage: NextPage<Props> = ({ params: { slug } }) => {
 };
 
 /**
- * Returns list of all news to generate static pages.
- * @returns {Promise<{ params: { slug: string[] } }[]>} List of all news.
+ * Returns list of all news/articles to generate static pages.
+ * @returns {Promise<{ slug: string[] }[]>} List of all news/articles.
  */
 export async function generateStaticParams() {
   const files = await getContentFiles();
   const result = files.map((fileName) => {
-    const slugAsArray = contentFileNameToUrl(fileName).split('/').filter(Boolean);
+    const slugAsArray = contentFileToUrl(fileName).split('/').filter(Boolean);
     // IS_DEBUG && console.log(fileName, '=', slugAsArray);
     return {
       slug: slugAsArray,

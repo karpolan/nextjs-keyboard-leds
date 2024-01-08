@@ -26,22 +26,22 @@ const TopMenuContent: FunctionComponent<Props> = ({
         </Button>
       </li>
       <li role="menuitem">
-        <Button activeClassName={activeClassName} href="/screenshots" margin={marginForButton} variant="text">
+        <Button activeClassName={activeClassName} href="/screenshots/" margin={marginForButton} variant="text">
           Screenshots
         </Button>
       </li>
       <li role="menuitem">
-        <Button activeClassName={activeClassName} href="/download" margin={marginForButton} variant="text">
+        <Button activeClassName={activeClassName} href="/download/" margin={marginForButton} variant="text">
           Download
         </Button>
       </li>
       {/* <li role="menuitem">
-        <Button activeClassName={activeClassName} href="/buy" margin={marginForButton} variant="text">
+        <Button activeClassName={activeClassName} href="/buy/" margin={marginForButton} variant="text">
           Buy
         </Button>
       </li> */}
       <li role="menuitem">
-        <Button activeClassName={activeClassName} href="/contact" margin={marginForButton} variant="text">
+        <Button activeClassName={activeClassName} href="/contact/" margin={marginForButton} variant="text">
           Contact
         </Button>
       </li>

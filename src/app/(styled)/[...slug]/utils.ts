@@ -10,13 +10,22 @@ export type ContentFile = {
   tags?: string[];
 };
 
-export function contentFileNameToUrl(fileName: string): string {
+/**
+ * Converts content file name to the URL
+ * @param {string} fileName Name of content file
+ * @returns {string} Relative URL
+ */
+export function contentFileToUrl(fileName: string): string {
   const justName = fileName.substring(0, fileName.indexOf('.')); // File name without extension
   const asArray = justName.split('-');
-  const result = '/' + asArray[0] + '/' + asArray[1] + '/' + asArray[2] + '/' + justName.substring(11);
+  const result = '/' + asArray[0] + '/' + asArray[1] + '/' + asArray[2] + '/' + justName.substring(11) + '/';
   return result;
 }
 
+/**
+ * Returns list of content/news/article files
+ * @returns {Promise<string[]>} List of content files as strings
+ */
 export async function getContentFiles(): Promise<string[]> {
   const directoryPath = 'src/app/(styled)/[...slug]';
   const fileNames = [];
