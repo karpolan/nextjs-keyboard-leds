@@ -3,8 +3,7 @@ import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
 import type { Metadata } from 'next';
 import { OPEN_GRAPH_DEFAULT } from '@/app/config';
 import { FONTS } from '@/layout/fonts';
-import { Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
-// import './globals.css';
+import { Advertising, Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
 
 export const metadata: Metadata = {
   metadataBase: new URL(PUBLIC_URL),
@@ -22,16 +21,14 @@ export const metadata: Metadata = {
 const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <body className={FONTS.default.className}>
-      <Suspense>
-        <MobileOrDesktop />
-      </Suspense>
-
       <Header />
       <div className="content">{children}</div>
       <Footer />
 
       <Suspense>
+        <MobileOrDesktop />
         <Analytics />
+        <Advertising />
       </Suspense>
     </body>
   );
