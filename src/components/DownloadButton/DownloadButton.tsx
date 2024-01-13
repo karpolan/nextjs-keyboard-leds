@@ -24,8 +24,8 @@ const DownloadButton: FunctionComponent<Props> = ({ children, file = 'exe', ...r
       href={href}
       title={`Download ${APP_NAME} software installation package as ${file.toUpperCase()} file`}
       onClick={
-        // TODO: Add Amplitude event also
-        () => gaPageView(href)
+        () => gaPageView(href) // Notify Google Analytics about file download
+        // Note: Amplitude event is fired automatically
       }
       {...restOfProps}
     >
