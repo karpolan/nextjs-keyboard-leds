@@ -6,3 +6,6 @@ export const SERVER_SIDE_MOBILE_FIRST = true; // true - for mobile, false - for 
 
 // export const CONTENT_MAX_WIDTH = 1200;
 // export const CONTENT_MIN_WIDTH = 320; // Not less then (CONTENT_MAX_WIDTH - sidebarWidth)
+
+export const SCRIPT_STRATEGY = 'afterInteractive';
+// export const SCRIPT_STRATEGY =  'lazyOnload';
