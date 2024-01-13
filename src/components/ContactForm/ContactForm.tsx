@@ -65,12 +65,12 @@ const ContactForm = () => {
 
   return (
     <form className={styles.form} onSubmit={onSubmit}>
-      <label htmlFor="email">
+      <label htmlFor="contact-form-email">
         Your Email: <span>(required)</span>
       </label>
-      <input type="email" name="email" required />
-      <label htmlFor="message">Message:</label>
-      <textarea name="message" rows={5} />
+      <input id="contact-form-email" name="email" type="email" required />
+      <label htmlFor="contact-form-message">Message:</label>
+      <textarea id="contact-form-message" name="message" rows={5} />
       <div className={styles.actions}>
         {emailSent && <div className={styles.success}>Your message sent successfully</div>}
         {error && <div className={styles.error}>Error: {error}</div>}
