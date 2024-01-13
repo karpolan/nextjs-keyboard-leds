@@ -12,6 +12,16 @@ const nextConfig = {
 
   reactStrictMode: true,
   // reactStrictMode: false,
+
+  async redirects() {
+    return [
+      {
+        source: '/articles/*',
+        destination: '/article/*',
+        permanent: true,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
