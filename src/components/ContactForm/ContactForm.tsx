@@ -68,7 +68,7 @@ const ContactForm = () => {
       <label htmlFor="contact-form-email">
         Your Email: <span>(required)</span>
       </label>
-      <input id="contact-form-email" name="email" type="email" required />
+      <input autoComplete="on" id="contact-form-email" name="email" type="email" required />
       <label htmlFor="contact-form-message">Message:</label>
       <textarea id="contact-form-message" name="message" rows={5} />
       <div className={styles.actions}>
