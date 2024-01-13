@@ -1,6 +1,6 @@
 import { APP_NAME, PUBLIC_URL } from '@/config';
 import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { OPEN_GRAPH_DEFAULT } from '@/app/config';
 import { FONTS } from '@/layout/fonts';
 import { Advertising, Analytics, Footer, Header, MobileOrDesktop } from '@/layout/components';
@@ -14,19 +14,24 @@ export const metadata: Metadata = {
   openGraph: OPEN_GRAPH_DEFAULT,
 };
 
-// export const viewport: Viewport = {
-//   themeColor: '#FFFFFF',
-// };
+export const viewport: Viewport = {
+  themeColor: '#FFFFFF',
+};
 
+/**
+ * Layout for (styled) pages, renders head and body tags
+ * @layout StyledLayout
+ */
 const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <head>
-        <script
+        <Advertising />
+        {/* <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1111097944989035"
           crossOrigin="anonymous"
-        />
+        /> */}
       </head>
 
       <body className={FONTS.default.className}>
