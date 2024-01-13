@@ -20,17 +20,27 @@ export const metadata: Metadata = {
 
 const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
-    <body className={FONTS.default.className}>
-      <Header />
-      <div className="content">{children}</div>
-      <Footer />
+    <>
+      <head>
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1111097944989035"
+          crossOrigin="anonymous"
+        />
+      </head>
 
-      <Suspense>
-        <MobileOrDesktop />
-        <Analytics />
-        <Advertising />
-      </Suspense>
-    </body>
+      <body className={FONTS.default.className}>
+        <Header />
+        <div className="content">{children}</div>
+        <Footer />
+
+        <Suspense>
+          <MobileOrDesktop />
+          <Analytics />
+          {/* <Advertising /> */}
+        </Suspense>
+      </body>
+    </>
   );
 };
 
