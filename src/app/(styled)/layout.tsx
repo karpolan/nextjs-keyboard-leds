@@ -26,7 +26,10 @@ const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <head>
-        <Advertising />
+        <Suspense>
+          <Advertising />
+          <Analytics />
+        </Suspense>
       </head>
 
       <body className={FONTS.default.className}>
@@ -36,7 +39,6 @@ const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
 
         <Suspense>
           <MobileOrDesktop />
-          <Analytics />
         </Suspense>
       </body>
     </>
