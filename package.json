@@ -1,6 +1,6 @@
 {
   "name": "nextjs-keyboard-leds",
-  "version": "0.5.8",
+  "version": "0.6.9",
   "description": "KEYBOARD-LEDS.COM website using NextJS",
   "private": true,
   "author": {
@@ -23,6 +23,7 @@
     "type": "tsc"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "latest",
     "@emailjs/browser": "latest",
     "next": "latest",
     "react": "latest",
