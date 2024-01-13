@@ -27,11 +27,6 @@ const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
     <>
       <head>
         <Advertising />
-        {/* <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1111097944989035"
-          crossOrigin="anonymous"
-        /> */}
       </head>
 
       <body className={FONTS.default.className}>
@@ -42,7 +37,6 @@ const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
         <Suspense>
           <MobileOrDesktop />
           <Analytics />
-          {/* <Advertising /> */}
         </Suspense>
       </body>
     </>
