@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useLayoutEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import Script from 'next/script';
 import { GA_ID, gaPageView } from '@/lib/ga';
@@ -12,7 +12,7 @@ const GoogleAnalytics = () => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (pathname) {
       gaPageView(pathname); // Track each page view with Google Analytics
     }
@@ -21,12 +21,15 @@ const GoogleAnalytics = () => {
     searchParams, // Also track all search params changes even when the page remain the same
   ]);
 
+  const strategy = 'afterInteractive';
+  // const strategy = 'lazyOnload';
+
   return (
     <>
-      <Script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+      <Script async strategy={strategy} src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
       <Script
         id="ga-script"
-        strategy="afterInteractive"
+        strategy={strategy}
         dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];
