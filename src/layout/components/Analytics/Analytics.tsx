@@ -1,7 +1,7 @@
 'use client';
 import { IS_PRODUCTION } from '@/config';
 import GoogleAnalytics from './GoogleAnalytics';
-import GoogleTagManager from './GoogleTagManager';
+import AmplitudeAnalytics from './AmplitudeAnalytics';
 
 /**
  * Add supporting scripts for Google Tag Manager, Google Analytics, Amplitude and other analytics services.
@@ -16,7 +16,7 @@ const Analytics = () => {
   return (
     <>
       <GoogleAnalytics />
-      <GoogleTagManager />
+      <AmplitudeAnalytics />
     </>
   );
 };

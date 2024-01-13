@@ -23,6 +23,7 @@
     "type": "tsc"
   },
   "dependencies": {
+    "@amplitude/analytics-browser": "latest",
     "@emailjs/browser": "latest",
     "next": "latest",
     "react": "latest",
