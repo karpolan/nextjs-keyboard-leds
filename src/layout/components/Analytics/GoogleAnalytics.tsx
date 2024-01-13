@@ -1,6 +1,4 @@
-import Script from 'next/script';
 import { GA_ID } from '@/lib/ga';
-import { SCRIPT_STRATEGY } from '@/layout/config';
 
 /**
  * Adds supporting scripts for Google Analytics, also tracks each page view.
@@ -9,15 +7,9 @@ import { SCRIPT_STRATEGY } from '@/layout/config';
 const GoogleAnalytics = () => {
   return (
     <>
-      <Script
-        id="google-tag-manager-script"
-        async
-        strategy={SCRIPT_STRATEGY}
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-      />
-      <Script
+      <script id="google-tag-manager-script" async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+      <script
         id="google-analytics-script"
-        strategy={SCRIPT_STRATEGY}
         dangerouslySetInnerHTML={{
           __html: `
           window.dataLayer = window.dataLayer || [];

@@ -12,7 +12,6 @@ const GoogleAdsense = () => {
     <script
       async
       crossOrigin="anonymous"
-      id="google-adsense-script"
       src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT_ID}`}
     />
   );
@@ -20,7 +19,6 @@ const GoogleAdsense = () => {
   // Using of <Script/> shows the following error: AdSense head tag doesn't support data-nscript attribute.
   // return (
   //   <Script
-  //     id="google-adsense-script"
   //     async
   //     crossOrigin="anonymous"
   //     strategy={SCRIPT_STRATEGY}

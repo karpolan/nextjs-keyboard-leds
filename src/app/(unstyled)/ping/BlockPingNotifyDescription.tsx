@@ -10,10 +10,10 @@ const BlockPingNotifyDescription = () => {
     <div>
       <h2>PingNotify&trade;</h2>
       <p>
-        <Link href="https//karpolan.com/services/ping-notify/">PingNotify&trade;</Link> is a web based system to help
+        <Link href="https://karpolan.com/services/ping-notify/">PingNotify&trade;</Link> is a web based system to help
         software products communicate with webserver. The main benefit of this solution is ability to see software usage
         statistics right in{' '}
-        <Link href="https//www.google.com/analytics/" rel="nofollow">
+        <Link href="https://www.google.com/analytics/" rel="nofollow">
           Google Analytics
         </Link>{' '}
         control panel. The system can be used for:
