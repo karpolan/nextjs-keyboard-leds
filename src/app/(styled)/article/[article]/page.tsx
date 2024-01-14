@@ -7,7 +7,7 @@ import { getArticleList } from '../utils';
 import BlockDownloadButtons from '../../download/BlockDownloadButtons';
 import BlockRelativeArticles from '../BlockRelativeArticles';
 
-interface Props {
+export interface ArticleProps {
   params: {
     article: string;
   };
@@ -17,7 +17,7 @@ interface Props {
  * Renders "Single Article" page
  * @component SingleArticlePage
  */
-const SingleArticlePage: NextPage<Props> = async ({ params: { article } }) => {
+const SingleArticlePage: NextPage<ArticleProps> = async ({ params: { article } }) => {
   const text = article.replace(/-/g, ' ').replace(/   /g, ' - ');
 
   const title = capitalizeAllWords(text);
