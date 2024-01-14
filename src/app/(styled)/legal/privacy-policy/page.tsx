@@ -1,6 +1,8 @@
 import { PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 
+const PRIVACY_POLICY_DATE = '2024-01-05';
+
 /**
  * Content of "Privacy Policy" page
  * @page PrivacyPolicy
@@ -70,7 +72,7 @@ const PrivacyPolicyPage = () => {
 
       <Typo variant="header2">Do we use cookies?</Typo>
       <Typo variant="paragraph">
-        Yes (Cookies are small files that a site or its service provider transfers to your computers hard drive through
+        Yes. Cookies are small files that a site or its service provider transfers to your computers hard drive through
         your Web browser (if you allow) that enables the sites or service providers systems to recognize your browser
         and capture and remember certain information.
       </Typo>
@@ -128,21 +130,21 @@ const PrivacyPolicyPage = () => {
 
       <Typo variant="header2">Terms and Conditions</Typo>
       <Typo variant="paragraph">
-        Please also visit our <Link href="/legal/terms-conditions">Terms and Conditions</Link> section establishing the
+        Please also visit our <Link href="/legal/terms-conditions/">Terms and Conditions</Link> section establishing the
         use, disclaimers, and limitations of liability governing the use of our website at{' '}
-        <Link href="/legal/terms-conditions">{PUBLIC_URL}/legal/terms-conditions/</Link>
+        <Link href="/legal/terms-conditions/">{PUBLIC_URL}/legal/terms-conditions</Link>
       </Typo>
 
       <Typo variant="header2">Your Consent</Typo>
       <Typo variant="paragraph">
-        By using our site, you consent to our <Link href="/legal/privacy-policy">websites privacy policy</Link>.
+        By using our site, you consent to our <Link href="/legal/privacy-policy/">websites privacy policy</Link>.
       </Typo>
 
       <Typo variant="header2">Changes to our Privacy Policy</Typo>
       <Typo variant="paragraph">
         If we decide to change our privacy policy, we will post those changes on this page{' '}
-        <Link href="/legal/privacy-policy">{PUBLIC_URL}/legal/privacy-policy/</Link>. This policy was last modified on
-        2024-01-05
+        <Link href="/legal/privacy-policy/">{PUBLIC_URL}/legal/privacy-policy</Link>. This policy was last modified on{' '}
+        {PRIVACY_POLICY_DATE}
       </Typo>
 
       <Typo variant="header2">Contacting Us</Typo>
@@ -151,7 +153,7 @@ const PrivacyPolicyPage = () => {
       </Typo>
       <Typo variant="list">
         <li>
-          Using online <Link href="/contact">contact form</Link>
+          Using online <Link href="/contact/">contact form</Link>
         </li>
         <li>Via email support(at)keyboard-leds[dot]com</li>
         <li>Post mail to Ozerna 28, 81, Kyiv 04209, UKRAINE</li>
