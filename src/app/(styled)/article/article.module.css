@@ -6,6 +6,7 @@
 }
 
 .list li {
+  font-weight: bold;
   margin: 0 0.5rem;
   list-style: none;
 }
