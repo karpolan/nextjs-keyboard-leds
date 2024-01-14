@@ -1,5 +1,4 @@
-// Note it is .js file (not .ts) because we need to import it in next.config.mjs
-export const ARTICLES = [
+export const ARTICLES: string[] = [
   'caps lock',
   'caps lock alarm',
   'caps lock beep',
