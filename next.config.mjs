@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+import { ARTICLES } from './src/app/(styled)/article/config.js';
+
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
@@ -14,14 +17,17 @@ const nextConfig = {
   // reactStrictMode: false,
 
   async redirects() {
-    return [
-      {
-        source: '/articles/:slug*',
-        destination: '/article/:slug*',
+    const articleRedirects = ARTICLES.map((article) => {
+      const slug = article.replace(/ /g, '-');
+      return {
+        source: `/articles/${slug}`,
+        destination: `/article/${slug}`,
         permanent: true,
-      },
-    ];
+      };
+    });
+
+    return [...articleRedirects];
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
