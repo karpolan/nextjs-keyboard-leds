@@ -1,10 +1,9 @@
+import { APP_NAME } from '@/config';
 import { Stack, Typo, Wrapper } from '@/components';
 import DownloadButton from '@/components/DownloadButton';
 import Video from '@/components/Video';
 import Screenshot from '@/components/Screenshot';
 import SocialMedia from '@/components/SocialMedia';
-import { APP_NAME } from '@/config';
-import { useMemo } from 'react';
 
 export const metadata = {
   alternates: {
@@ -17,7 +16,7 @@ export const metadata = {
  * @page Home
  */
 const HomePage = () => {
-  const appName = useMemo(() => <strong>{APP_NAME}</strong>, []);
+  const appName = <strong>{APP_NAME}</strong>;
 
   return (
     <Wrapper tag="article">
