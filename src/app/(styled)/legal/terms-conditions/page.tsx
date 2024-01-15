@@ -1,3 +1,4 @@
+import { APP_NAME } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 
 /**
@@ -56,7 +57,7 @@ const TermsAndConditionsPage = () => {
 
       <Typo variant="header2">Trademarks</Typo>
       <Typo variant="paragraph">
-        &quot;Keyboards LEDs&quot;, &quot;Keyboard Leds&quot;, &quot;Key Leds&quot;, &quot;KeyLeds&quot;, &quot;Keyboard
+        &quot;{APP_NAME}&quot;, &quot;Keyboard Leds&quot;, &quot;Key Leds&quot;, &quot;KeyLeds&quot;, &quot;Keyboard
         Indicator&quot; are trademarks or registered trademarks of Owner. All other trademarks appearing on the Site are
         the sole property of their respective owners.
       </Typo>
