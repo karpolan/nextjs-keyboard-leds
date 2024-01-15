@@ -1,3 +1,4 @@
+import { APP_NAME } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 
 /**
@@ -15,7 +16,7 @@ const SoftwareLicensePage = () => {
         <strong>
           <Link href="https://karpolan.com">KARPOLAN</Link>
         </strong>
-        , the manufacturer and the copyright owner (&quot;Owner&quot;), for the use of the &quot;Keyboard Leds&quot; aka
+        , the manufacturer and the copyright owner (&quot;Owner&quot;), for the use of the &quot;{APP_NAME}&quot; aka
         &quot;Keyboard Indicator&quot; aka &quot;Key Leds&quot; software product (&quot;Software&quot;).
       </Typo>
       <Typo variant="paragraph">
