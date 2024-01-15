@@ -53,7 +53,7 @@ const SingleArticlePage: NextPage<ArticleProps> = async ({ params: { article } }
       </Typo>
       <Typo variant="paragraph">
         Other <Link href="/article/">{text} documents and articles</Link> will be published soon. Get more information
-        about caps lock switch and product at web site.
+        about {text} and the product at web site.
       </Typo>
 
       <Typo variant="header2">More {title} documents</Typo>
