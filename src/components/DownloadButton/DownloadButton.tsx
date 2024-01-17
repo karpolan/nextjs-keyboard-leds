@@ -4,13 +4,18 @@ import { APP_NAME } from '@/config';
 import { gaPageView } from '@/lib/ga';
 import Button, { ButtonProps } from '../Button/Button';
 
-const FILES = {
+const LOCAL_FILES = {
   exe: '/files/keyboard-leds.exe',
   zip: '/files/keyboard-leds.zip',
 };
 
+const S3_BUCKET_FILES = {
+  exe: 'https://public-file-storage.s3.us-east-2.amazonaws.com/software/keyboard-leds.exe',
+  zip: 'https://public-file-storage.s3.us-east-2.amazonaws.com/software/keyboard-leds.zip',
+};
+
 interface Props extends ButtonProps {
-  file?: keyof typeof FILES;
+  file?: keyof typeof LOCAL_FILES;
 }
 
 /**
@@ -18,13 +23,14 @@ interface Props extends ButtonProps {
  * @component DownloadButton
  */
 const DownloadButton: FunctionComponent<Props> = ({ children, file = 'exe', ...restOfProps }) => {
-  const href = FILES[file];
+  const hrefToTrack = LOCAL_FILES[file];
+  const hrefToDownload = S3_BUCKET_FILES[file];
   return (
     <Button
-      href={href}
+      href={hrefToDownload}
       title={`Download ${APP_NAME} software installation package as ${file.toUpperCase()} file`}
       onClick={
-        () => gaPageView(href) // Notify Google Analytics about file download
+        () => gaPageView(hrefToTrack) // Notify Google Analytics about file download
         // Note: Amplitude event is fired automatically
       }
       {...restOfProps}
