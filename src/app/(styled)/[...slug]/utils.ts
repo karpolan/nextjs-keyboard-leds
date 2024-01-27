@@ -23,6 +23,18 @@ export function contentFileToUrl(fileName: string): string {
 }
 
 /**
+ * Returns YYYY-MM-DD date stamp from given file name
+ * @param {string} fileName Name of content file
+ * @returns {string} YYYY-MM-DD date string
+ */
+export function contentFileToDateString(fileName: string): string {
+  const justName = fileName.substring(0, fileName.indexOf('.')); // File name without extension
+  const asArray = justName.split('-');
+  const result = asArray[0] + '-' + asArray[1] + '-' + asArray[2];
+  return result;
+}
+
+/**
  * Returns list of content/news/article files
  * @returns {Promise<string[]>} List of content files as strings
  */
