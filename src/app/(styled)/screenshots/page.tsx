@@ -1,8 +1,14 @@
 import Image from 'next/image';
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Stack, Typo, Wrapper } from '@/components';
 import Screenshot from '@/components/Screenshot';
 import Video from '@/components/Video';
+
+export const metadata = {
+  alternates: {
+    canonical: `${PUBLIC_URL}/screenshots/`,
+  },
+};
 
 /**
  * Screenshots page content

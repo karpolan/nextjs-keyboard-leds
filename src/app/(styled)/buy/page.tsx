@@ -1,8 +1,14 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import SocialMedia from '@/components/SocialMedia';
 import { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
 import ListOtherSoftware from '../download/ListOtherSoftware';
+
+export const metadata = {
+  alternates: {
+    canonical: `${PUBLIC_URL}/buy/`,
+  },
+};
 
 /**
  * Content of "Buy" page

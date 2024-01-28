@@ -1,8 +1,14 @@
-import { APP_NAME, APP_VERSION } from '@/config';
+import { APP_NAME, APP_VERSION, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import Video from '@/components/Video';
 import BlockDownloadButtons from './BlockDownloadButtons';
 import ListOtherSoftware from './ListOtherSoftware';
+
+export const metadata = {
+  alternates: {
+    canonical: `${PUBLIC_URL}/download/`,
+  },
+};
 
 /**
  * Content of Download page

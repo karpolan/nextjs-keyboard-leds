@@ -5,6 +5,7 @@ export const SOFTWARE: string[] = [
   'Caps Lock Status',
   'Caps Lock Viewer',
   'CapsLock',
+  'CapsLock Indicator',
   'CapsLockDelay',
   'CapslockHater',
   'Clever Keyboard Indicator',

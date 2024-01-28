@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Stack, Typo, Wrapper } from '@/components';
 import DownloadButton from '@/components/DownloadButton';
 import Video from '@/components/Video';
@@ -7,7 +7,7 @@ import SocialMedia from '@/components/SocialMedia';
 
 export const metadata = {
   alternates: {
-    canonical: 'https://keyboard-leds.com', // TODO: Make CANONICAL_ROOT configurable in .env
+    canonical: PUBLIC_URL,
   },
 };
 
