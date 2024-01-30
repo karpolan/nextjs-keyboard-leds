@@ -1,4 +1,4 @@
-import { Metadata, NextPage, ResolvingMetadata } from 'next';
+import { Metadata, NextPage } from 'next';
 import { notFound } from 'next/navigation';
 import { ContentFile, contentFileToUrl, getContentFiles } from './utils';
 import { APP_NAME, IS_DEBUG } from '@/config';
