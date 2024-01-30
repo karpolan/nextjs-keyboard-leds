@@ -8,7 +8,7 @@ export { generateStaticParams } from '../../article/[article]/page'; // For stat
  * Redirect to the Single article page
  */
 const SingleArticleRedirect: NextPage<ArticleProps> = ({ params: { article } }) => {
-  return redirect(`/article/${article}`);
+  return redirect(`/article/${article}/`);
 };
 
 export default SingleArticleRedirect;
