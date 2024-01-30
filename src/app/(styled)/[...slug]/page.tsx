@@ -1,6 +1,6 @@
 import { Metadata, NextPage, ResolvingMetadata } from 'next';
 import { notFound } from 'next/navigation';
-import { contentFileToUrl, getContentFiles } from './utils';
+import { ContentFile, contentFileToUrl, getContentFiles } from './utils';
 import { APP_NAME, IS_DEBUG } from '@/config';
 import { Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
@@ -11,13 +11,7 @@ interface Props {
   };
 }
 
-type PageData = {
-  url?: string;
-  categories?: string[];
-  tags?: string[];
-  title?: string;
-  content?: JSX.Element;
-};
+type PageData = Partial<ContentFile>;
 
 /**
  * Loads page data from xxx.tsx file based on current slug
@@ -26,7 +20,7 @@ function getPageData(slug: string[]): PageData {
   let pageData: Partial<PageData>;
   const normalizedSlug = slug.map((x) => x.toLowerCase());
   const fileName = slug.map((x) => x.toLowerCase()).join('-');
-  const url = `/${normalizedSlug.join('/')}`;
+  const href = `/${normalizedSlug.join('/')}`;
 
   try {
     pageData = require(`@/app/(styled)/[...slug]/${fileName}.tsx`);
@@ -35,7 +29,7 @@ function getPageData(slug: string[]): PageData {
   }
 
   return {
-    url,
+    href,
     ...pageData,
   };
 }
@@ -81,10 +75,7 @@ export async function generateStaticParams() {
 /**
  * Generates MetaData for the page based on the route params.
  */
-export async function generateMetadata(
-  { params: { slug } }: Props
-  // parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
   const { categories = [], tags = [], title } = getPageData(slug);
   const titleToRender = `${title} - ${APP_NAME}`;
   const tagsAndCategories = [...categories, ...tags];
