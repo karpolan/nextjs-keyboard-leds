@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+import { APP_NAME } from '@/config';
 import { Button, Stack, Typo, Wrapper } from '@/components';
 import { getTagList, tagToUrl } from './utils';
 
@@ -20,5 +22,15 @@ const AllTagsPage = async () => {
     </Wrapper>
   );
 };
+
+/**
+ * Generates MetaData for the page based on the route params.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const tags = await getTagList();
+  const title = `Tags - ${APP_NAME}`;
+  const keywords = tags.join(', ');
+  return { keywords, title };
+}
 
 export default AllTagsPage;

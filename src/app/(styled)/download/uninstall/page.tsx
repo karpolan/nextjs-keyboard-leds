@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import ContactForm from '@/components/ContactForm';
 import SocialMedia, { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
@@ -41,6 +41,16 @@ const UninstallPage = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Software Uninstalled - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/download/uninstall/`,
+  },
 };
 
 export default UninstallPage;

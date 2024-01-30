@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 
 /**
@@ -67,6 +67,16 @@ const SoftwareLicensePage = () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `End User License Agreement - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/legal/software-license/`,
+  },
 };
 
 export default SoftwareLicensePage;

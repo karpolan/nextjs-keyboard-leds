@@ -1,13 +1,36 @@
-import { NextPage } from 'next';
+import { Metadata, NextPage } from 'next';
 import { notFound } from 'next/navigation';
-import { IS_DEBUG } from '@/config';
+import { ContentFile, contentFileToUrl, getContentFiles } from './utils';
+import { APP_NAME, IS_DEBUG } from '@/config';
 import { Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-import { contentFileToUrl, getContentFiles } from './utils';
 
 interface Props {
   params: {
     slug: string[];
+  };
+}
+
+type PageData = Partial<ContentFile>;
+
+/**
+ * Loads page data from xxx.tsx file based on current slug
+ */
+function getPageData(slug: string[]): PageData {
+  let pageData: Partial<PageData>;
+  const normalizedSlug = slug.map((x) => x.toLowerCase());
+  const fileName = slug.map((x) => x.toLowerCase()).join('-');
+  const href = `/${normalizedSlug.join('/')}`;
+
+  try {
+    pageData = require(`@/app/(styled)/[...slug]/${fileName}.tsx`);
+  } catch (error) {
+    pageData = {};
+  }
+
+  return {
+    href,
+    ...pageData,
   };
 }
 
@@ -16,15 +39,7 @@ interface Props {
  * @page NewsPage
  */
 const NewsPage: NextPage<Props> = ({ params: { slug } }) => {
-  let pageData;
-  const combinedSlug = slug.map((x) => x.toLowerCase()).join('-');
-  try {
-    pageData = require(`@/app/(styled)/[...slug]/${combinedSlug}.tsx`);
-  } catch (error) {
-    // return notFound();
-  }
-
-  const { categories, tags, content, title } = pageData ?? {};
+  const { categories, tags, content, title } = getPageData(slug);
   if (!content) {
     return notFound();
   }
@@ -33,8 +48,8 @@ const NewsPage: NextPage<Props> = ({ params: { slug } }) => {
     <Wrapper tag="article">
       {title && <Typo variant="header1">{title}</Typo>}
       {content}
-      {categories?.length > 0 && <CategoryGroup categories={categories} />}
-      {tags?.length > 0 && <TagGroup tags={tags} />}
+      {categories && categories?.length > 0 && <CategoryGroup categories={categories} />}
+      {tags && tags?.length > 0 && <TagGroup tags={tags} />}
     </Wrapper>
   );
 };
@@ -55,6 +70,17 @@ export async function generateStaticParams() {
 
   IS_DEBUG && console.log('news.generateStaticParams()', JSON.stringify(result));
   return result;
+}
+
+/**
+ * Generates MetaData for the page based on the route params.
+ */
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+  const { categories = [], tags = [], title } = getPageData(slug);
+  const titleToRender = `${title} - ${APP_NAME}`;
+  const tagsAndCategories = [...categories, ...tags];
+  const keywords = Array.from(new Set(tagsAndCategories)).join(', ');
+  return { keywords, title: titleToRender };
 }
 
 export default NewsPage;

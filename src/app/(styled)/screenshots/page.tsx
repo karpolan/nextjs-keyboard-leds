@@ -4,12 +4,6 @@ import { Stack, Typo, Wrapper } from '@/components';
 import Screenshot from '@/components/Screenshot';
 import Video from '@/components/Video';
 
-export const metadata = {
-  alternates: {
-    canonical: `${PUBLIC_URL}/screenshots/`,
-  },
-};
-
 /**
  * Screenshots page content
  * @page Screenshots
@@ -41,6 +35,16 @@ const ScreenshotsPage = () => {
       </Stack>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Screenshots of free Caps Lock Indicator software - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/screenshots/`,
+  },
 };
 
 export default ScreenshotsPage;

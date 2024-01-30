@@ -5,12 +5,6 @@ import Video from '@/components/Video';
 import Screenshot from '@/components/Screenshot';
 import SocialMedia from '@/components/SocialMedia';
 
-export const metadata = {
-  alternates: {
-    canonical: PUBLIC_URL,
-  },
-};
-
 /**
  * Home page content
  * @page Home
@@ -72,6 +66,16 @@ const HomePage = () => {
       <Typo variant="paragraph">Thank you for choosing {appName} - where visibility meets simplicity</Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Free Caps Lock, Num Lock, Scroll Lock Software Indicator - ${APP_NAME}`,
+  alternates: {
+    canonical: PUBLIC_URL,
+  },
 };
 
 export default HomePage;

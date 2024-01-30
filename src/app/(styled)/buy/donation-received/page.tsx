@@ -1,8 +1,12 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import SocialMedia, { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
 import ListOtherSoftware from '../../download/ListOtherSoftware';
 
+/**
+ * Content of "Donation received" page
+ * @page DonationReceived
+ */
 const DonationReceivedPage = () => {
   return (
     <Wrapper tag="article">
@@ -28,6 +32,16 @@ const DonationReceivedPage = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Thank You - Donation Received - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/buy/donation-received/`,
+  },
 };
 
 export default DonationReceivedPage;

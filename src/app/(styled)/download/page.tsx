@@ -4,12 +4,6 @@ import Video from '@/components/Video';
 import BlockDownloadButtons from './BlockDownloadButtons';
 import ListOtherSoftware from './ListOtherSoftware';
 
-export const metadata = {
-  alternates: {
-    canonical: `${PUBLIC_URL}/download/`,
-  },
-};
-
 /**
  * Content of Download page
  * @page Download
@@ -53,6 +47,16 @@ const PageDownload = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Download free Caps Lock and Num Lock software - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/download/`,
+  },
 };
 
 export default PageDownload;

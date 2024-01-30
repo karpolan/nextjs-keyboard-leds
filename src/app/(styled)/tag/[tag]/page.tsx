@@ -1,5 +1,6 @@
-import { NextPage } from 'next';
-import { IS_DEBUG } from '@/config';
+import { Metadata, NextPage } from 'next';
+import { APP_NAME, IS_DEBUG } from '@/config';
+import { capitalizeAllWords } from '@/utils';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
 import { ContentFile, contentFileToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
@@ -29,7 +30,7 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
 
   return (
     <Wrapper tag="section">
-      <Typo variant="header1">Tag: &quot;{textToFind}&quot;</Typo>
+      <Typo variant="header1">Tag: &quot;{capitalizeAllWords(textToFind)}&quot;</Typo>
       {articles.map(({ content, categories = [], href = '/', tags = [], title }) => (
         <article key={title}>
           {title && (
@@ -55,6 +56,15 @@ export async function generateStaticParams() {
   const result = tags.map((tag) => ({ tag: tag.replace(/ /g, '-') }));
   IS_DEBUG && console.log('tag.generateStaticParams()', JSON.stringify(result));
   return result;
+}
+
+/**
+ * Generates MetaData for the page based on the route params.
+ */
+export async function generateMetadata({ params: { tag } }: Props): Promise<Metadata> {
+  const normalizedTag = capitalizeAllWords(tag.replace(/-/g, ' '));
+  const title = `${normalizedTag} - Tag - ${APP_NAME}`;
+  return { title };
 }
 
 export default SingleTagPage;
