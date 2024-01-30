@@ -7,7 +7,7 @@ import { getArticleList } from '../utils';
 import BlockDownloadButtons from '../../download/BlockDownloadButtons';
 import BlockRelativeArticles from '../BlockRelativeArticles';
 
-interface ArticleProps {
+export interface ArticleProps {
   params: {
     article: string;
   };
