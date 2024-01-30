@@ -1,4 +1,4 @@
-'use client';
+import { Suspense } from 'react';
 import { IS_PRODUCTION } from '@/config';
 import GoogleAnalytics from './GoogleAnalytics';
 import AmplitudeAnalytics from './AmplitudeAnalytics';
@@ -16,7 +16,9 @@ const Analytics = () => {
   return (
     <>
       <GoogleAnalytics />
-      <AmplitudeAnalytics />
+      <Suspense>
+        <AmplitudeAnalytics />
+      </Suspense>
     </>
   );
 };

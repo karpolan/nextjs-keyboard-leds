@@ -1,5 +1,6 @@
-import { NextPage } from 'next';
-import { IS_DEBUG } from '@/config';
+import { Metadata, NextPage } from 'next';
+import { APP_NAME, IS_DEBUG } from '@/config';
+import { capitalize } from '@/utils';
 import BlockPingNotifyInfo from '../BlockPingNotifyInfo';
 import BlockPingNotifyDescription from '../BlockPingNotifyDescription';
 
@@ -21,6 +22,18 @@ const PingNotifyEventPage: NextPage<Props> = ({ params: { slug } }) => {
     </>
   );
 };
+
+/**
+ * Generates MetaData for the page based on the route params.
+ */
+export async function generateMetadata(
+  { params: { slug } }: Props
+  // parent: ResolvingMetadata
+): Promise<Metadata> {
+  const event = slug ? slug.map((x) => capitalize(x)).join(' - ') : 'Default';
+  const title = `${event} - PingNotify - ${APP_NAME}`;
+  return { title };
+}
 
 /**
  * Returns list of all PingNotify verbs to generate static pages.

@@ -1,7 +1,8 @@
 'use client';
-import { useLayoutEffect } from 'react';
+import { Suspense, useLayoutEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import { gaPageView } from '@/lib/ga';
+import GoogleAnalytics from './GoogleAnalytics';
 
 /**
  * Adds supporting scripts for Google Analytics, also tracks each page view.
@@ -20,7 +21,12 @@ const GoogleAnalyticsWithPageView = () => {
     searchParams, // Also track all search params changes even when the page remain the same
   ]);
 
-  return <GoogleAnalyticsWithPageView />;
+  return (
+    <Suspense>
+      {/* Note: Suspense is needed due to direct rendering of default exported <GoogleAnalytics/> in Layout(s) */}
+      <GoogleAnalytics />
+    </Suspense>
+  );
 };
 
 export default GoogleAnalyticsWithPageView;

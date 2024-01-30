@@ -1,6 +1,6 @@
 {
   "name": "nextjs-keyboard-leds",
-  "version": "0.8.21",
+  "version": "0.9.25",
   "description": "KEYBOARD-LEDS.COM website using NextJS",
   "private": true,
   "author": {
@@ -13,8 +13,11 @@
     "url": "https://github.com/karpolan/nextjs-keyboard-leds.git"
   },
   "scripts": {
+    "aws:cloudfront:invalidate": "aws cloudfront create-invalidation --distribution-id E3BK7CVC9OQ6XO --paths /* --profile sysadmin",
+    "aws:s3:upload": "aws s3 sync out/ s3://website-keyboard-leds.com --delete --profile sysadmin",
     "build": "next build",
     "dev": "next dev",
+    "deploy:aws": "npm run build && npm run aws:s3:upload && npm run aws:cloudfront:invalidate",
     "format": "prettier ./ --write",
     "lint": "next lint",
     "start": "next start",
