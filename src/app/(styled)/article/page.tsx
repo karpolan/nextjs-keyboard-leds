@@ -1,5 +1,5 @@
 import { Link, Typo, Wrapper } from '@/components';
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { articleToTitle, articleToUrl, getArticleList } from './utils';
 import styles from './article.module.css';
 
@@ -32,6 +32,16 @@ const AllArticlesPage = async () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Articles relative Caps Lock, Num Lock, and Scroll Lock - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/article/`,
+  },
 };
 
 export default AllArticlesPage;
