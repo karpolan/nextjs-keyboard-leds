@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import Video from '@/components/Video';
 import SocialMedia, { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
@@ -38,6 +38,16 @@ const InstallPage = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Software Installed - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/download/install/`,
+  },
 };
 
 export default InstallPage;

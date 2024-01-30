@@ -1,3 +1,4 @@
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 import { contentFileToUrl, getContentFiles } from '../[...slug]/utils';
 import { articleToTitle, articleToUrl, getArticleList } from '../article/utils';
@@ -119,6 +120,16 @@ const SitemapPage = async () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Sitemap - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/sitemap/`,
+  },
 };
 
 export default SitemapPage;

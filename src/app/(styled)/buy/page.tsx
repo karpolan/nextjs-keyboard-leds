@@ -4,12 +4,6 @@ import SocialMedia from '@/components/SocialMedia';
 import { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
 import ListOtherSoftware from '../download/ListOtherSoftware';
 
-export const metadata = {
-  alternates: {
-    canonical: `${PUBLIC_URL}/buy/`,
-  },
-};
-
 /**
  * Content of "Buy" page
  * @page Buy
@@ -63,6 +57,16 @@ const BuyPage = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Purchase - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/buy/`,
+  },
 };
 
 export default BuyPage;
