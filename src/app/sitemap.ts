@@ -158,6 +158,12 @@ async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.6,
     },
     ...software,
+    {
+      url: `${PUBLIC_URL}/sitemap/`,
+      lastModified,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 }
 

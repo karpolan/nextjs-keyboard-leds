@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
 
 /**
@@ -74,6 +74,16 @@ const TermsAndConditionsPage = () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Terms and Conditions - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/legal/terms-conditions//`,
+  },
 };
 
 export default TermsAndConditionsPage;

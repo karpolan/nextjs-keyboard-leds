@@ -1,31 +1,37 @@
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Typo, Wrapper } from '@/components';
+import { contentFileToUrl, getContentFiles } from '../[...slug]/utils';
+import { articleToTitle, articleToUrl, getArticleList } from '../article/utils';
+import { getSoftwareList, softwareToTitle, softwareToUrl } from '../software/utils';
+
+interface LinkData {
+  url: string;
+  title: string;
+}
 
 /**
  * Content of the Sitemap page.
  * @page Sitemap
  */
-const SitemapPage = () => {
+const SitemapPage = async () => {
+  const news: LinkData[] = (await getContentFiles()).map((fileName) => {
+    const url = contentFileToUrl(fileName);
+    const { title } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    return { url, title };
+  });
+
+  const articles: LinkData[] = (await getArticleList()).map((current) => {
+    return { url: articleToUrl(current), title: articleToTitle(current) };
+  });
+
+  const software: LinkData[] = (await getSoftwareList()).map((current) => {
+    return { url: softwareToUrl(current), title: softwareToTitle(current) };
+  });
+
   return (
     <Wrapper tag="article">
       <Typo variant="header1">Sitemap</Typo>
       <Typo variant="list">
-        <li>
-          <Link href="/popular-articles/">Articles</Link>
-          <Typo variant="list">
-            <li>
-              <Link href="/popular-articles/caps-lock-indicator/">Caps Lock Indicator</Link>
-            </li>
-            <li>
-              <Link href="/popular-articles/keyboard-indicator/">Keyboard Indicator</Link>
-            </li>
-            <li>
-              <Link href="/popular-articles/num-lock-indicator/">Num Lock Indicator</Link>
-            </li>
-            <li>
-              <Link href="/popular-articles/scroll-lock-indicator/">Scroll Lock Indicator</Link>
-            </li>
-          </Typo>
-        </li>
         <li>
           <Link href="/">Home</Link>
         </li>
@@ -50,6 +56,9 @@ const SitemapPage = () => {
           <Link href="/screenshots/">Screenshots</Link>
         </li>
         <li>
+          <Link href="/contact/">Contact</Link>
+        </li>
+        <li>
           <Link href="/download/">Download</Link>
           <Typo variant="list">
             <li>
@@ -70,15 +79,40 @@ const SitemapPage = () => {
         </li>
         <li>
           <Link href="/news/">News</Link>
+          <Typo variant="list">
+            {news.map(({ title, url }) => {
+              return (
+                <li key={url}>
+                  <Link href={url}>{title}</Link>
+                </li>
+              );
+            })}
+          </Typo>
         </li>
-        <li>
-          <Link href="/contact/">Contact</Link>
-        </li>
+
         <li>
           <Link href="/articles/">Articles</Link>
+          <Typo variant="list">
+            {articles.map(({ title, url }) => {
+              return (
+                <li key={url}>
+                  <Link href={url}>{title}</Link>
+                </li>
+              );
+            })}
+          </Typo>
         </li>
         <li>
           <Link href="/software/">Software</Link>
+          <Typo variant="list">
+            {software.map(({ title, url }) => {
+              return (
+                <li key={url}>
+                  <Link href={url}>{title}</Link>
+                </li>
+              );
+            })}
+          </Typo>
         </li>
         <li>
           <Link href="/ping/">PingNotify&trade;</Link>
@@ -86,6 +120,16 @@ const SitemapPage = () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Sitemap - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/sitemap/`,
+  },
 };
 
 export default SitemapPage;

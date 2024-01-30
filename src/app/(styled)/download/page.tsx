@@ -1,4 +1,4 @@
-import { APP_NAME, APP_VERSION } from '@/config';
+import { APP_NAME, APP_VERSION, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import Video from '@/components/Video';
 import BlockDownloadButtons from './BlockDownloadButtons';
@@ -47,6 +47,16 @@ const PageDownload = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Download free Caps Lock and Num Lock software - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/download/`,
+  },
 };
 
 export default PageDownload;

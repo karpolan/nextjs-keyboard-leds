@@ -1,3 +1,5 @@
+import { Metadata } from 'next';
+import { APP_NAME } from '@/config';
 import { Button, Stack, Typo, Wrapper } from '@/components';
 import { categoryToUrl, getCategoryList } from './utils';
 
@@ -20,5 +22,15 @@ const AllCategoriesPage = async () => {
     </Wrapper>
   );
 };
+
+/**
+ * Generates MetaData for the page based on the route params.
+ */
+export async function generateMetadata(): Promise<Metadata> {
+  const categories = await getCategoryList();
+  const title = `Categories - ${APP_NAME}`;
+  const keywords = categories.join(', ');
+  return { keywords, title };
+}
 
 export default AllCategoriesPage;

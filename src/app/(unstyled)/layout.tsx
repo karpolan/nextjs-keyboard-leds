@@ -1,4 +1,4 @@
-import { FunctionComponent, PropsWithChildren, Suspense } from 'react';
+import { FunctionComponent, PropsWithChildren } from 'react';
 import { Analytics } from '@/layout/components';
 import './unstyled.css';
 
@@ -10,9 +10,7 @@ const UnstyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <head>
-        <Suspense>
-          <Analytics />
-        </Suspense>
+        <Analytics />
       </head>
       <body>
         <div className="content">{children}</div>

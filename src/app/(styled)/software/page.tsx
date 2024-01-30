@@ -1,6 +1,5 @@
 import { Link, Typo, Wrapper } from '@/components';
-import { capitalizeAllWords } from '@/utils';
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { softwareToUrl, getSoftwareList, softwareToTitle } from './utils';
 import styles from './software.module.css';
 
@@ -36,6 +35,16 @@ const AllSoftwarePage = async () => {
       </Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Software relative to Caps Lock, Num Lock, and Scroll Lock - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/software/`,
+  },
 };
 
 export default AllSoftwarePage;

@@ -1,15 +1,9 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Stack, Typo, Wrapper } from '@/components';
 import DownloadButton from '@/components/DownloadButton';
 import Video from '@/components/Video';
 import Screenshot from '@/components/Screenshot';
 import SocialMedia from '@/components/SocialMedia';
-
-export const metadata = {
-  alternates: {
-    canonical: 'https://keyboard-leds.com', // TODO: Make CANONICAL_ROOT configurable in .env
-  },
-};
 
 /**
  * Home page content
@@ -72,6 +66,16 @@ const HomePage = () => {
       <Typo variant="paragraph">Thank you for choosing {appName} - where visibility meets simplicity</Typo>
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Free Caps Lock, Num Lock, Scroll Lock Software Indicator - ${APP_NAME}`,
+  alternates: {
+    canonical: PUBLIC_URL,
+  },
 };
 
 export default HomePage;

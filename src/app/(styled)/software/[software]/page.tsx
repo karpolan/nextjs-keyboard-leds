@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { Metadata, NextPage } from 'next';
 import { APP_NAME, IS_DEBUG } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import { capitalizeAllWords } from '@/utils';
@@ -66,6 +66,18 @@ export async function generateStaticParams() {
   const result = software.map((name) => ({ software: name.replace(/ /g, '-') }));
   IS_DEBUG && console.log('Software.generateStaticParams()', JSON.stringify(result));
   return result;
+}
+
+/**
+ * Generates MetaData for the page based on params
+ */
+export async function generateMetadata(
+  { params: { software } }: Props
+  // parent: ResolvingMetadata
+): Promise<Metadata> {
+  const text = decodeURIComponent(software).replace(/-/g, ' ').replace(/   /g, ' - ');
+  const title = `${capitalizeAllWords(text)} - Software - ${APP_NAME}`;
+  return { title };
 }
 
 export default SingleSoftwarePage;

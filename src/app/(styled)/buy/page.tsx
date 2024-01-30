@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/config';
+import { APP_NAME, PUBLIC_URL } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import SocialMedia from '@/components/SocialMedia';
 import { SOCIAL_MEDIA } from '@/components/SocialMedia/SocialMedia';
@@ -57,6 +57,16 @@ const BuyPage = () => {
       <ListOtherSoftware />
     </Wrapper>
   );
+};
+
+/**
+ * MetaData for the page
+ */
+export const metadata = {
+  title: `Purchase - ${APP_NAME}`,
+  alternates: {
+    canonical: `${PUBLIC_URL}/buy/`,
+  },
 };
 
 export default BuyPage;

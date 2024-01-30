@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { Metadata, NextPage } from 'next';
 import { APP_NAME, IS_DEBUG } from '@/config';
 import { Link, Stack, Typo, Wrapper } from '@/components';
 import { capitalizeAllWords } from '@/utils';
@@ -7,7 +7,7 @@ import { getArticleList } from '../utils';
 import BlockDownloadButtons from '../../download/BlockDownloadButtons';
 import BlockRelativeArticles from '../BlockRelativeArticles';
 
-export interface ArticleProps {
+interface ArticleProps {
   params: {
     article: string;
   };
@@ -78,6 +78,18 @@ export async function generateStaticParams() {
   const result = articles.map((name) => ({ article: name.replace(/ /g, '-') }));
   IS_DEBUG && console.log('article.generateStaticParams()', JSON.stringify(result));
   return result;
+}
+
+/**
+ * Generates MetaData for the page based on params
+ */
+export async function generateMetadata(
+  { params: { article } }: ArticleProps
+  // parent: ResolvingMetadata
+): Promise<Metadata> {
+  const text = article.replace(/-/g, ' ').replace(/   /g, ' - ');
+  const title = `${capitalizeAllWords(text)} - Article - ${APP_NAME}`;
+  return { title };
 }
 
 export default SingleArticlePage;
