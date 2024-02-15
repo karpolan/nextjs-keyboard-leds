@@ -20,7 +20,7 @@ export const viewport: Viewport = {
 };
 
 /**
- * Layout for (styled) pages, renders head and body tags
+ * Layout for (main) pages, renders head and body tags
  * @layout StyledLayout
  */
 const StyledLayout: FunctionComponent<PropsWithChildren> = ({ children }) => {

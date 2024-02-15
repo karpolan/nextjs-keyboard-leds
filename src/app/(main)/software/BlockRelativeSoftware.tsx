@@ -1,5 +1,4 @@
 import { FunctionComponent } from 'react';
-import { capitalizeAllWords } from '@/utils';
 import { Link, Typo } from '@/components';
 import { SOFTWARE } from './config';
 import { softwareToTitle, softwareToUrl } from './utils';

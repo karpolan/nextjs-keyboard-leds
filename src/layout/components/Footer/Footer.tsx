@@ -40,8 +40,8 @@ const Footer = () => {
           <Link href="/screenshots/">Screenshots</Link>
           <Link href="/download/">Download</Link>
           <Link href="/buy/">Buy</Link>
-          <Link href="/contact/">Contacts</Link>
           <Link href="/news/">News</Link>
+          <Link href="/contact/">Contacts</Link>
         </div>
         <div className={styles.menu}>
           <Link href="/legal/privacy-policy/">Privacy Policy</Link>

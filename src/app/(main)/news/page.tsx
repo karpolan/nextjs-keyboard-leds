@@ -8,7 +8,7 @@ import { ContentFile, contentFileToDateString, contentFileToUrl, getContentFiles
 const NewsPage = async () => {
   const contentFiles = await getContentFiles();
   const articles: ContentFile[] = contentFiles.map((fileName: string) => {
-    const { tags, categories, content, title } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    const { tags, categories, content, title } = require(`@/app/(main)/[...slug]/${fileName}`);
     const titleWithDate = `${contentFileToDateString(fileName)} - ${title}`;
     const href = contentFileToUrl(fileName);
     return { tags, categories, content, title: titleWithDate, href };

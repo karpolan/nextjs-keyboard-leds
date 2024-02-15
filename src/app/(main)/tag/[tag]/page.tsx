@@ -3,7 +3,7 @@ import { APP_NAME, IS_DEBUG } from '@/config';
 import { capitalizeAllWords } from '@/utils';
 import { Link, Typo, Wrapper } from '@/components';
 import { CategoryGroup, TagGroup } from '@/components/Taxonomy';
-import { ContentFile, contentFileToUrl, getContentFiles } from '@/app/(styled)/[...slug]/utils';
+import { ContentFile, contentFileToUrl, getContentFiles } from '@/app/(main)/[...slug]/utils';
 import { getTagList } from '../utils';
 
 interface Props {
@@ -20,7 +20,7 @@ const SingleTagPage: NextPage<Props> = async ({ params: { tag } }) => {
   const textToFind = tag.replace(/-/g, ' ');
   const contentFiles = await getContentFiles();
   const articles: ContentFile[] = contentFiles.reduce((all: ContentFile[], fileName: string) => {
-    const { tags, categories, content, title } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    const { tags, categories, content, title } = require(`@/app/(main)/[...slug]/${fileName}`);
     if (tags.includes(textToFind)) {
       const href = contentFileToUrl(fileName);
       all.push({ tags, categories, content, title, href });

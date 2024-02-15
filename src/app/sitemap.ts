@@ -1,10 +1,10 @@
 import { MetadataRoute } from 'next';
 import { PUBLIC_URL } from '@/config';
-import { contentFileToUrl, getContentFiles } from './(styled)/[...slug]/utils';
-import { getTagList, tagToUrl } from './(styled)/tag/utils';
-import { categoryToUrl, getCategoryList } from './(styled)/category/utils';
-import { articleToUrl, getArticleList } from './(styled)/article/utils';
-import { getSoftwareList, softwareToUrl } from './(styled)/software/utils';
+import { contentFileToUrl, getContentFiles } from './(main)/[...slug]/utils';
+import { getTagList, tagToUrl } from './(main)/tag/utils';
+import { categoryToUrl, getCategoryList } from './(main)/category/utils';
+import { articleToUrl, getArticleList } from './(main)/article/utils';
+import { getSoftwareList, softwareToUrl } from './(main)/software/utils';
 
 async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const currentDate = new Date().toISOString();
