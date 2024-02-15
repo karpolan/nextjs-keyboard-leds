@@ -1,4 +1,4 @@
-import { getContentFiles } from '@/app/(styled)/[...slug]/utils';
+import { getContentFiles } from '@/app/(main)/[...slug]/utils';
 
 /**
  * Generates url for given Category
@@ -16,7 +16,7 @@ export function categoryToUrl(category: string): string {
 export async function getCategoryList() {
   const contentFiles = await getContentFiles();
   const allCategories: string[] = contentFiles.reduce((all: string[], fileName: string) => {
-    const { categories } = require(`@/app/(styled)/[...slug]/${fileName}`);
+    const { categories } = require(`@/app/(main)/[...slug]/${fileName}`);
     return [...all, ...categories];
   }, []);
   const uniqueCategories = Array.from(new Set(allCategories)).sort();

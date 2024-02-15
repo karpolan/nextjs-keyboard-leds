@@ -39,7 +39,7 @@ export function contentFileToDateString(fileName: string): string {
  * @returns {Promise<string[]>} List of content files as strings
  */
 export async function getContentFiles(): Promise<string[]> {
-  const directoryPath = 'src/app/(styled)/[...slug]';
+  const directoryPath = 'src/app/(main)/[...slug]';
   const fileNames = [];
   try {
     const files = await readdir(directoryPath);

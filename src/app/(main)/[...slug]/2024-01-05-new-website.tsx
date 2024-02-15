@@ -1,7 +1,7 @@
 import { Link, Typo } from '@/components';
 
 export const categories = ['news', 'website'];
-export const tags = ['website', 'internet'];
+export const tags = ['website', 'internet', 'domain'];
 export const title = 'New Website';
 export const content = (
   <>

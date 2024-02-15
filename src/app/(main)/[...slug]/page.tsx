@@ -23,7 +23,7 @@ function getPageData(slug: string[]): PageData {
   const href = `/${normalizedSlug.join('/')}`;
 
   try {
-    pageData = require(`@/app/(styled)/[...slug]/${fileName}.tsx`);
+    pageData = require(`@/app/(main)/[...slug]/${fileName}.tsx`);
   } catch (error) {
     pageData = {};
   }
